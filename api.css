@@ -74,7 +74,7 @@
   transition: 0.3s;
   font-family: "Rubik";
   font-weight: 600;
-  text-shadow: 0px 0px 0px #6e3bf3;
+  text-shadow: 0px 0px 0px #E3EEFF;
   text-decoration: none;
 }
 .navbar-link1:hover {
@@ -88,7 +88,7 @@
   transition: 0.3s;
   font-family: "Rubik";
   font-weight: 600;
-  text-shadow: 0px 0px 0px #6e3bf3;
+  text-shadow: 0px 0px 0px #E3EEFF;
   text-decoration: none;
 }
 .navbar-link2:hover {
@@ -102,7 +102,7 @@
   transition: 0.3s;
   font-family: "Rubik";
   font-weight: 600;
-  text-shadow: 0px 0px 0px #6e3bf3;
+  text-shadow: 0px 0px 0px #E3EEFF;
   text-decoration: none;
 }
 .navbar-link3:hover {
@@ -116,7 +116,7 @@
   transition: 0.3s;
   font-family: "Rubik";
   font-weight: 600;
-  text-shadow: 0px 0px 0px #6e3bf3;
+  text-shadow: 0px 0px 0px #E3EEFF;
   text-decoration: none;
 }
 .navbar-link4:hover {
@@ -130,7 +130,7 @@
   transition: 0.3s;
   font-family: "Rubik";
   font-weight: 600;
-  text-shadow: 0px 0px 0px #6e3bf3;
+  text-shadow: 0px 0px 0px #E3EEFF;
   text-decoration: none;
 }
 .navbar-link5:hover {
@@ -150,6 +150,7 @@
   width: var(--dl-size-size-xsmall);
   object-fit: cover;
   text-decoration: none;
+  color: #FFFFFF;
 }
 
 .navbar-link1 {
@@ -160,6 +161,7 @@
   width: var(--dl-size-size-xsmall);
   object-fit: cover;
   text-decoration: none;
+  color: #FFFFFF;
 }
 .navbar-github:hover {
   color: #FFFFFF;
@@ -172,6 +174,7 @@
   width: var(--dl-size-size-xsmall);
   object-fit: cover;
   text-decoration: none;
+  color: #FFFFFF;
 }
 .navbar-youtube:hover {
   color: #FFFFFF;
