@@ -171,6 +171,14 @@
           document.title = title
       })
     </script>
+    <script>
+      var onresize = function(e) {
+        width = e.target.outerWidth;
+        height = e.target.outerHeight;
+        console.info(width)
+      }
+      window.addEventListener("resize", onresize);
+    </script>
   </head>
   <body>
     <div id="loader"></div>
