@@ -38,6 +38,7 @@
   border-right-width: 0px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+  filter: hue-rotate(15deg) brightness(105%);
 }
 .navbar-logo:hover {
   filter: hue-rotate(15deg) brightness(105%);
@@ -65,6 +66,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  text-shadow: 0px 0px 0px #E3EEFF;
 }
 .navbar-link1 {
   fill: var(--dl-color-juststudio.styles-purple);
@@ -535,7 +537,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: center;
+  align-self: left;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
@@ -587,7 +589,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: center;
+  align-self: left;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
