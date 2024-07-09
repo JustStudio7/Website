@@ -176,7 +176,7 @@
     <div id="loader"></div>
 <div id="loaderbg"></div>
     <link rel="stylesheet" href="./style.css" />
-    <div id="content">
+    <div id="content" style="user-select: none;">
       <link href="./api.css" rel="stylesheet" />
 
       <div class="api-container">
@@ -602,12 +602,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      document.ondragstart = noselect;
-      document.onselectstart = noselect;
-      document.oncontextmenu = noselect;
-      function noselect() {return false;}
-    </script>
     <script>
     var something;
 
