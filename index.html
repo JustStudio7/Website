@@ -17,6 +17,54 @@
           window.location.href = "/";
       }
     </script>
+    <style>
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1000000;
+      width: 120px;
+      height: 120px;
+      margin: -76px 0 0 -76px;
+      border: 16px solid #000040;
+      border-radius: 50%;
+      border-top: 16px solid #6e3bf3;
+      -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+    }
+    #loaderbg {
+    	position: absolute;
+    	background-color: #000040;
+        width: 100%;
+        height: 100%
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+
+    #content {
+      display: none;
+      text-align: center;
+    }
+</style>
     <meta property="og:title" content="JustStudio." />
     <meta
       property="og:image"
@@ -126,9 +174,10 @@
     </script>
   </head>
   <body>
-    <div class="loader"></div>
+    <div id="loader"></div>
+    <div id="loaderbg"></div>
     <link rel="stylesheet" href="./style.css" />
-    <div>
+    <div id="content">
       <link href="./index.css" rel="stylesheet" />
 
       <div class="home-container">
@@ -608,6 +657,19 @@
       document.onselectstart = noselect;
       document.oncontextmenu = noselect;
       function noselect() {return false;}
+    </script>
+    <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 3000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("loaderbg").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }
     </script>
     <script
       defer=""
