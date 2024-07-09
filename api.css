@@ -818,7 +818,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: center;
+  align-self: left;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
