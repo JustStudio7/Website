@@ -546,7 +546,6 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
-  text-align: left;
 }
 .api-source {
   fill: var(--dl-color-juststudio.styles-light);
@@ -555,6 +554,7 @@
   font-style: normal;
   font-family: "Fira Mono";
   font-weight: 500;
+  text-align: left;
 }
 .api-text013 {
   color: #84d6f7;
@@ -599,7 +599,6 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
-  text-align: left;
 }
 .api-source1 {
   fill: var(--dl-color-juststudio.styles-light);
@@ -607,6 +606,7 @@
   width: 100%;
   font-family: "Fira Mono";
   font-weight: 500;
+  text-align: left;
 }
 .api-text026 {
   color: #84d6f7;
@@ -829,7 +829,6 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
-  text-align: left;
 }
 .api-source2 {
   fill: var(--dl-color-juststudio.styles-light);
@@ -837,6 +836,7 @@
   width: 100%;
   font-family: "Fira Mono";
   font-weight: 500;
+  text-align: left;
 }
 .api-text087 {
   color: #84d6f7;
