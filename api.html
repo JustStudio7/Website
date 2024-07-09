@@ -172,10 +172,17 @@
       })
     </script>
     <script>
+      width = document.body.clientWidth;
+      height = document.body.clientHeight;
+        if(width<1111){
+          window.location.href.replace("/")
+        }
       var onresize = function(e) {
         width = e.target.outerWidth;
         height = e.target.outerHeight;
-        console.info(width)
+        if(width<1111){
+          window.location.href.replace("/")
+        }
       }
       window.addEventListener("resize", onresize);
     </script>
