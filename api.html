@@ -175,13 +175,13 @@
       width = document.body.clientWidth;
       height = document.body.clientHeight;
         if(width<1111){
-          window.location.href.replace("/")
+          window.location.href = "/"
         }
       var onresize = function(e) {
         width = e.target.outerWidth;
         height = e.target.outerHeight;
         if(width<1111){
-          window.location.href.replace("/")
+          window.location.href = "/"
         }
       }
       window.addEventListener("resize", onresize);
