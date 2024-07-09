@@ -537,7 +537,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: left;
+  align-self: center;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
@@ -546,6 +546,7 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
+  text-align: left;
 }
 .api-source {
   fill: var(--dl-color-juststudio.styles-light);
@@ -589,7 +590,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: left;
+  align-self: center;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
@@ -598,6 +599,7 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
+  text-align: left;
 }
 .api-source1 {
   fill: var(--dl-color-juststudio.styles-light);
@@ -818,7 +820,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   flex-wrap: wrap;
-  align-self: left;
+  align-self: center;
   margin-top: var(--dl-space-space-halfunit);
   align-items: flex-start;
   padding-left: 16px;
@@ -827,6 +829,7 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(37,37,37);
+  text-align: left;
 }
 .api-source2 {
   fill: var(--dl-color-juststudio.styles-light);
