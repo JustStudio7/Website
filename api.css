@@ -4,7 +4,7 @@
   z-index: 10000;
   position: relative;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.51);
+  background-color: rgba(0, 0, 0, 0.21);
 }
 .navbar-main {
   width: 100%;
@@ -17,7 +17,7 @@
   padding-bottom: 30px;
   backdrop-filter: blur(8px);
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.71);
+  background-color: rgba(0, 0, 0, 0.21);
 }
 .navbar-navlink {
   display: contents;
