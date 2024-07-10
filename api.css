@@ -38,7 +38,6 @@
   border-right-width: 0px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  filter: hue-rotate(15deg) brightness(105%);
 }
 .navbar-logo:hover {
   filter: hue-rotate(15deg) brightness(105%);
@@ -95,6 +94,9 @@
 }
 .navbar-link2:hover {
   text-shadow: 0px 0px 0px #E3EEFF;
+}
+.navbaricon {
+  filter: saturate(50%) brightness(333%)
 }
 .navbar-link3 {
   fill: var(--dl-color-juststudio.styles-blue);
