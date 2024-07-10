@@ -1,3 +1,4 @@
+<!-- JustStudio. /-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +7,64 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script> // Debug url script by JustStudio. \\ https://juststudio.github.io
+    let url = window.location.href;
+    if (url.match("index.html")) {
+        window.location.href = url.replace("index.html", "");
+    } else if (url.match(".html")) {
+        window.location.href = url.replace(".html", "");
+    } else if (url.match(/\.\w+$/)) {
+        window.location.href = "/";
+    }
+  </script>
+    <style>
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1000000;
+      width: 60px;
+      height: 60px;
+      margin: -35px 0 0 -35px;
+      border: 5px solid #000040;
+      border-radius: 50%;
+      border-top: 5px solid #6e3bf3;
+      -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+    }
+    #loaderbg {
+    	position: absolute;
+    	background-color: #000040;
+        width: 100%;
+        height: 100%
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+
+    #content {
+      display: none;
+      text-align: center;
+    }
+</style>
     <meta
       name="description"
       content="JustStudio.AdminPanel: Simple admin panel for your games on Roblox. Add JustStudio.AdminPanel to your game using API!"
@@ -122,8 +181,10 @@
     </script>
   </head>
   <body>
+    <div id="loader"></div>
+<div id="loaderbg"></div>
     <link rel="stylesheet" href="./style.css" />
-    <div>
+    <div id="content">
       <link href="./products.css" rel="stylesheet" />
 
       <div class="products-container">
@@ -375,6 +436,21 @@
       document.oncontextmenu = noselect;
       function noselect() {return false;}
     </script>
+    <script>
+    var something;
+
+    function activate() {
+      something = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }
+
+    activate()
+  </script>
     <script
       defer=""
       src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
