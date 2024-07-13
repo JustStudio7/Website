@@ -165,10 +165,13 @@
     <script type="text/javascript">
       let title = document.title
       window.addEventListener('blur', () => {
-          document.title = "JustStudio."
+          document.title = "JustStudio.";
       })
       window.addEventListener('focus', () => {
-          document.title = title
+          document.title = title;
+          setTimeout(() => {
+            window.location.href = window.location.href
+          }, 100);
       })
     </script>
     <script>
