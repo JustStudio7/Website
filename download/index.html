@@ -1,9 +1,27 @@
 <head>
   <script>
+    function downloadFile(url, fileName) {
+      fetch(url, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
+        .then((res) => res.blob())
+        .then((res) => {
+          const aElement = document.createElement("a");
+          aElement.setAttribute("download", fileName);
+          const href = URL.createObjectURL(res);
+          aElement.href = href;
+          aElement.setAttribute("target", "_blank");
+          aElement.click();
+          URL.revokeObjectURL(href);
+        });
+    };
+    
     const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
+    let filename = "JustStudio.API Script (";
     newurl += searchParams.get('id');
-    newurl += ".server.lua";
-    window.location.href = newurl;
+//  newurl += ".server.lua";
+//  window.location.href = newurl;
+    filename += searchParams.get('id');
+    filename += ").lua";
+    downloadFile(newurl, filename);
   </script>
 </head>
