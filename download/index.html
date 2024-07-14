@@ -13,7 +13,7 @@
           URL.revokeObjectURL(href);
         });
     };
-    const searchParams = new URLSearchParams(window.location.search);
+    let searchParams = new URLSearchParams(window.location.search);
     if searchParams.has('id') === false {
       window.location.href.replace("/")
     };
