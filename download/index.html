@@ -13,8 +13,10 @@
           URL.revokeObjectURL(href);
         });
     };
-    
     const searchParams = new URLSearchParams(window.location.search);
+    if searchParams.has('id') === false {
+      window.location.href.replace("/")
+    };
     let newurl = "/download/";
     let filename = "JustStudio.API Script (";
     newurl += searchParams.get('id');
@@ -22,7 +24,24 @@
 //  window.location.href = newurl;
     filename += searchParams.get('id');
     filename += ").lua";
-    downloadFile(newurl, filename);
-    window:close()
+    if searchParams.has('copy') {
+      fetch(newurl, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
+        .then((res) => {
+          if (res) {
+              var reader = new FileReader();
+              reader.readAsText(res, "UTF-8");
+              reader.onload = function (evt) {
+                  navigator.clipboard.writeText(evt.target.result);
+              };
+              reader.onerror = function (evt) {
+                  alert("Failed to copy text");
+              };
+          };
+        });
+      window:close();
+    } else {
+      downloadFile(newurl, filename);
+      window:close();
+    };
   </script>
 </head>
