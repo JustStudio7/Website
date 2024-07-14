@@ -1,5 +1,5 @@
 <head>
-  <script>
+  <script type="text/javascript">
     function downloadFile(url, fileName) {
       fetch(url, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
         .then((res) => res.blob())
@@ -18,8 +18,7 @@
     let newurl = "/download/";
     let filename = "JustStudio.API Script (";
     newurl += searchParams.get('id');
-//  newurl += ".server.lua";
-//  window.location.href = newurl;
+    newurl += ".lua";
     filename += searchParams.get('id');
     filename += ").lua";
     if searchParams.has('copy') {
