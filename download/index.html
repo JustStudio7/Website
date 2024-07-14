@@ -3,7 +3,7 @@
     const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
     newurl += searchParams.get('id');
-    newurl += ".server.lua"
+    newurl += ".server.lua";
     window.location.href = url.replace(newurl, "");
   </script>
 </head>
