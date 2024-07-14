@@ -1078,3 +1078,59 @@
     text-align: center;
   }
 }
+.lua-text {
+  color: rgb(204, 204, 204);
+  font-family: "Fira Mono";
+}
+.lua-bg {
+  gap: 2;
+  flex: 0 0 auto;
+  width: 80%;
+  height: auto;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  flex-wrap: wrap;
+  align-self: center;
+  margin-top: var(--dl-space-space-halfunit);
+  align-items: flex-start;
+  padding-left: 16px;
+  border-radius: var(--dl-radius-radius-inputradius);
+  margin-bottom: var(--dl-space-space-unit);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgb(37,37,37);
+}
+.lua-op {
+  color: rgb(204, 204, 204);
+  font-family: "Fira Mono";
+}
+.lua-num {
+  color: rgb(255, 198, 0);
+  font-family: "Fira Mono";
+}
+.lua-str {
+  color: rgb(173, 241, 149);
+  font-family: "Fira Mono";
+}
+.lua-comm {
+  color: rgb(102, 102, 102);
+  font-family: "Fira Mono";
+}
+.lua-key {
+  color: rgb(248, 109, 124);
+  font-family: "Fira Mono";
+}
+.lua-bif {
+  color: rgb(132, 214, 247);
+  font-family: "Fira Mono";
+}
+.lua-nil {
+  color: rgb(255, 198, 0);
+  font-family: "Fira Mono";
+  font-weight: 500;
+}
+.lua-bool {
+  color: rgb(255, 198, 0);
+  font-family: "Fira Mono";
+  font-weight: 500;
+}
