@@ -13,7 +13,7 @@
           URL.revokeObjectURL(href);
         });
     };
-    let searchParams = new URLSearchParams(window.location.search);
+    const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
     let filename = "JustStudio.API Script (";
     newurl += searchParams.get('id');
