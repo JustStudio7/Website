@@ -618,6 +618,231 @@
             </span>
           </div>
         </div>
+        <h1 id="AdminPanel" class="api-admin-panel">
+          <span>JustStudio.AdminPanel</span>
+          <br />
+        </h1>
+        <div class="api-tutorial">
+          <h3 class="api-step1">Adding admin panel to your game</h3>
+          <span class="api-desc1">
+            <span>
+              Create a server script in ServerScriptService and follow the
+              instructions below, or add
+            </span>
+            <a
+              href="https://create.roblox.com/store/asset/18408781155/Admin-Panel-JustStudioAdminPanel"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="api-link"
+            >
+              this model
+            </a>
+            <span>to your game.</span>
+            <br />
+            <span class="api-text011">
+              Note: The game owner always has access to the admin panel (even
+              without configuring the admin panel).
+            </span>
+            <br />
+          </span>
+          <div class="api-code1" style="align-self:center; user-select: text;">
+            <span class="api-source" style="align:left">
+              <span class="api-text013">require</span>
+              <span style="margin-left: -10px;">(</span>
+              <span class="api-text015" style="margin-left: -10px;">18408482320</span>
+              <span style="margin-left: -10px;">).</span>
+              <span class="api-text017" style="margin-left: -10px;">Initialize</span>
+              <span style="margin-left: -10px;">()</span>
+            </span>
+          </div>
+          <h3 class="api-step2">
+            <span>Adding Settings</span>
+            <span class="api-text020">(Optional)</span>
+            <br />
+          </h3>
+          <span class="api-desc2">
+            <span>
+              You can add admins by roles in your group. And you can toggle
+              admin anchor when admin panel open.
+            </span>
+            <br />
+            <span class="api-text024">
+              Note: Adding group settings is optional.
+            </span>
+            <br />
+          </span>
+          <div class="api-code2" style="align-self:center; user-select: text;">
+            <span class="api-source1" style="align:left">
+              <span class="api-text026">require</span>
+              <span class="api-text027" style="margin-left: -10px;">(</span>
+              <span class="api-text028" style="margin-left: -10px;">18408482320</span>
+              <span class="api-text029" style="margin-left: -10px;">).</span>
+              <span class="api-text030" style="margin-left: -10px;">Initialize</span>
+              <span class="api-text031" style="margin-left: -10px;">({</span>
+              <br class="api-text032" />
+              <span class="api-text033"></span>
+              <span class="api-text034">&nbsp; &nbsp; &nbsp;</span>
+              <span class="api-text035">-- Settings</span>
+              <br class="api-text036" />
+              <span class="api-text037">&nbsp; &nbsp; &nbsp; [</span>
+              <span class="api-text038" style="margin-left: -10px;">"Admin"</span>
+              <span class="api-text039" style="margin-left: -10px;">] = {</span>
+              <br class="api-text040" />
+              <span class="api-text041">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text042" style="margin-left: -10px;">"AnchorPlayer"</span>
+              <span class="api-text043" style="margin-left: -10px;">] =</span>
+              <span class="api-text044">true</span>
+              <span class="api-text045" style="margin-left: -10px;">;</span>
+              <span class="api-text046">
+                -- Anchor admin when admin panel open? (Default: true)
+              </span>
+              <br class="api-text047" />
+              <span class="api-text048">&nbsp; &nbsp; &nbsp; };</span>
+              <br class="api-text049" />
+              <span class="api-text050">&nbsp; &nbsp; &nbsp; [</span>
+              <span class="api-text051" style="margin-left: -10px;">"Group"</span>
+              <span class="api-text052" style="margin-left: -10px;">] = {</span>
+              <br class="api-text053" />
+              <span class="api-text054">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text055" style="margin-left: -10px;">"GroupID"</span>
+              <span class="api-text056" style="margin-left: -10px;">] =</span>
+              <span class="api-text057">34450183</span>
+              <span class="api-text058" style="margin-left: -10px;">;</span>
+              <span class="api-text059">-- Your Group ID</span>
+              <br class="api-text060" />
+              <span class="api-text061">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text062" style="margin-left: -10px;">"AdminRoleNames"</span>
+              <span class="api-text063" style="margin-left: -10px;">] = {</span>
+              <br class="api-text064" />
+              <span class="api-text065">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              </span>
+              <span class="api-text066">"ModTeam"</span>
+              <span class="api-text067" style="margin-left: -10px;">;</span>
+              <span class="api-text068" style="margin-left: -10px;">"DevTeam"</span>
+              <span class="api-text069" style="margin-left: -10px;">;</span>
+              <span class="api-text070" style="margin-left: -10px;">"Owner"</span>
+              <span class="api-text071" style="margin-left: -10px;">;</span>
+              <span class="api-text072">
+                -- Up to 3 roles (USE ROLE NAMES ONLY!)
+              </span>
+              <br class="api-text073" />
+              <span class="api-text074">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; };
+              </span>
+              <br class="api-text075" />
+              <span class="api-text076">&nbsp; &nbsp; &nbsp; };</span>
+              <br class="api-text077" />
+              <span class="api-text078">})</span>
+              <br class="api-text079" />
+            </span>
+          </div>
+          <h3 class="api-step3">
+            <span>Adding Admin IDs</span>
+            <span class="api-text081">(Optional)</span>
+            <br />
+          </h3>
+          <span class="api-desc3">
+            <span>You can add admins by UserIDs.</span>
+            <br />
+            <span class="api-text085">
+              Note: There should be settings first, and only after settings you
+              can add Admin IDs!
+            </span>
+            <br />
+          </span>
+          <div class="api-code3" style="align-self:center; user-select: text;">
+            <span class="api-source2" style="align:left">
+              <span class="api-text087">require</span>
+              <span class="api-text088" style="margin-left: -10px;">(</span>
+              <span class="api-text089" style="margin-left: -10px;">18408482320</span>
+              <span class="api-text090" style="margin-left: -10px;">).</span>
+              <span class="api-text091" style="margin-left: -10px;">Initialize</span>
+              <span class="api-text092" style="margin-left: -10px;">({</span>
+              <br class="api-text093" />
+              <span class="api-text094"></span>
+              <span class="api-text095">&nbsp; &nbsp; &nbsp;</span>
+              <span class="api-text096">-- Settings</span>
+              <br class="api-text097" />
+              <span class="api-text098">&nbsp; &nbsp; &nbsp; [</span>
+              <span class="api-text099" style="margin-left: -10px;">"Admin"</span>
+              <span class="api-text100" style="margin-left: -10px;">] = {</span>
+              <br class="api-text101" />
+              <span class="api-text102">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text103" style="margin-left: -10px;">"AnchorPlayer"</span>
+              <span class="api-text104" style="margin-left: -10px;">] =</span>
+              <span class="api-text105">true</span>
+              <span class="api-text106" style="margin-left: -10px;">;</span>
+              <span class="api-text107">
+                -- Anchor admin when admin panel open? (Default: true)
+              </span>
+              <br class="api-text108" />
+              <span class="api-text109">&nbsp; &nbsp; &nbsp; };</span>
+              <br class="api-text110" />
+              <span class="api-text111">&nbsp; &nbsp; &nbsp; [</span>
+              <span class="api-text112" style="margin-left: -10px;">"Group"</span>
+              <span class="api-text113" style="margin-left: -10px;">] = {</span>
+              <br class="api-text114" />
+              <span class="api-text115">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text116" style="margin-left: -10px;">"GroupID"</span>
+              <span class="api-text117" style="margin-left: -10px;">] =</span>
+              <span class="api-text118">34450183</span>
+              <span class="api-text119" style="margin-left: -10px;">;</span>
+              <span class="api-text120">-- Your Group ID</span>
+              <br class="api-text121" />
+              <span class="api-text122">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [
+              </span>
+              <span class="api-text123" style="margin-left: -10px;">"AdminRoleNames"</span>
+              <span class="api-text124" style="margin-left: -10px;">] = {</span>
+              <br class="api-text125" />
+              <span class="api-text126">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              </span>
+              <span class="api-text127">"ModTeam"</span>
+              <span class="api-text128" style="margin-left: -10px;">;</span>
+              <span class="api-text129" style="margin-left: -10px;">"DevTeam"</span>
+              <span class="api-text130" style="margin-left: -10px;">;</span>
+              <span class="api-text131" style="margin-left: -10px;">"Owner"</span>
+              <span class="api-text132" style="margin-left: -10px;">;</span>
+              <span class="api-text133">
+                -- Up to 3 roles (USE ROLE NAMES ONLY!)
+              </span>
+              <br class="api-text134" />
+              <span class="api-text135">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; };
+              </span>
+              <br class="api-text136" />
+              <span class="api-text137">&nbsp; &nbsp; &nbsp; };</span>
+              <br class="api-text138" />
+              <span class="api-text139">}</span>
+              <span style="margin-left: -10px;">,{</span>
+              <br class="api-text141" />
+              <span>&nbsp; &nbsp; &nbsp;</span>
+              <span class="api-text143">-- Admin UserIDs</span>
+              <br class="api-text144" />
+              <span>&nbsp; &nbsp; &nbsp;</span>
+              <span class="api-text146">1296091692</span>
+              <span style="margin-left: -10px;">;&nbsp;</span>
+              <span class="api-text148" style="margin-left: -10px;">920151518</span>
+              <span style="margin-left: -10px;">;</span>
+              <br class="api-text150" />
+              <span>}</span>
+              <span class="api-text152" style="margin-left: -10px;">)</span>
+              <br class="api-text153" />
+            </span>
+          </div>
+        </div>
       </div>
     </div>
     <script>
