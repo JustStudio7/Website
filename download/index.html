@@ -11,14 +11,14 @@
           aElement.setAttribute("target", "_blank");
           aElement.click();
           URL.revokeObjectURL(href);
-          setTimeout(end, 1500)
+          setTimeout(end, 1500);
         } else {
-          window.location.href = "/"
+          window.location.href = "/";
         });
     };
     function end() {
       window:close();
-    }
+    };
 
     const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
@@ -41,7 +41,7 @@
               };
           };
         });
-      setTimeout(end, 1500)
+      setTimeout(end, 1500);
     } else {
       downloadFile(newurl, filename);
     };
