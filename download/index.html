@@ -12,13 +12,15 @@
           aElement.click();
           URL.revokeObjectURL(href);
           setTimeout(end, 1500);
-        } else {
+        })
+        .catch(() => {
           window.location.href = "/";
         });
-    };
+    }
+
     function end() {
-      window:close();
-    };
+      window.close();
+    }
 
     const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
@@ -29,21 +31,25 @@
     filename += ").lua";
     if (searchParams.has('copy')) {
       fetch(newurl, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
+        .then((res) => res.blob())
         .then((res) => {
           if (res) {
-              var reader = new FileReader();
-              reader.readAsText(res, "UTF-8");
-              reader.onload = function (evt) {
-                  navigator.clipboard.writeText(evt.target.result);
-              };
-              reader.onerror = function (evt) {
-                  alert("Failed to copy text");
-              };
-          };
+            var reader = new FileReader();
+            reader.readAsText(res, "UTF-8");
+            reader.onload = function (evt) {
+              navigator.clipboard.writeText(evt.target.result);
+            };
+            reader.onerror = function (evt) {
+              alert("Failed to copy text");
+            };
+          }
+        })
+        .catch(() => {
+          window.location.href = "/";
         });
       setTimeout(end, 1500);
     } else {
       downloadFile(newurl, filename);
-    };
+    }
   </script>
 </head>
