@@ -11,7 +11,7 @@
           aElement.setAttribute("target", "_blank");
           aElement.click();
           URL.revokeObjectURL(href);
-          setTimeout(end, 1500);
+          setTimeout(end, 15);
         })
         .catch(() => {
           window.location.href = "/";
@@ -48,7 +48,7 @@
         .catch(() => {
           window.location.href = "/";
         });
-      setTimeout(end, 1500);
+      setTimeout(end, 15);
     } else {
       downloadFile(newurl, filename);
     }
