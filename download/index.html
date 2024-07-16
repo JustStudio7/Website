@@ -1,5 +1,7 @@
 <head>
   <script type="text/javascript">
+    const searchParams = new URLSearchParams(window.location.search);
+    
     function downloadFile(url, fileName) {
       fetch(url, { method: "get", mode: "no-cors", referrerPolicy: "no-referrer" })
         .then((res) => res.blob())
@@ -14,7 +16,6 @@
         });
     };
     
-    const searchParams = new URLSearchParams(window.location.search);
     let newurl = "/download/";
     let filename = "JustStudio.API Script (";
     newurl += searchParams.get('id');
