@@ -40,7 +40,8 @@
               navigator.clipboard.writeText(evt.target.result);
             };
             reader.onerror = function (evt) {
-              alert("Failed to copy text");
+              //alert("Failed to copy text");
+              window.location.href = window.location.href;
             };
           }
         })
