@@ -354,11 +354,11 @@
                   <span class="home-text1">JustStudio.</span>
                   <br />
                 </h1>
-                <p class="home-text3 thq-body-large">
+                <p class="home-text3 thq-body-large" id="nomobile1">
                   <span class="home-text4">a System Development Studio</span>
                   <br />
                 </p>
-                <div class="home-container1">
+                <div class="home-container1" id="nomobile2">
                   <a href="api.html" class="home-api button thq-button-filled">
                     Roblox API
                   </a>
@@ -677,5 +677,11 @@
       defer=""
       src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
     ></script>
+    <script>
+      if(window.innerWidth < 480px) {
+        document.getElementById('nomobile1').remove();
+        document.getElementById('nomobile2').remove();
+      };
+    </script>
   </body>
 </html>
