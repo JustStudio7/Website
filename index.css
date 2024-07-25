@@ -423,9 +423,9 @@
   background-position: center,top left;
 }
 .home-main {
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
   z-index: 100;
   position: absolute;
