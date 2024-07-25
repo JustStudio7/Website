@@ -550,4 +550,8 @@
   .home-text4 {
     text-align: center;
   }
+  .home-content {
+    padding: 0px;
+    margin: 0px;
+  }
 }
