@@ -7,15 +7,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <script> // Debug url script by JustStudio. \\ https://juststudio.github.io
-    let url = window.location.href;
-    if (url.match("index.html")) {
-        window.location.href = url.replace("index.html", "");
-    } else if (url.match(".html")) {
+      let url = window.location.href;
+      if (url.match("index.html")) {
+          window.location.href = url.replace("index.html", "");
+      } else if (url.match(".html")) {
         window.location.href = url.replace(".html", "");
-    } else if (url.match(/\.\w+$/)) {
+      } else if (url.match(/\.\w+$/)) {
         window.location.href = "/";
-    }
-  </script>
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH7JXLSWPX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-PH7JXLSWPX');
+    </script>
     <style>
     #loader {
       position: absolute;
