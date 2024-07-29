@@ -1,0 +1,24 @@
+# This file created by JustStudio.
+# 2024
+
+User-agent: *
+Disallow: /download*
+Disallow: /*.json$
+
+Sitemap: https://juststudio.is-a.dev/data/sitemap.xml
+
+User-agent: Googlebot-News
+Disallow: /
+Crawl-delay: 5
+User-agent: Googlebot-Video
+Disallow: /
+Crawl-delay: 5
+User-agent: Baiduspider
+Disallow: /
+Crawl-delay: 5
+User-agent: facebookexternalhit
+Disallow: /
+Crawl-delay: 5
+User-agent: YandexAdditionalBot
+Disallow: /
+Crawl-delay: 5
