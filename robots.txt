@@ -2,7 +2,8 @@
 # 2024
 
 User-agent: *
-Disallow: /download*
+Disallow: /cname
+Disallow: /licence
 Disallow: /*.json$
 
 Sitemap: https://juststudio.is-a.dev/data/sitemap.xml
