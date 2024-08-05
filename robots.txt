@@ -4,6 +4,11 @@
 User-agent: *
 Disallow: /cname
 Disallow: /licence
+Disallow: /justdeveloper
+Disallow: /justdeveloper.json
+Disallow: /css/
+Disallow: /data/
+Disallow: /img/
 Disallow: /*.json$
 
 Sitemap: https://juststudio.is-a.dev/data/sitemap.xml
