@@ -1,3 +1,7 @@
+<a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">© 2024 JustStudio.</a>
+
+-------------
+
 <a href="https://juststudio.is-a.dev/">
         <div align="center">
                 <picture>
