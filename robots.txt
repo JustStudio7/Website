@@ -1,15 +1,22 @@
 # This file created by JustStudio.
-# 2024
+# © 2024 JustStudio. <https://juststudio.is-a.dev>
+#
+# Last Updated: (MM/DD/YYYY) 08/05/2024
 
 User-agent: *
 Disallow: /cname
 Disallow: /licence
 Disallow: /justdeveloper
-Disallow: /justdeveloper.json
+Disallow: /justdeveloper.html
 Disallow: /css/
 Disallow: /data/
 Disallow: /img/
+Disallow: /readme
+Disallow: /readme.md
 Disallow: /*.json$
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.lua$
 
 Sitemap: https://juststudio.is-a.dev/data/sitemap.xml
 
