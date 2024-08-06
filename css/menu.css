@@ -68,7 +68,7 @@
     font-size: 14px;
   }
 }
-@media(max-width: 673px) {
+@media(max-width: 674.5px) {
   .home-header {
     display: none;
   }
