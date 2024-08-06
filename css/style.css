@@ -650,7 +650,7 @@ body {
     font-size: 14px;
   }
 }
-@media(max-width: 660px) {
+@media(max-width: 673px) {
   .home-header {
     display: none;
   }
