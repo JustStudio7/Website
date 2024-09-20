@@ -2,7 +2,7 @@
 
 MIT License
 
-Copyright (c) 2024 JustStudio. <https://juststudio.is-a.dev/>
+Copyright (c) 2024 JustDeveloper <https://justdeveloper.is-a.dev/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,58 +23,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 \-->
-
-
-<!-- JustStudio. /-->
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!doctype html>
+<head>
     <title>JustStudio.</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
-    let url = window.location.href;
-    if (url.match("index.html")) {
-        window.location.href = url.replace("index.html", "");
-    } else if (url.match(".html")) {
-        window.location.href = url.replace(".html", "");
-    } else if (url.match(/\.\w+$/)) {
-        window.location.href = "/";
-    }
-  </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH7JXLSWPX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-PH7JXLSWPX');
-    </script>
     <style>
     #loader {
       position: absolute;
       left: 50%;
       top: 50%;
-      z-index: 1000000;
+      z-index: 1000001;
       width: 60px;
       height: 60px;
       margin: -35px 0 0 -35px;
-      border: 5px solid #1437f3;
+      border: 5px solid #0F0F4F;
       border-radius: 50%;
       border-top: 5px solid #6e3bf3;
       -webkit-animation: spin 1.5s linear infinite;
-      animation: spin 1.5s linear infinite;
+      animation: spin 1s linear infinite;
+	    transition-duration: 0.5s;
     }
     #loaderbg {
     	position: absolute;
-    	background-color: #1437f3;
+    	background-color: #000040;
         width: 100%;
-        height: 100%
+        height: 100%;
+	    z-index: 1000000;
+	    transition-duration: 0.5s;
     }
 
     @-webkit-keyframes spin {
@@ -102,415 +76,44 @@ SOFTWARE.
       display: none;
       text-align: center;
     }
-</style>
-    <meta name="description" content="a System Development Studio" />
-    <meta property="og:title" content="JustStudio." />
-    <meta property="og:description" content="a System Development Studio." />
-    <meta
-      property="og:image"
-      content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9819bb2f-010c-481e-936e-0ff85d44f8ab/ce7a1bbd-65e8-43c4-a8b3-8f0776d2b099?org_if_sml=1&amp;force_format=original"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background-color: var(--dl-color-theme-neutral-light);
-
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="shortcut icon"
-      href="img/1714165239.602498-1f96a837-e638-476a-81d3-75b9f25ed066.png"
-      type="icon/png"
-      sizes="32x32"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-
-    <script type="text/javascript">
-      const JSLstyles = [
-       'color: white',
-       'background: blue',
-       'font-size: 30px',
-        'border: 1px solid white',
-        'text-shadow: 2px 2px black',
-        'padding: 10px',
-      ].join(';');
-      const WARNstyles = [
-       'color: black',
-       'background: yellow',
-       'font-size: 60px',
-        'border: 1px solid red',
-        'text-shadow: 0px 0px black',
-        'padding: 5px',
-      ].join(';');
-       setTimeout(() => {
-           console.clear();
-
-           console.info("Powered by JustStudio.");
-      console.info("https://juststudio.is-a.dev");
-
-         console.log('%cJustStudio.', JSLstyles);
-          console.log('');
-
-       console.log('%cSTOP!', WARNstyles);
-       console.log('WARNING! We strongly do NOT recommended doing anything in the developer tools menu!');
-       console.log('If someone told you to paste or copy or change something, they are most likely truing to hack you/your account!');
-      }, 7500);
+    <script>
+	    if (window.parent.frames.length > 0 && document.referrer.indexOf('justdeveloper.is-a.dev') == -1) {
+    		window.stop();
+	    }
     </script>
-    <script type="text/javascript">
-      let title = document.title
-      window.addEventListener('blur', () => {
-          document.title = "JustStudio."
-      })
-      window.addEventListener('focus', () => {
-          document.title = title
-      })
+    <script>
+        window.location.href = "/"
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <div id="loader"></div>
     <div id="loaderbg"></div>
     <noscript>
-	    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(111%) rotateZ(2deg); color: #FFFFFF; z-index: 1000001; padding: 2px; background-color: rgba(0,0,0,0.33); border-radius: 5px; border-style: solid; border-width: 2px; border-color: #FFFFFF; backdrop-filter: blur(4px); box-shadow: 2px 2px 5px 0px #FFFFFF;">
+	    <span style="
+		    position: absolute; 
+		    top: 50%; 
+		    left: 50%; 
+		    transform: 
+			    translate(-50%, -50%) 
+			    scale(111%) 
+			    rotateZ(2deg); 
+		    color: #FFFFFF; 
+		    z-index: 1000001; 
+		    padding: 2px; 
+		    background-color: rgba(0,0,0,0.33); 
+		    border-radius: 5px; 
+		    border-style: solid; 
+		    border-width: 2px; 
+		    border-color: #FFFFFF; 
+		    backdrop-filter: blur(4px); 
+		    box-shadow: 2px 2px 5px 0px #FFFFFF;
+		    ">
 		    You need to enable JavaScript in your browser settings to access this website.
 	    </span>
     </noscript>
-    <link rel="stylesheet" href="./css/style.css" />
-    <div id="content">
-      <link href="./css/index.css" rel="stylesheet" />
-      <style>
-        .home-hitbox2:hover {
-           width: 100%;
-           height: 250px;
-           transform: translate(-50%, 150%);
-           align-items: flex-end;
-        }
-      </style>
-      <link
-      	rel="stylesheet"
-      	href="./css/menu.css"
-      />
-      <div class="home-container">
-        <div class="home-bg">
-          <img
-            alt="image"
-            src="img/wavebar.svg"
-            loading="eager"
-            class="home-wave"
-          />
-          <img
-            alt="image"
-            src="img/wavebar.svg"
-            loading="eager"
-            class="home-wave1"
-          />
-        </div>
-        <div class="home-main">
-          <div class="home-info">
-            <h1 class="home-name text-shadow">JustStudio.</h1>
-            <div class="home-line">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div class="home-hitbox4"></div>
-              <div class="home-hitbox5"></div>
-              <div class="home-hitbox6"></div>
-            </div>
-            <h1 class="home-desc text-shadow">a System Development Studio</h1>
-          </div>
-          <div class="home-left-links"><a
-	      href="https://github.com/JustStudio7/Website/blob/main/LICENSE"
-	      target="_blank"
-              rel="noreferrer noopener"
-              class="home-link"
-            >
-            <img
-              alt="image"
-              src="img/copyright.svg"
-              loading="eager"
-              class="home-licence"
-            /></a>
-            <a
-              href="https://github.com/JustStudio7/Website"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link"
-            >
-              <img
-                alt="image"
-                src="img/opensource.svg"
-                loading="eager"
-                class="home-code"
-              />
-            </a>
-            <div class="home-hitbox"></div>
-          </div>
-          <div class="home-right-links">
-            <a
-              href="https://www.roblox.com/groups/11641563/JustStudio#!/about"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link1"
-            >
-              <img
-                alt="image"
-                src="img/roblox.svg"
-                loading="eager"
-                class="home-roblox"
-              />
-            </a>
-            <a
-              href="https://github.com/JustStudio7"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link2"
-            >
-              <img
-                alt="image"
-                src="img/github.svg"
-                loading="eager"
-                class="home-github"
-              />
-            </a>
-            <a
-              href="https://discord.gg/aHXxS6VvcC"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link3"
-            >
-              <img
-                alt="image"
-                src="img/discord.svg"
-                loading="eager"
-                class="home-discord"
-              />
-            </a>
-            <div class="home-hitbox1"></div>
-          </div>
-        </div>
-        <div class="home-footer">
-          <div class="home-row-1">
-            <a href="/" class="home-navlink">
-              <div class="home-info1">
-                <img alt="image" src="img/logo-200h.png" class="home-logo" />
-                <h1 class="home-text text-shadow">
-                  <span>JustStudio.</span>
-                  <br />
-                </h1>
-              </div>
-            </a>
-            <span class="home-copyright">© JustStudio. 2024</span>
-          </div>
-          <div class="home-row-2">
-            <h1 class="home-heading text-shadow">
-              <span>Terms</span>
-              <br />
-              <br />
-            </h1>
-            <a href="terms" class="home-link-1">
-              <span>User Agreement</span>
-              <br />
-            </a>
-            <a href="rules" class="home-link-2">
-              <span>Rules For Players</span>
-              <br />
-            </a>
-          </div>
-          <div class="home-row-3">
-            <h1 class="home-heading1 text-shadow">
-              <span>Games</span>
-              <br />
-              <br />
-            </h1>
-            <span class="home-link-11">
-              <span>Coming soon.</span>
-              <br class="home-text14" />
-            </span>
-            <span class="home-link-21">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-row-4">
-            <h1 class="home-heading2 text-shadow">
-              <span>Products</span>
-              <br />
-            </h1>
-            <span class="home-link-12">
-              <span>Coming soon.</span>
-              <br class="home-text20" />
-            </span>
-            <span class="home-link-22">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-hitbox2">
-            <img
-              alt="image"
-              src="img/reaver.entertainment-300h.png"
-              class="home-arrow"
-            />
-            <div class="home-hitbox-2"></div>
-          </div>
-        </div>
-        <div class="home-header">
-          <a href="/" class="home-navlink1">
-            <div class="home-row-11">
-              <div class="home-info2">
-                <img
-                  alt="image"
-                  src="img/logo-200h.png"
-                  class="home-logo1"
-                />
-                <h1 class="home-text23 text-shadow">
-                  <span>DevTeam</span>
-                  <br />
-                </h1>
-              </div>
-            </div>
-          </a>
-          <div class="home-row-21">
-            <h1 class="home-heading3 text-shadow">
-              <span>JustDeveloper</span>
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/1296091692/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-13"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <a
-              href="https://justdeveloper.is-a.dev/"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-23"
-            >
-              <span>Website</span>
-              <br />
-            </a>
-          </div>
-          <div class="home-row-31">
-            <h1 class="home-heading4 text-shadow">
-              <span>yruowr</span>
-              <br />
-              <br />
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/1473133132/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-14"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <span class="home-link-24">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-row-41">
-            <h1 class="home-heading5 text-shadow">
-              <span>GarikHappy</span>
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/2214857326/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-15"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <span class="home-link-25">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-hitbox3">
-            <img
-              alt="image"
-              src="img/reaver.entertainment-300h.png"
-              class="home-arrow1"
-            />
-            <div class="home-hitbox-21"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-      document.ondragstart = noselect;
-      document.onselectstart = noselect;
-      document.oncontextmenu = noselect;
-      function noselect() {return false;}
-    </script>
-    <script src="/js/menu.js"></script>
-    <script>
-      var something;
-  
-      function activate() {
-        something = setTimeout(showPage, 3000);
-      }
-  
-      function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("loaderbg").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }
-  
-      activate()
-    </script>
-  </body>
-</html>
+    <p>Error 404. Not Found!</p>
+    <a href="/" target="_self">
+        <p>Back to Homepage</p>
+    </a>
+</body>
