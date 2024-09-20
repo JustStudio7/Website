@@ -126,6 +126,16 @@
           overflow: hidden;
       }
     </style>
+    <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
+    let url = window.location.href;
+    if (url.match("index.html")) {
+        window.location.href = url.replace("index.html", "");
+    } else if (url.match(".html")) {
+        window.location.href = url.replace(".html", "");
+    } else if (url.match(/\.\w+$/)) {
+        window.location.href = "/";
+    }
+  </script>
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
@@ -204,7 +214,7 @@
           <div class="docs-endpoint">
             <div class="docs-req-info">
               <h1 class="docs-method">GET</h1>
-              <h1 class="docs-url">/status</h1>
+              <h1 class="docs-url" style="text-align:left;">/status</h1>
             </div>
             <span class="docs-info">Response:</span>
             <div class="docs-code">
