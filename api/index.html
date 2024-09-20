@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JustStudio.API docs</title>
+    <meta
+      name="description"
+      content="JustStudio. - a System Development Studio."
+    />
+    <meta property="og:title" content="JustStudio.API docs" />
+    <meta
+      property="og:description"
+      content="JustStudio. - a System Development Studio."
+    />
+    <meta
+      property="og:image"
+      content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/d7c893eb-fdce-499e-a190-c49524fbd3ff/3d66f9fb-c541-4bf9-971e-fdd2d9f82b8f?org_if_sml=1&amp;force_format=original"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="public/api-logo-2.png"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      body {
+          overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="docs-container">
+        <div id="title" class="docs-title">
+          <h1 class="docs-name1">JustStudio.API</h1>
+          <h1 class="docs-version">
+            <span>V1</span>
+            <br />
+          </h1>
+        </div>
+        <a href="index.html" class="docs-link1">
+          <div class="docs-nav-bar">
+            <img
+              alt="image"
+              src="public/api-logo-21-200h.png"
+              class="docs-logo1"
+            />
+            <h1 class="docs-name2">JustStudio.API</h1>
+            <h1 class="docs-sub-name">
+              <span>Docs</span>
+              <br />
+            </h1>
+          </div>
+        </a>
+        <div id="footer" class="docs-footer">
+          <a
+            href="https://juststudio.is-a.dev/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="docs-link2"
+          >
+            <div class="docs-just-studio">
+              <img
+                alt="image"
+                src="public/1714165239.602498-1f96a837-e638-476a-81d3-75b9f25ed066-200h.png"
+                class="docs-logo2"
+              />
+              <h1 class="docs-name3">JustStudio.</h1>
+            </div>
+          </a>
+          <h1 class="docs-copyright">© JustStudio. 2024</h1>
+        </div>
+        <span id="burl" class="docs-baseurl">
+          [ Base URL: api.juststudio.is-a.dev ]
+        </span>
+        <div id="endpoints" class="docs-endpoints">
+          <div class="docs-endpoint">
+            <div class="docs-req-info">
+              <h1 class="docs-method">GET</h1>
+              <h1 class="docs-url">/status</h1>
+            </div>
+            <span class="docs-info">Response:</span>
+            <div class="docs-code">
+              <div class="docs-json">
+                <span class="docs-text14">
+                  <span class="docs-text15">{</span>
+                  <br class="docs-text16" />
+                  <br class="docs-text17" />
+                  <span class="docs-text18"></span>
+                  <span class="docs-text19">"code"</span>
+                  <span class="docs-text20">:</span>
+                  <span class="docs-text21">200</span>
+                  <span class="docs-text22">,</span>
+                  <br class="docs-text23" />
+                  <br class="docs-text24" />
+                  <span class="docs-text25"></span>
+                  <span class="docs-text26">"text"</span>
+                  <span class="docs-text27">:</span>
+                  <span class="docs-text28">"OK"</span>
+                  <br class="docs-text29" />
+                  <br class="docs-text30" />
+                  <span class="docs-text31">}</span>
+                </span>
+                <span class="docs-format">
+                  <span>JSON</span>
+                  <br />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://juststudio.is-a.dev/js/api.docs.js"></script>
+  </body>
+</html>
