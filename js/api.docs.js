@@ -30,7 +30,7 @@ const burl = document.getElementById('burl');
 const footer = document.getElementById('footer');
 
 function resize() {
-  endpoints.style.height = window.innerHeight - ( title.offsetHeight + burl.offsetHeight + 25) - footer.offsetHeight;
+  endpoints.style.height = window.innerHeight - ( title.offsetHeight + burl.offsetHeight + 25) - footer.offsetHeight + 'px';
 };
 resize();
 window.onresize = resize;
