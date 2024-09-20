@@ -27,9 +27,10 @@ SOFTWARE.
 const endpoints = document.getElementById('endpoints');
 const title = document.getElementById('title');
 const burl = document.getElementById('burl');
+const footer = document.getElementById('footer');
 
 function resize() {
-  endpoints.style.height = window.innerHeight - ( title.offsetHeight + burl.offsetHeight + 25)
+  endpoints.style.height = window.innerHeight - ( title.offsetHeight + burl.offsetHeight + 25) - footer.offsetHeight;
 };
 resize();
 window.onresize = resize;
