@@ -35,3 +35,6 @@ function resize() {
 resize();
 window.onresize = resize;
 
+window.onload = function() {
+  setInterval(resize, 200);
+};
