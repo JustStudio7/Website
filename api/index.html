@@ -22,6 +22,57 @@
     <style data-tag="reset-style-sheet">
       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
+    <style>
+    	#loader {
+      		position: absolute;
+      		left: 50%;
+      		top: 50%;
+      		z-index: 1000001;
+      		width: 60px;
+      		height: 60px;
+      		margin: -35px 0 0 -35px;
+      		border: 5px solid #0F0F4F;
+      		border-radius: 50%;
+      		border-top: 5px solid #6e3bf3;
+      		-webkit-animation: spin 1.5s linear infinite;
+      		animation: spin 1s linear infinite;
+	    	transition-duration: 0.5s;
+    	}
+    	#loaderbg {
+    		position: absolute;
+    		background-color: #000040;
+        	width: 100%;
+        	height: 100%;
+	    	z-index: 1000000;
+	    	transition-duration: 0.5s;
+    	}
+
+    	@-webkit-keyframes spin {
+      		0% { -webkit-transform: rotate(0deg); }
+      		100% { -webkit-transform: rotate(360deg); }
+    	}
+
+    	@keyframes spin {
+      		0% { transform: rotate(0deg); }
+      		100% { transform: rotate(360deg); }
+    	}
+
+
+    	@-webkit-keyframes animatebottom {
+      		from { bottom:-100px; opacity:0 } 
+      		to { bottom:0px; opacity:1 }
+    	}
+
+    	@keyframes animatebottom { 
+      		from{ bottom:-100px; opacity:0 } 
+      		to{ bottom:0; opacity:1 }
+    	}
+
+    	#content {
+      		display: none;
+      		text-align: center;
+    	}
+    </style>
     <style data-tag="default-style-sheet">
       html {
         font-family: Inter;
@@ -78,7 +129,32 @@
   </head>
   <body>
     <link rel="stylesheet" href="./style.css" />
-    <div>
+    <div id="loader"></div>
+    <div id="loaderbg"></div>
+    <noscript>
+	    <span style="
+		    position: absolute; 
+		    top: 50%; 
+		    left: 50%; 
+		    transform: 
+			    translate(-50%, -50%) 
+			    scale(111%) 
+			    rotateZ(2deg); 
+		    color: #FFFFFF; 
+		    z-index: 1000001; 
+		    padding: 2px; 
+		    background-color: rgba(0,0,0,0.33); 
+		    border-radius: 5px; 
+		    border-style: solid; 
+		    border-width: 2px; 
+		    border-color: #FFFFFF; 
+		    backdrop-filter: blur(4px); 
+		    box-shadow: 2px 2px 5px 0px #FFFFFF;
+		    ">
+		    You need to enable JavaScript in your browser settings to access this website.
+	    </span>
+    </noscript>
+    <div id="content">
       <link href="./index.css" rel="stylesheet" />
 
       <div class="docs-container">
@@ -162,6 +238,42 @@
         </div>
       </div>
     </div>
+    <script>
+      document.ondragstart = noselect;
+      document.onselectstart = noselect;
+      document.oncontextmenu = noselect;
+      function noselect() {return false;}
+      
+      var something;
+
+    function activate() {
+      something = setTimeout(showPage, 2500);
+    };
+
+    function showPage() {/*
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";*/
+      document.getElementById("content").style.display = "block";
+      document.getElementById("fps").style.display = "block";
+      document.getElementById("loader").style.opacity = 0;
+      /*document.getElementById("loaderbg").style.opacity = 0;*/
+	    otherthng = setTimeout(showPage02, 500);
+    };
+    function showPage02() {
+      document.getElementById("loaderbg").style.opacity = 0;
+	    otherthng = setTimeout(activatePage, 500);
+    };
+    function activatePage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";
+      document.getElementById("loader").style["z-index"] = -5;
+      document.getElementById("loaderbg").style["z-index"] = -5;
+      document.getElementById("loader").remove()
+      document.getElementById("loaderbg").remove()
+    };
+
+    activate();
+    </script>
     <script src="https://juststudio.is-a.dev/js/api.docs.js"></script>
   </body>
 </html>
