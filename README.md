@@ -25,3 +25,6 @@
 Icons by <a href="https://icons8.com">Icons8</a>,
 Reaver logo by <a href="https://reaverentertainment.dcms.site/">Reaver.Entertainment</a>,
 Wave image on website background by <a href="https://rpcs3.net/">RPCS3</a>.
+
+
+Using `404.html` by <a href="https://justdeveloper.is-a.dev/">JustDeveloper</a>.
