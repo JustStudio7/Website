@@ -75,6 +75,20 @@
       		display: none;
       		text-align: center;
     	}
+
+		    pre {
+  width: 100%;
+        position: relative;
+         align-items: left;
+   }
+    code {
+        width:100%;
+        color: white;
+        left: 0%;
+        align-items: left;
+         align-self: left;
+        margin: 0px;
+    }
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -262,23 +276,19 @@ DOCS: https://juststudio.is-a.dev/api/</span>
             <span class="docs-info">Response:</span>
             <div class="docs-code">
               <div class="docs-json">
-                <span class="docs-text14">
-                  <span class="docs-text15">{</span>
-                  <br class="docs-text16">
-                  <br class="docs-text17">
-                  <span class="docs-text18"></span>
-                  <span class="docs-text19">"code"</span>
-                  <span class="docs-text20">:</span>
-                  <span class="docs-text21">200</span>
-                  <span class="docs-text22">,</span>
-                  <br class="docs-text23">
-                  <br class="docs-text24">
-                  <span class="docs-text31">}</span>
-                </span>
-                <span class="docs-format">
-                  <span>JSON</span>
-                  <br>
-                </span>
+                <pre style="position: relative; left: 0%; height:500px"><code id="status" style="position: absolute; text-align:left"></code></pre>
+              </div>
+            </div>
+          </div>
+	  <div class="docs-endpoint">
+            <div class="docs-req-info">
+              <h1 class="docs-method">GET</h1>
+              <h1 class="docs-url" style="text-align:left;">/v1/reqCount</h1>
+            </div>
+            <span class="docs-info">Response:</span>
+            <div class="docs-code">
+              <div class="docs-json">
+                <pre style="position: relative; left: 0%; height:500px"><code id="reqCount" style="position: absolute; text-align:left"></code></pre>
               </div>
             </div>
           </div>
@@ -321,5 +331,6 @@ DOCS: https://juststudio.is-a.dev/api/</span>
     activate();
     </script>
     <script src="https://juststudio.is-a.dev/js/api.docs.js"></script>
+    <script src="https://juststudio.is-a.dev/js/json_object_pretty_print.js"></script>
   </body>
 </html>
