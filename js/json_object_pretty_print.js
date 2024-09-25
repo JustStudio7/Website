@@ -48,10 +48,16 @@ reqCount.innerHTML = rc.prettyPrint();
 const status = document.getElementById('status')
 status.innerHTML = s.prettyPrint();
 
-setTimeout(() => {
-    
+function update() {
+
     reqCount.parentNode.style.height = reqCount.offsetHeight;
     status.parentNode.style.height = status.offsetHeight;
     
+};
+setTimeout(() => {
+    update();
 }, 2000);
+window.onload = function() {
+  setInterval(update, 200);
+};
 
