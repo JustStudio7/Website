@@ -45,8 +45,13 @@ var s = {"code":200};
 
 const reqCount = document.getElementById('reqCount')
 reqCount.innerHTML = rc.prettyPrint();
-reqCount.parentNode.style.height = reqCount.offsetHeight;
 const status = document.getElementById('status')
 status.innerHTML = s.prettyPrint();
-status.parentNode.style.height = status.offsetHeight;
+
+setTimeout(() => {
+    
+    reqCount.parentNode.style.height = reqCount.offsetHeight;
+    status.parentNode.style.height = status.offsetHeight;
+    
+}, 2000);
 
