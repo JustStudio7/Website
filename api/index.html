@@ -26,6 +26,9 @@
       	html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
     <style>
+	    body {
+		    pointer-events: none;
+	    }
     	#loader {
       		position: absolute;
       		left: 50%;
@@ -88,7 +91,11 @@
         align-items: left;
          align-self: left;
         margin: 0px;
+        pointer-events: all;
     }
+	    #burl, .docs-url {
+		  pointer-events: all;  
+	    }
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -212,7 +219,6 @@
           <a
             href="https://juststudio.is-a.dev/"
             target="_blank"
-            rel="noreferrer noopener"
             class="docs-link2"
           >
             <div class="docs-just-studio">
@@ -229,12 +235,12 @@
               <h1 class="docs-name3" style="text-decoration: underline; font-size:0.75em;">source code</h1>
             </div>
           </a>
-          <h1 class="docs-copyright">© JustStudio. 2024</h1>
+          <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank" rel="noreferrer noopener"><h1 class="docs-copyright">© JustStudio. 2024</h1></a>
         </div>
         <span id="burl" class="docs-baseurl">
           [ Base URL: <a href="https://api.juststudio.is-a.dev/" target="_blank" style="text-decoration: underline;">api.juststudio.is-a.dev</a> ]
         </span>
-        <div style="height: 472px;" class="docs-endpoints" id="endpoints">
+        <div style="height: 5px; border-radius:10px;" class="docs-endpoints" id="endpoints">
           <div class="docs-endpoint">
             <div class="docs-req-info">
               <h1 class="docs-method">GET</h1>
@@ -277,6 +283,10 @@ DOCS: https://juststudio.is-a.dev/api/</span>
             <div class="docs-code">
               <div class="docs-json">
                 <pre style="position: relative; left: 0%; height:500px"><code id="status" style="position: absolute; text-align:left"></code></pre>
+		<span class="docs-format">
+                  <span>JSON</span>
+                  <br>
+                </span>
               </div>
             </div>
           </div>
@@ -289,17 +299,50 @@ DOCS: https://juststudio.is-a.dev/api/</span>
             <div class="docs-code">
               <div class="docs-json">
                 <pre style="position: relative; left: 0%; height:500px"><code id="reqCount" style="position: absolute; text-align:left"></code></pre>
+		<span class="docs-format">
+                  <span>JSON</span>
+                  <br>
+                </span>
+              </div>
+            </div>
+          </div>
+		<div class="docs-endpoint">
+            <div class="docs-req-info">
+              <h1 class="docs-method">GET</h1>
+              <h1 class="docs-url" style="text-align:left;">/v1/account/welcomeText</h1>
+            </div>
+            <span class="docs-info">Response:</span>
+            <div class="docs-code">
+              <div class="docs-json">
+                <span class="docs-text14">
+                  <span class="docs-text15">Hello, %Player.DisplayName%! Welcome to %GameName%!<br>But before playing, you must agree to our rules, which you can read on our server (link on the game page). Thanks!
+<br></span>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                </span>
+                <span class="docs-format">
+                  <span>TEXT</span>
+                  <br>
+                </span>
               </div>
             </div>
           </div>
 	</div>
       </div>
     </div>
-    <script>
+    <script>/*
       document.ondragstart = noselect;
       document.onselectstart = noselect;
       document.oncontextmenu = noselect;
-      function noselect() {return false;}
+      function noselect() {return false;}*/
       
       var something;
 
