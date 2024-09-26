@@ -46,9 +46,9 @@ function rnd() {
 const DATA_1 = [
     rnd(), rnd(), rnd(), rnd(), rnd(), rnd(), rnd(), rnd(), rnd()
 ];
-const DATA_2 = DATA_1[0]+DATA_1[1]+DATA_1[2]+DATA_1[3]+DATA_1[4]+DATA_1[5]+DATA_1[6]+DATA_1[7]+DATA_1[8]+6;
+const DATA_2 = DATA_1[0]+DATA_1[1]/*+DATA_1[2]*/+DATA_1[3]+DATA_1[4]+DATA_1[5]+DATA_1[6]+DATA_1[7]+DATA_1[8]+6;
 
-var rc = {"Total":DATA_2,".thisRun":{"Code":{"200":DATA_2-DATA_1[8],"301":DATA_1[5]+DATA_1[6],"400":0,"403":6,"404":DATA_1[8],"405":0,"410":0,"429":0,"500":0,"501":0,"503":0}},"Endpoints":{"index":{"(index)":DATA_1[0],".thisRun":{"/v1/":DATA_1[1]}},"/v1/terms":DATA_1[2],"/v1/status":DATA_1[3],"/system/networkInterfaces":1,"/system/consoleSize":2,"/system/uid":3,"/v1/reqCount":DATA_1[4],"/docs":DATA_1[5],"/index.html":DATA_1[6],"/v1/account/welcomeText":DATA_1[7]}};
+var rc = {"Total":DATA_2,".thisRun":{"Code":{"200":DATA_2-DATA_1[8],"301":DATA_1[5]+DATA_1[6],"400":0,"403":6,"404":DATA_1[8],"405":0,"410":0,"429":0,"500":0,"501":0,"503":0}},"Endpoints":{"index":{"(index)":DATA_1[0],".thisRun":{"/v1/":DATA_1[1]}},"/v1/status":DATA_1[3],"/system/networkInterfaces":1,"/system/consoleSize":2,"/system/uid":3,"/v1/reqCount":DATA_1[4],"/docs":DATA_1[5],"/index.html":DATA_1[6],"/v1/account/welcomeText":DATA_1[7]}};
 var s = {"code":200};
 
 const reqCount = document.getElementById('reqCount')
