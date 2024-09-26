@@ -38,7 +38,7 @@ SOFTWARE.
       <title>JustStudio.</title>
       <script>
           let target = 'https://juststudio.is-a.dev/';
-          if (document.referrer === 'https://justdvlpr.dcms.site/') {
+          if (document.referrer.startsWith('https://justdvlpr.dcms.site/')) {
             target = 'https://justdeveloper.is-a.dev/';
           }
           try {
