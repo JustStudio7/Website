@@ -37,7 +37,26 @@ SOFTWARE.
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>JustStudio.</title>
       <script>
-          try {window.parent.location.href = 'https://juststudio.is-a.dev/';} catch { try {window.opener.location.href = 'https://juststudio.is-a.dev/';} catch {window.location.href = 'https://juststudio.is-a.dev/';};};
+          try {
+            window.parent.location.href = 'https://juststudio.is-a.dev/';}
+          catch { 
+            try {
+              window.opener.location.href = 'https://juststudio.is-a.dev/';
+            } 
+            catch {
+              //window.location.href = 'https://juststudio.is-a.dev/';
+              alert('This is outdated website. Please use new website: https://juststudio.is-a.dev/');
+              try {
+                window.style.left = '0px';
+                window.style.top = '0px';
+                window.style.height = '100%';
+                window.style.width = '100%';
+                window.style.position = 'fixed';
+                window.style.transform = 'translate(0%)';
+                window.style['z-index'] = 999
+              }
+            };
+          };
       </script>
   </head>
   <body>
