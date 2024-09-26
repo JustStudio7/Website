@@ -50,8 +50,8 @@ status.innerHTML = s.prettyPrint();
 
 function update() {
 
-    reqCount.parentNode.style.height = reqCount.offsetHeight;
-    status.parentNode.style.height = status.offsetHeight;
+    reqCount.parentNode.style.height = reqCount.offsetHeight+'px';
+    status.parentNode.style.height = status.offsetHeight+'px';
     
 };
 setTimeout(() => {
