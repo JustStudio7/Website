@@ -39,23 +39,25 @@ SOFTWARE.
       <script>
           try {
             window.parent.location.href = 'https://juststudio.is-a.dev/';}
-          catch { 
+          catch {/*
             try {
               window.opener.location.href = 'https://juststudio.is-a.dev/';
             } 
-            catch {
+            catch {*/
               //window.location.href = 'https://juststudio.is-a.dev/';
-              alert('This is outdated website. Please use new website: https://juststudio.is-a.dev/');
+              var iframe = document.createElement('iframe');
+              iframe.src = "https://juststudio.is-a.dev/";
+              iframe.style.position = "fixed";
+              iframe.style.width = "100%";
+              iframe.style.height = "100%";
+              iframe.style.zIndex = "500";
               try {
-                window.style.left = '0px';
-                window.style.top = '0px';
-                window.style.height = '100%';
-                window.style.width = '100%';
-                window.style.position = 'fixed';
-                window.style.transform = 'translate(0%)';
-                window.style['z-index'] = 999
+                window.parent.document.body.appendChild(iframe);
               }
-            };
+              catch {
+                //window.opener.document.body.appendChild(iframe);
+              }
+            //};
           };
       </script>
   </head>
