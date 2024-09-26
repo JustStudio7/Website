@@ -37,8 +37,12 @@ SOFTWARE.
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>JustStudio.</title>
       <script>
+          let target = 'https://juststudio.is-a.dev/';
+          if (document.referrer === 'https://justdvlpr.dcms.site/') {
+            target = 'https://justdeveloper.is-a.dev/';
+          }
           try {
-            window.parent.location.href = 'https://juststudio.is-a.dev/';}
+            window.parent.location.href = target;}
           catch {/*
             try {
               window.opener.location.href = 'https://juststudio.is-a.dev/';
@@ -46,7 +50,7 @@ SOFTWARE.
             catch {*/
               //window.location.href = 'https://juststudio.is-a.dev/';
               var iframe = document.createElement('iframe');
-              iframe.src = "https://juststudio.is-a.dev/";
+              iframe.src = target;
               iframe.style.position = "fixed";
               iframe.style.width = "100%";
               iframe.style.height = "100%";
