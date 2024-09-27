@@ -17,6 +17,7 @@ Disallow: /*.json$
 Disallow: /*.css$
 Disallow: /*.js$
 Disallow: /*.lua$
+Allow: /data/sitemap.xml
 
 Sitemap: https://juststudio.is-a.dev/data/sitemap.xml
 
