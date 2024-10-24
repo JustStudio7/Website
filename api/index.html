@@ -177,9 +177,42 @@
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
     <style>
+      
       body {
           overflow: hidden;
       }
+    .docs-endpoints {
+        -webkit-transform: translateX(5px);
+    }
+
+/* 
+    scrollbar style by https://www.is-a.dev/ 
+    modified by JustStudio.
+*/
+            ::-webkit-scrollbar {
+                width: 20px;
+            }
+
+            ::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: rgba(0,0,0,0);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #9b7dff;
+                border: 6px solid #0f0c19;
+                border-radius: 10px;
+                transition: 1s;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #8a66ff;
+            }
+
     </style>
     <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
     let url = window.location.href;
