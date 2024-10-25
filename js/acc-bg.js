@@ -10,10 +10,8 @@
 
 
 
-const width  = window.innerWidth || document.documentElement.clientWidth || 
-document.body.clientWidth;
-const height = window.innerHeight|| document.documentElement.clientHeight|| 
-document.body.clientHeight;
+const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+const height = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 var w = 0;
 var h = 0;
 var ww = width;
@@ -95,11 +93,13 @@ function animateParticles() {
     }
 requestAnimationFrame(animateParticles);
 
-$(window).on('resize',function(){
-  ww = $(window).width();
-  wh = $(window).height();
+window.addEventListener('resize', function() {
+  const width0 = window.innerWidth  || document.documentElement.clientWidth || document.body.clientWidth;
+  const he1ght = window.innerHeight || document.documentElement.clientHeight|| document.body.clientHeight;
+  ww = width0;
+  wh = he1ght;
   canvas.width = ww;
-  canvas.height= wh;
+  canvas.height = wh;
   clearCanvas();
   particles = [];
   createParticles();
