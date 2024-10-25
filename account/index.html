@@ -50,7 +50,7 @@
                 ];
                 buttonsToRemove.forEach(button => button.remove());
             } else {
-                const newWindow = window.open("https://accounts.juststudio.is-a.dev/sign-up", "_blank");
+                const newWindow = window.open("https://accounts.juststudio.is-a.dev/sign-up", "_blank", "width=1,height=1");
                 newWindow.onload = function() {
                     if (newWindow.location.href === "https://juststudio.is-a.dev/account?created=false" || 
                         newWindow.location.href === "https://juststudio.is-a.dev/account?created=true") {
