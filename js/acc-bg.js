@@ -95,9 +95,10 @@ function animateParticles() {
     }
 requestAnimationFrame(animateParticles);
 
-window.addEventListener('resize', function() {
-  const width0 = window.innerWidth  || document.documentElement.clientWidth || document.body.clientWidth;
-  const he1ght = window.innerHeight || document.documentElement.clientHeight|| document.body.clientHeight;
+window.addEventListener('resize', updateBackground);
+function updateBackground() {
+  let width0 = window.innerWidth  || document.documentElement.clientWidth || document.body.clientWidth;
+  let he1ght = window.innerHeight || document.documentElement.clientHeight|| document.body.clientHeight;
   ww = width0;
   wh = he1ght;
   canvas.width = ww;
@@ -106,7 +107,7 @@ window.addEventListener('resize', function() {
   particles = [];
   createParticles();
   drawParticles();
-});
+}
 function randomInt(min,max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
@@ -115,3 +116,4 @@ function velocityInt(min,max)
 {
     return Math.random()*(max-min+1)+min;
 }
+updateBackground()
