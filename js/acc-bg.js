@@ -2,6 +2,7 @@
   Made by: Jonas Badalic
   https://codepen.io/JonasBadalic
 */
+
 /*
   Modified by: JustDeveloper
   https://justdeveloper.is-a.dev/
@@ -9,14 +10,14 @@
 
 
 
-var canvas = document.getElementById('container');
-var ctx = canvas.getContext('2d');
-var w = $('#blurCanvasTop').width();
-var h = $('#blurCanvasTop').height();
-var ww = $(window).width();
-var wh = $(window).height();
-canvas.width = ww;
-canvas.height= wh;
+const width  = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+const height = window.innerHeight|| document.documentElement.clientHeight|| 
+document.body.clientHeight;
+var w = 0;
+var h = 0;
+var ww = width;
+var wh = height;
 var partCount = 100;
 var particles = [];
 
