@@ -39,28 +39,41 @@
     
       gtag('config', 'G-PH7JXLSWPX');
     </script><script>
-window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const createdParam = urlParams.get('created');
+	window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const createdParam = urlParams.get('created');
 
-    if (createdParam === 'true' || createdParam === 'false') {
-        const buttonsToRemove = [
-            ...document.getElementsByClassName('home-account-button2'),
-            ...document.getElementsByClassName('home-account-button1')
-        ];
-        buttonsToRemove.forEach(button => button.remove());
-    } else {
-        const buttonToRemove = document.getElementsByClassName('home-account-button3');
-        while (buttonToRemove.length > 0) {
-            buttonToRemove[0].remove();
-        }
-    }
+            if (createdParam === 'true' || createdParam === 'false') {
+                const buttonsToRemove = [
+                    ...document.getElementsByClassName('home-account-button2'),
+                    ...document.getElementsByClassName('home-account-button1')
+                ];
+                buttonsToRemove.forEach(button => button.remove());
+            } else {
+                const newWindow = window.open("https://accounts.juststudio.is-a.dev/sign-up", "_blank");
+                newWindow.onload = function() {
+                    if (newWindow.location.href === "https://juststudio.is-a.dev/account?created=false" || 
+                        newWindow.location.href === "https://juststudio.is-a.dev/account?created=true") {
+                        const buttonsToRemove = [
+                            ...document.getElementsByClassName('home-account-button2'),
+                            ...document.getElementsByClassName('home-account-button1')
+                        ];
+                        buttonsToRemove.forEach(button => button.remove());
+                    } else {
+                        const buttonToRemove = document.getElementsByClassName('home-account-button3');
+                        while (buttonToRemove.length > 0) {
+                            buttonToRemove[0].remove();
+                        }
+                    }
+                    newWindow.close();
+                };
+            }
 
-    const remainingButtons = document.querySelectorAll('.home-account-button1, .home-account-button2, .home-account-button3');
-    remainingButtons.forEach(button => {
-        button.style.display = 'inline-block';
-    });
-};
+            const remainingButtons = document.querySelectorAll('.home-account-button1, .home-account-button2, .home-account-button3');
+            remainingButtons.forEach(button => {
+                button.style.display = 'inline-block';
+            });
+        };
     </script><meta
       property="og:image"
       content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9819bb2f-010c-481e-936e-0ff85d44f8ab/ce7a1bbd-65e8-43c4-a8b3-8f0776d2b099?org_if_sml=1&amp;force_format=original"
