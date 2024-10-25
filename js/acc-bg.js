@@ -23,7 +23,6 @@ var particles = [];
 
 function particle(){
   this.color = 'rgba(255,255,255,'+ Math.random()+')';
-  console.log(this.color);
   this.x = randomInt(0,ww);
   this.y = randomInt(0,wh);
   this.direction = {
