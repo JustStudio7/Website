@@ -15,17 +15,30 @@ const themeSwitch = document.getElementById('theme-switch');
 
 const switchThemeToLight = () => {
   document.body.classList.add('t-light');
+  document.body.classList.remove('t-purple');
   localStorage.setItem('theme', 'light');
 }
 
 const switchThemeToDark = () => {
   document.body.classList.remove('t-light');
+  document.body.classList.remove('t-purple');
   localStorage.setItem('theme', 'dark');
 }
 
+const switchThemeToSpecial = () => {
+  document.body.classList.remove('t-light');
+  document.body.classList.add('t-purple');
+  localStorage.setItem('theme', 'special');
+}
+
 if(theme === "light") switchThemeToLight()
+if(theme === "special") switchThemeToSpecial()
 
 themeSwitch.addEventListener("click", () => {
   theme = localStorage.getItem('theme');
   theme !== "light" ? switchThemeToLight() : switchThemeToDark()
 })
+themeSwitch.addEventListener("dblclick", function(event) { 
+  theme = localStorage.getItem('theme');
+  theme !== "special" ? switchThemeToSpecial()
+}, false);
