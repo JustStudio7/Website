@@ -89,7 +89,7 @@
   box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.52);
   transition: 0.3s;
 }
-.home-hitbox1 {
+.home-hitb0x1 {
   top: 50%;
   left: 6%;
   width: 30%;
@@ -99,7 +99,7 @@
   border-radius: 50px;
   pointer-events: all;
 }
-.home-hitbox2 {
+.home-hitb0x2 {
   top: 50%;
   right: 6%;
   width: 30%;
