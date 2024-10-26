@@ -2,10 +2,13 @@
   --bgc: rgba(0, 0, 0, 0.24);
   --acc-bgc: rgba(0, 0, 0, 1);
 }
+.home-bg, .user-agreement-bg, .rules-for-players-bg {
+  transition: 1s
+}
 
 .t-light{
-  --bgc: rgba(0, 0, 0, 0.19);
-  --acc-bgc: rgba(0, 0, 0, 0);
+  --bgc: rgba(0, 0, 0, 0);
+  --acc-bgc: rgba(255, 255, 255, 0.2);
 }
 .t-light #theme-switch svg:last-child{
   display: none;
