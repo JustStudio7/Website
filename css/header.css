@@ -40,6 +40,9 @@ SOFTWARE.
 .home-footer, .home-header {
   display: none;
 }
+.footer {
+  display: block;
+}
 .h-logo-link {
   display: contents;
 }
