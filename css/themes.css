@@ -18,12 +18,12 @@
   --bgc: rgba(255, 22, 22, 0.24);
   --acc-bgc: rgb(255, 0, 193);
 }
-.t-light #theme-switch {
+.t-purple #theme-switch {
   background-color: #6e3bf3;
 }
-.t-light #theme-switch svg:last-child{
+.t-purple #theme-switch svg:last-child{
   display: none;
 }
-.t-light #theme-switch svg:first-child{
+.t-purple #theme-switch svg:first-child{
   display: none;
 }
