@@ -26,8 +26,8 @@
   border-width: 10px;
 }
 .t-purple #theme-switch svg:last-child{
-  display: none;
+  opacity: 0;
 }
 .t-purple #theme-switch svg:first-child{
-  display: none;
+  opacity: 0;
 }
