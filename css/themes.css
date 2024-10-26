@@ -23,6 +23,7 @@
 }
 .t-purple #theme-switch {
   background-color: #6e3bf3;
+  border-width: 10px;
 }
 .t-purple #theme-switch svg:last-child{
   display: none;
