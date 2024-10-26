@@ -33,6 +33,9 @@ SOFTWARE.
   top: 0%;
   z-index: 3;
 }
+.home-footer, .home-header {
+  display: none;
+}
 .h-logo-link {
   display: contents;
 }
