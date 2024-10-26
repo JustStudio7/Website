@@ -99,7 +99,7 @@ function updateBackground() {
   let width0 = window.innerWidth  || document.documentElement.clientWidth || document.body.clientWidth;
   let height = window.innerHeight || document.documentElement.clientHeight|| document.body.clientHeight;
   ww = width0;
-  wh = height;
+  wh = he1ght;
   canvas.width = ww;
   canvas.height = wh;
   clearCanvas();
