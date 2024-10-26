@@ -9,6 +9,14 @@ headerElement.innerHTML = `
         </svg>
     </div>
 `;
+headerElement.parentElement.innerHTML += `
+    <span class="home-footer footer">
+        <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">
+              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);">© JustStudio. 2024</span>
+        </a>
+        <br>
+    </span>
+`;
 
 let theme = localStorage.getItem('theme');
 const themeSwitch = document.getElementById('theme-switch');
