@@ -58,18 +58,33 @@ SOFTWARE.
 }
 .h-logo:hover {
   filter: drop-shadow(0px 0px 5px #fff);
+  -webkit-filter: drop-shadow(0px 0px 5px #fff);
   transition: 1s;
   background-color: rgba(255,255,255,1);
 }
 #theme-switch {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   padding: 0;
   border-radius: 50%;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  right: 15px;
+  position: fixed;
+  top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#theme-switch:hover {
+  transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -o-transform: rotate(20deg);
+  filter: drop-shadow(0px 0px 5px white);
+  -webkit-filter: drop-shadow(0px 0px 5px white);
+  transition: 1s;
 }
 #theme-switch svg:first-child{
   display: none;
