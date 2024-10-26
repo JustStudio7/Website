@@ -46,7 +46,7 @@ themeSwitch.addEventListener("click", () => {
   theme = localStorage.getItem('theme');
   theme !== "light" ? switchThemeToLight() : switchThemeToDark()
 })
-themeSwitch.addEventListener("dblclick", function(event) { 
+themeSwitch.addEventListener("dblclick", () => { 
   theme = localStorage.getItem('theme');
   theme !== "special" ? switchThemeToSpecial()
-}, false);
+});
