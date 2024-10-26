@@ -76,6 +76,8 @@ SOFTWARE.
   top: 15px;
   cursor: pointer;
   transition: 0.3s;
+  border-color: white;
+  border-width: 0px;
 }
 #theme-switch:hover {
   transform: rotate(20deg);
