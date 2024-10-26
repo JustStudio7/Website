@@ -1,0 +1,12 @@
+:root{
+  --bgc: rgba(0, 0, 0, 0.24);
+  --acc-bgc: rgba(0, 0, 0, 1);
+}
+.t-light{
+  --bgc: rgba(0, 0, 0, 0.19);
+  --acc-bgc: rgba(0, 0, 0, 0);
+}
+.t-purple{
+  --bgc: rgba(255, 22, 22, 0.24);
+  --acc-bgc: rgb(255, 0, 193);
+}
