@@ -61,3 +61,16 @@ SOFTWARE.
   transition: 1s;
   background-color: rgba(255,255,255,1);
 }
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#theme-switch svg:first-child{
+  display: none;
+}
