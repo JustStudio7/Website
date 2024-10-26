@@ -575,5 +575,5 @@ canvas {
   opacity: 0.33;
 }
 .t-purple canvas {
-  filter: none;
+  filter: saturate(100%);
 }
