@@ -43,6 +43,9 @@ SOFTWARE.
   flex-direction: row-reverse;
   -webkit-flex-direction: row-reverse;
   gap: 1em;
+  transition: 300ms;
+  border-color: #fff;
+  border-width: 0px;
 }
 .home-footer, .home-header {
   display: none;
@@ -150,7 +153,7 @@ SOFTWARE.
   z-index: 1;
   cursor: pointer;
   border-radius: 15px;
-  transition: 350ms border-radius 700ms, 700ms color 700ms, 350ms min-width 700ms;
+  transition: 350ms border-radius 700ms, 700ms color 700ms, 300ms background-color 300ms, 350ms min-width 700ms;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,4 +260,31 @@ SOFTWARE.
 .dropdown .trigger:hover ul.buttons a {
   opacity: 1;
   transition: 1s opacity 500ms;
+}
+.t-purple .dropdown .trigger span {
+  background: #6e3bf3;
+  color: #ffffff;
+}
+.t-purple .dropdown .trigger ul.buttons li a {
+  color: #6e3bf3;
+}
+.t-light .header {
+  background-color: rgba(255,255,255,0.15);
+}
+.t-purple .header {
+  background-color: rgba(110, 59, 243, 0.17);
+  border-bottom-width: 3px;
+}
+.t-purple .h-logo {
+  background-color: rgba(255,255,255,1);
+}
+@media(max-width: 750px) {
+  .h-products {
+    display: none;
+  }
+}
+@media(max-width: 350px) {
+  .h-games {
+    display: none;
+  }
 }
