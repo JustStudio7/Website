@@ -47,6 +47,9 @@ SOFTWARE.
   border-color: #fff;
   border-width: 0px;
 }
+.header *{
+  font-family: Rubik;
+}
 .home-footer, .home-header {
   display: none;
 }
@@ -140,7 +143,7 @@ SOFTWARE.
   border-radius: 22px;
 }
 .dropdown .trigger span {
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0px;
   font-size: 16px;
   position: relative;
@@ -289,5 +292,88 @@ SOFTWARE.
 @media(max-width: 350px) {
   .h-games {
     display: none;
+  }
+}
+.h-main {
+  height: 40px;
+  width: auto;
+  left: 0%;
+  position: relative;
+  flex: auto;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  display: flex;
+}
+.h-main span {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  left: 0%;
+  position: absolute;
+}
+.h-main img {
+  width: 20px;
+  height: 20px;
+  margin-top: 20px;
+  margin-right: 5px;
+  transition: 300ms;
+}
+.h-main img:hover {
+  filter: drop-shadow(0px 0px 5px white);
+  -webkit-filter: drop-shadow(0px 0px 5px white);
+}
+@media(max-width: 535px) {
+  .h-main {
+    display: none;
+  }
+}
+@media(max-width: 850px) {
+  .dropdown:hover {
+    min-width: 175px;
+  }
+  .dropdown .trigger:hover span {
+    min-width: 175px;
+  }
+  .dropdown .trigger ul.buttons li {
+    width: 175px;
+  }
+}
+@media(max-width: 700px) {
+  .dropdown:hover {
+    min-width: 150px;
+  }
+  .dropdown .trigger:hover span {
+    min-width: 150px;
+  }
+  .dropdown .trigger ul.buttons li {
+    width: 150px;
+  }
+}
+@media(max-width: 570px) {
+  .h-main span {
+    font-size: 15px;
+  }
+}
+@media(max-width: 410px) {
+  .dropdown {
+    max-width: 120px;
+  }
+  .dropdown:hover {
+    min-width: 120px;
+  }
+  .dropdown .trigger:hover span {
+    min-width: 120px;
+  }
+  .dropdown .trigger ul.buttons li {
+    width: 120px;
+  }
+}
+@media(max-width: 266px) {
+  #theme-switch {
+    display: none;
+  }
+  .header {
+    padding-right: 10px;
   }
 }
