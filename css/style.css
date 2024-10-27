@@ -583,4 +583,9 @@ spline-viewer {
   filter: blur(8px);
   -webkit-filter: blur(8px);
   z-index: -1;
+  transition: 300ms;
+}
+.t-light spline-viewer {
+  filter: blur(8px) brightness(125%);
+  -webkit-filter: blur(8px) brightness(125%);
 }
