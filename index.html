@@ -254,6 +254,21 @@ SOFTWARE.
             loading="eager"
             class="home-wave1"
           />
+	  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js"></script>
+          <spline-viewer url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode"></spline-viewer>
+          <script type="text/javascript" defer>
+            setInterval(() => {
+              const splineViewer = document.querySelector('spline-viewer');
+              if (splineViewer) {
+                const shadowRoot = splineViewer.shadowRoot;
+                const logoElement = shadowRoot.querySelector('#logo');
+
+                if (logoElement) {
+                  logoElement.remove();
+                }
+              }
+            }, 200)
+          </script>
         </div>
         <div class="home-main">
           <div class="home-info">
