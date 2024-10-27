@@ -36,12 +36,39 @@ SOFTWARE.
   -webkit-backdrop-filter: blur(8px);
   -moz-backdrop-filter: blur(8px);
   -o-backdrop-filter: blur(8px);
+  padding-right: 70px;
+  padding-left: 70px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  gap: 1em;
 }
 .home-footer, .home-header {
   display: none;
 }
 .footer {
   display: block;
+}
+.home-footer1 {
+  fill: rgba(228, 228, 228, 0.75);
+  left: 0%;
+  color: rgba(228, 228, 228, 0.75);
+  width: 100%;
+  bottom: 5px;
+  height: auto;
+  position: fixed;
+  font-size: 16px;
+  font-style: normal;
+  text-align: center;
+  font-family: "Rubik";
+  font-weight: 400;
+  animation-name: fadeInUp;
+  animation-delay: 0s;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
 }
 .h-logo-link {
   display: contents;
@@ -97,4 +124,137 @@ SOFTWARE.
 }
 #theme-switch svg:first-child{
   opacity: 0;
+}
+.dropdown {
+  max-width: 220px;
+  min-width: 0px;
+  width: 125px;
+  transition: 350ms min-width 700ms;
+}
+.dropdown .trigger {
+  position: relative;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.15);
+  border-radius: 22px;
+}
+.dropdown .trigger span {
+  font-weight: 500;
+  letter-spacing: 0px;
+  font-size: 16px;
+  position: relative;
+  background: #ffffff;
+  color: #6e3bf3;
+  display: block;
+  min-width: 0px;
+  height: 40px;
+  padding: 0 18px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: 350ms border-radius 700ms, 700ms color 700ms, 350ms min-width 700ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dropdown .trigger span em {
+  font-style: normal;
+  margin-right: 5px;
+  transform-origin: bottom;
+  animation: 1s waving infinite;
+}
+@keyframes waving {
+  0% {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+  }
+}
+.dropdown .trigger ul.buttons {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 0 0 22px 22px;
+  font-size: 14px;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  -webkit-transform: scaleY(0);
+  -webkit-transform-origin: top;
+  transition: 350ms transform 350ms, 350ms -webkit-transform 350ms;
+}
+.dropdown .trigger ul.buttons a {
+  opacity: 0;
+  transition: 350ms opacity 0ms;
+}
+.dropdown .trigger ul.buttons li {
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 40px;
+  padding: 0 20px;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 0px solid #6e3bf3;
+  transition: 200ms border-left 0ms;
+}
+.dropdown .trigger ul.buttons li:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #eee, #fcfcfc);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dropdown .trigger ul.buttons li:last-of-type {
+  border-radius: 0 0 22px 22px;
+}
+.dropdown .trigger ul.buttons li a {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dropdown .trigger ul.buttons li:hover {
+  border-left: 5px solid #6e3bf3;
+}
+.dropdown .trigger ul.buttons li:last-of-type:hover {
+  border-left: 5px solid #1437f3;
+}
+.dropdown:hover {
+  min-width: 220px;
+  transition: 350ms min-width 0ms;
+}
+.dropdown .trigger:hover span {
+  min-width: 220px;
+  border-radius: 22px 22px 0 0;
+  transition: 125ms border-radius 125ms, 700ms color 700ms, 350ms min-width 0ms;
+  color: #1437f3;
+}
+.dropdown .trigger:hover ul.buttons {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transition: 350ms transform 350ms, 350ms -webkit-transform 350ms;
+}
+.dropdown .trigger:hover ul.buttons a {
+  opacity: 1;
+  transition: 1s opacity 500ms;
 }
