@@ -38,7 +38,7 @@ headerElement.innerHTML = `
     </div>
 `;
 headerElement.parentElement.innerHTML += `
-    <span class="home-footer footer">
+    <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">
               <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);">© JustStudio. 2024</span>
         </a>
