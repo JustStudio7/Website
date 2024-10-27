@@ -259,7 +259,30 @@ SOFTWARE.
   <body>
     <link href="https://juststudio.is-a.dev/css/themes.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://juststudio.is-a.dev/css/acc-style1.css" />
-    <div>
+    <noscript>
+	    <span style="
+		    position: absolute; 
+		    top: 50%; 
+		    left: 50%; 
+		    transform: 
+			    translate(-50%, -50%) 
+			    scale(111%) 
+			    rotateZ(2deg); 
+		    color: #FFFFFF; 
+		    z-index: 1000001; 
+		    padding: 2px; 
+		    background-color: rgba(0,0,0,0.33); 
+		    border-radius: 5px; 
+		    border-style: solid; 
+		    border-width: 2px; 
+		    border-color: #FFFFFF; 
+		    backdrop-filter: blur(4px); 
+		    box-shadow: 2px 2px 5px 0px #FFFFFF;
+		    ">
+		    You need to enable JavaScript in your browser settings to access this website.
+	    </span>
+    </noscript>
+    <div id="content">
       <link href="https://juststudio.is-a.dev/css/acc-style2.css" rel="stylesheet" />
 	    
       <div class="home-container">
@@ -332,5 +355,35 @@ SOFTWARE.
       function noselect() {return false;}
     </script>
     <script src="https://juststudio.is-a.dev/js/acc-bg.js" defer></script>
+    <script>
+var something;
+	    
+      function activate() {
+      something = setTimeout(showPage, 2500);
+    };
+
+    function showPage() {/*
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";*/
+      document.getElementById("content").style.display = "block";
+      document.getElementById("loader").style.opacity = 0;
+      /*document.getElementById("loaderbg").style.opacity = 0;*/
+	    otherthng = setTimeout(showPage02, 500);
+    };
+    function showPage02() {
+      document.getElementById("loaderbg").style.opacity = 0;
+	    otherthng = setTimeout(activatePage, 500);
+    };
+    function activatePage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";
+      document.getElementById("loader").style["z-index"] = -5;
+      document.getElementById("loaderbg").style["z-index"] = -5;
+      document.getElementById("loader").remove()
+      document.getElementById("loaderbg").remove()
+    };
+
+    activate();
+    </script>
   </body>
 </html>
