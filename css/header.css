@@ -242,6 +242,9 @@ SOFTWARE.
 .dropdown .trigger ul.buttons li:last-of-type:hover {
   border-left: 5px solid #1437f3;
 }
+.t-purple .dropdown .trigger ul.buttons li:last-of-type:hover {
+  border-left: 5px solid #6e3bf3;
+}
 .dropdown:hover {
   min-width: 220px;
   transition: 350ms min-width 0ms;
