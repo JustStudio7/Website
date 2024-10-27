@@ -821,6 +821,9 @@ SOFTWARE.
   .user-agreement-info span, .user-agreement-info1 span {
     font-size: 0.88em;
   }
+  .user-agreement-main {
+    padding: 5px;
+  }
 }
 @media(max-width: 375px) {
   .user-agreement-info span, .user-agreement-info1 span {
@@ -829,5 +832,8 @@ SOFTWARE.
   }
   .user-agreement-info br, .user-agreement-info1 br {
     display: none;
+  }
+  .user-agreement-main {
+    padding: 10px;
   }
 }
