@@ -28,4 +28,5 @@ Wave image on website background by <a href="https://rpcs3.net/">RPCS3</a>.
 
 
 Using `404.html` by <a href="https://justdeveloper.is-a.dev/">JustDeveloper</a>.<br/>
-Using <a href="https://codepen.io/JonasBadalic/pen/ExqNzZ">scripts from "Personal Website"</a> by <a href="https://codepen.io/JonasBadalic">Jonas Badalic</a>.
+Using <a href="https://codepen.io/JonasBadalic/pen/ExqNzZ">scripts from "Personal Website"</a> by <a href="https://codepen.io/JonasBadalic">Jonas Badalic</a>.<br/>
+Using <a href="https://spline.design/">Spline</a>.
