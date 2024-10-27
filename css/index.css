@@ -830,3 +830,38 @@ SOFTWARE.
     font-size: 1.6em;
   }
 }
+@media(max-height: 600px) {
+  .home-right-links, .home-left-links {
+    height: 120%;
+    margin-top: -1%;
+  }
+}
+@media(max-height: 500px) {
+  .home-right-links, .home-left-links {
+    height: 150%;
+    margin-top: -1.5%;
+  }
+}
+@media(max-height: 400px) {
+  .home-right-links, .home-left-links {
+    height: 175%;
+    margin-top: -2%;
+  }
+}
+@media(max-height: 350px) {
+  .home-right-links, .home-left-links {
+    height: 200%;
+    margin-top: -2.5%;
+  }
+}
+@media(max-height: 300px) {
+  .home-right-links, .home-left-links {
+    height: 225%;
+    margin-top: -3%;
+  }
+}
+@media(max-height: 240px) {
+  .home-right-links, .home-left-links {
+    display: none;
+  }
+}
