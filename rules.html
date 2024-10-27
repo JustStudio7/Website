@@ -79,51 +79,60 @@ SOFTWARE.
     </script>
     <style>
     #loader {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      z-index: 1000000;
-      width: 60px;
-      height: 60px;
-      margin: -35px 0 0 -35px;
-      border: 5px solid #1437f3;
-      border-radius: 50%;
-      border-top: 5px solid #6e3bf3;
-      -webkit-animation: spin 1.5s linear infinite;
-      animation: spin 1.5s linear infinite;
-    }
-    #loaderbg {
-    	position: absolute;
-    	background-color: #1437f3;
-        width: 100%;
-        height: 100%
-    }
+      		position: absolute;
+      		left: 50%;
+      		top: 50%;
+      		z-index: 1000001;
+      		width: 60px;
+      		height: 60px;
+      		margin: -35px 0 0 -35px;
+      		border: 5px solid rgba(0,0,0,0);
+      		border-radius: 50%;
+      		border-top: 5px solid white;
+      		-webkit-animation: spin 1.5s linear infinite;
+      		animation: spin 1s linear infinite;
+	    	transition-duration: 0.5s;
+    	}
+    	#loaderbg {
+    		position: absolute;
+    		background-color: #1437f3;
+        	width: 100%;
+        	height: 100%;
+	    	z-index: 1000000;
+	    	transition-duration: 0.5s;
+    	}
 
-    @-webkit-keyframes spin {
-      0% { -webkit-transform: rotate(0deg); }
-      100% { -webkit-transform: rotate(360deg); }
-    }
+    	@-webkit-keyframes spin {
+      		0% { -webkit-transform: rotate(0deg); }
+      		100% { -webkit-transform: rotate(360deg); }
+    	}
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    	@keyframes spin {
+      		0% { transform: rotate(0deg); }
+      		100% { transform: rotate(360deg); }
+    	}
 
 
-    @-webkit-keyframes animatebottom {
-      from { bottom:-100px; opacity:0 } 
-      to { bottom:0px; opacity:1 }
-    }
+    	@-webkit-keyframes animatebottom {
+      		from { bottom:-100px; opacity:0 } 
+      		to { bottom:0px; opacity:1 }
+    	}
 
-    @keyframes animatebottom { 
-      from{ bottom:-100px; opacity:0 } 
-      to{ bottom:0; opacity:1 }
-    }
+    	@keyframes animatebottom { 
+      		from{ bottom:-100px; opacity:0 } 
+      		to{ bottom:0; opacity:1 }
+    	}
 
-    #content {
-      display: none;
-      text-align: center;
-    }
+    	#content {
+      		display: none;
+      		text-align: center;
+    	}
+	    .t-purple #loaderbg {
+		    background-color: #7d53ea;
+	    }
+	    .t-light #loaderbg {
+		    background-color: #576fef;
+	    }
 </style>
     <meta name="description" content="a System Development Studio" />
     <meta property="og:title" content="JustStudio." />
@@ -631,19 +640,34 @@ SOFTWARE.
     </script>
     <script src="/js/menu.js"></script>
     <script>
-      var something;
-  
+var something;
+	    
       function activate() {
-        something = setTimeout(showPage, 3000);
-      }
-  
-      function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("loaderbg").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }
-  
-      activate()
+      something = setTimeout(showPage, 2500);
+    };
+
+    function showPage() {/*
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";*/
+      document.getElementById("content").style.display = "block";
+      document.getElementById("loader").style.opacity = 0;
+      /*document.getElementById("loaderbg").style.opacity = 0;*/
+	    otherthng = setTimeout(showPage02, 500);
+    };
+    function showPage02() {
+      document.getElementById("loaderbg").style.opacity = 0;
+	    otherthng = setTimeout(activatePage, 500);
+    };
+    function activatePage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";
+      document.getElementById("loader").style["z-index"] = -5;
+      document.getElementById("loaderbg").style["z-index"] = -5;
+      document.getElementById("loader").remove()
+      document.getElementById("loaderbg").remove()
+    };
+
+    activate();
     </script>
   </body>
 </html>
