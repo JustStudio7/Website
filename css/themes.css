@@ -57,3 +57,22 @@ SOFTWARE.
 .t-purple #theme-switch svg:first-child{
   opacity: 0;
 }
+.t-purple .home-left-links, .t-purple .home-right-links {
+  background-color: #6e3bf3;
+  box-shadow: 0px 0px 5px 0px white;
+}
+.t-purple .home-left-links a img, .t-purple .home-right-links a img{
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+.t-purple .home-line {
+  background-color: #b19ce8;
+  opacity: 0.75;
+  box-shadow: 0px 0px 5px 0px #ae99e4;
+}
+.t-purple .home-line:hover {
+  background-color: #7d53ea;
+  opacity: 1;
+  box-shadow: 0px 0px 5px 0px #784fe4;
+}
