@@ -76,3 +76,12 @@ SOFTWARE.
   opacity: 1;
   box-shadow: 0px 0px 5px 0px #784fe4;
 }
+.t-light .home-product, .t-purple .home-product, .t-purple .home-buttons .button {
+  background-color: rgba(255,255,255,0.05);
+}
+.t-purple .home-buttons .button {
+  border-width: 0px;
+}
+.t-purple .home-buttons .button:hover {
+  color: white;
+}
