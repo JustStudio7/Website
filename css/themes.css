@@ -79,6 +79,11 @@ SOFTWARE.
 .t-light .home-product, .t-purple .home-product, .t-purple .home-buttons .button {
   background-color: rgba(255,255,255,0.05);
 }
+@media(max-width: 500px) {
+  .t-light .home-product, .t-purple .home-product, .t-purple .home-buttons .button {
+    background-color: rgba(255,255,255,0);
+  }
+}
 .t-purple .home-buttons .button {
   border-width: 0px;
 }
