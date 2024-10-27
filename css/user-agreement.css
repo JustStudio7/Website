@@ -1,3 +1,29 @@
+/*
+
+MIT License
+
+Copyright (c) 2024 JustStudio. <https://juststudio.is-a.dev/>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
 .user-agreement-container {
   width: 100%;
   display: flex;
@@ -39,26 +65,26 @@
   right: 0px;
   width: 100%;
   bottom: 0px;
-  height: 10%;
-  display: flex;
-  position: fixed;
+  height: 80%;
+  display: block;
+  position: absolute;
   transform: translate(-50%, -50%);
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
 }
 .user-agreement-info {
   gap: 5px;
-  top: 0px;
+  top: 0%;
   flex: 0 0 auto;
-  left: 50%;
-  width: 50%;
+  left: 0%;
+  width: 100%;
   bottom: 0px;
-  height: 100%;
+  height: auto;
   margin: auto;
   display: flex;
-  position: absolute;
-  transform: scale(66%) translateX(-25%);
+  position: relative;
   align-self: center;
   align-items: center;
   flex-direction: column;
@@ -109,13 +135,12 @@
   gap: 5px;
   top: 0px;
   flex: 0 0 auto;
-  right: 50%;
   width: 50%;
-  height: 100%;
+  height: auto;
   margin: auto;
   display: flex;
-  position: absolute;
-  transform: scale(66%) translateX(25%);
+  position: relative;
+  transform: scale(66%);
   align-self: center;
   align-items: center;
   flex-direction: column;
@@ -784,22 +809,25 @@
     font-size: 0.91em;
   }
 }
-@media(max-width: 479px) {
-  .user-agreement-info {
-    transform: scale(66%) translateX(-77px);
+@media(max-width: 1140px) {
+  .user-agreement-info, .user-agreement-info1 {
+    width: 100%;
   }
-  .user-agreement-desc {
-    font-size: 1em;
+  .user-agreement-info1 {
+    transform: scale(100%);
   }
-  .user-agreement-desc1 {
-    font-size: 1em;
-    padding-left: 50px;
+}
+@media(max-width: 450px) {
+  .user-agreement-info span, .user-agreement-info1 span {
+    font-size: 0.88em;
   }
-  .user-agreement-desc2 {
-    font-size: 1em;
+}
+@media(max-width: 375px) {
+  .user-agreement-info span, .user-agreement-info1 span {
+    font-size: 0.8em;
+    line-height: 1.25
   }
-  .user-agreement-desc3 {
-    font-size: 1em;
-    padding-right: 25px;
+  .user-agreement-info br, .user-agreement-info1 br {
+    display: none;
   }
 }
