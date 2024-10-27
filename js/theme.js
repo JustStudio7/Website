@@ -1,5 +1,33 @@
 const headerElement = document.querySelector('.header');
 headerElement.innerHTML = `
+<div class="dropdown h-terms">
+    <div class="trigger">
+        <span><em style="display:none;">📜</em>Terms</span>
+        <ul class="buttons">
+            <li><a href="/terms">User Agreement</a></li>
+            <li><a href="/rules">Rules For Players</a></li>
+        </ul>
+    </div>
+</div>
+    
+    <div class="dropdown h-products">
+    <div class="trigger">
+        <span><em style="display:none;">🟣</em>Products</span>
+        <ul class="buttons">
+            <li><a href="/account/">JustStudio.Accounts</a></li>
+            <li><a href="https://api.juststudio.is-a.dev/">API</a></li>
+        </ul>
+    </div>
+</div><div class="dropdown h-games">
+    <div class="trigger">
+        <span><em style="display:none;">🎮</em>Games</span>
+        <ul class="buttons">
+            <li><a style="color:rgba(0,0,0,0.5);">Coming soon...</a></li>
+            
+        </ul>
+    </div>
+</div>
+
     <div id="theme-switch">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1437f3">
             <path d="M480-120q-151 0-255.5-104.5T120-480q0-138 90-239.5T440-838q13-2 23 3.5t16 14.5q6 9 6.5 21t-7.5 23q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q11-7 22.5-6.5T819-479q10 5 15.5 15t3.5 24q-14 138-117.5 229T480-120Z"></path>
