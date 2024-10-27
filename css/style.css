@@ -579,3 +579,8 @@ body {
   overflow: hidden;
   background: black;
 }
+spline-viewer {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -1;
+}
