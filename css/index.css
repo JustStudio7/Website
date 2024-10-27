@@ -1,3 +1,29 @@
+/*
+
+MIT License
+
+Copyright (c) 2024 JustStudio. <https://juststudio.is-a.dev/>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
 .home-container {
   width: 100%;
   display: flex;
@@ -777,4 +803,30 @@
   height: 250px;
   transform: translate(-50%, 150%);
   align-items: flex-end;
+}
+@media(max-width: 300px) {
+  .home-left-links, .home-right-links {
+    translate: 0% 390%;
+    -webkit-translate: 0% 390%;
+  }
+  .home-info {
+    width: 100%;
+  }
+  .home-desc {
+    font-size: 1.2em;
+  }
+  .home-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media(max-width: 190px) {
+  .home-name {
+    font-size: 1.75em;
+  }
+}
+@media(max-width: 150.4px) {
+  .home-name {
+    font-size: 1.6em;
+  }
 }
