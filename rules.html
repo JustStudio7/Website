@@ -640,19 +640,34 @@ SOFTWARE.
     </script>
     <script src="/js/menu.js"></script>
     <script>
-      var something;
-  
+var something;
+	    
       function activate() {
-        something = setTimeout(showPage, 3000);
-      }
-  
-      function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("loaderbg").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }
-  
-      activate()
+      something = setTimeout(showPage, 2500);
+    };
+
+    function showPage() {/*
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";*/
+      document.getElementById("content").style.display = "block";
+      document.getElementById("loader").style.opacity = 0;
+      /*document.getElementById("loaderbg").style.opacity = 0;*/
+	    otherthng = setTimeout(showPage02, 500);
+    };
+    function showPage02() {
+      document.getElementById("loaderbg").style.opacity = 0;
+	    otherthng = setTimeout(activatePage, 500);
+    };
+    function activatePage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("loaderbg").style.display = "none";
+      document.getElementById("loader").style["z-index"] = -5;
+      document.getElementById("loaderbg").style["z-index"] = -5;
+      document.getElementById("loader").remove()
+      document.getElementById("loaderbg").remove()
+    };
+
+    activate();
     </script>
   </body>
 </html>
