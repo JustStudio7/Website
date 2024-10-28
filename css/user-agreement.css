@@ -837,3 +837,6 @@ SOFTWARE.
     padding: 10px;
   }
 }
+.stfl {
+  text-decoration: underline;
+}
