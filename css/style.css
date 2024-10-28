@@ -667,3 +667,127 @@ spline-viewer {
                 border: 6px solid rgb(140 102 240);
                 transition: 1s;
             }
+.pop-up {
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  background-color: rgb(0 0 0 / 66%);
+  translate: -50% -50%;
+  -webkit-translate: -50% -50%;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: scale(0%);
+  -webkit-transform: scale(0%);
+  -moz-transform: scale(0%);
+  -o-transform: scale(0%);
+  transition: 300ms;
+  min-width: 510px;
+  min-height: 350px;
+  max-width: 600px;
+  max-height: 430px;
+}
+.pop-up span {
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  translate: -50% 0%;
+  -webkit-translate: -50% 0%;
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 20px;
+  width: 50%;
+  color: white;
+  transition: 0.75s;
+}
+.pop-up a {
+  position: fixed;
+  top: -0.5%;
+  right: -0.5%;
+  font-family: Rubik;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  padding-right: 6px;
+  padding-left: 6.5px;
+  padding-bottom: 2.25px;
+  padding-top: 0.5px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px white;
+}
+.pop-up a.pu-n {
+  left: -0.5%;
+  max-width: 50px;
+  padding-bottom: 2px;
+}
+.pop-up span span{
+  position: fixed;
+  top: 120%;
+  width: 200%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px;
+}
+.pop-up span span .no-pu-n {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0);
+  padding: 0px;
+  text-decoration: underline;
+}
+.pop-up:target {
+  transition: 0.75s;
+  opacity: 1;
+  transform: scale(100%);
+  -webkit-transform: scale(100%);
+  -moz-transform: scale(100%);
+  -o-transform: scale(100%);
+}
+.t-light .pop-up {
+  background-color: rgb(255 255 255 / 66%);
+}
+.t-light .pop-up *{
+  color: black;
+}
+.t-light .pop-up a {
+  color: white;
+}
+.t-purple .pop-up {
+  background-color: rgb(164 108 240 / 66%);
+}
+.t-purple .pop-up *{
+  color: white;
+}
+@media(max-width: 530px) {
+  .pop-up {
+    min-width: 400px;
+    min-height: 450px;
+  }
+}
+@media(max-width: 410px) {
+  .pop-up {
+    min-width: 350px;
+    min-height: 475px;
+  }
+}
+@media(max-width: 350px) {
+  .pop-up {
+    min-width: 300px;
+    min-height: 530px;
+  }
+}
+@media(max-width: 300px) {
+  .pop-up:target {
+    transform: scale(80%);
+    -webkit-transform: scale(80%);
+    -moz-transform: scale(80%);
+    -o-transform: scale(80%);
+  }
+}
