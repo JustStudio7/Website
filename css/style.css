@@ -741,6 +741,7 @@ spline-viewer {
   box-shadow: 0px 0px 0px rgba(0,0,0,0);
   padding: 0px;
   text-decoration: underline;
+  transition: 0.75s;
 }
 .pop-up:target {
   transition: 0.75s;
@@ -753,7 +754,7 @@ spline-viewer {
 .t-light .pop-up {
   background-color: rgb(255 255 255 / 66%);
 }
-.t-light .pop-up *{
+.t-light .pop-up *, .t-light .pop-up span span .no-pu-n{
   color: black;
 }
 .t-light .pop-up a {
