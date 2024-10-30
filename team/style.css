@@ -1,475 +1,168 @@
-@font-face {
-  font-family: "Geist Sans";
-  src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
-}
-
-:root {
-	--backdrop: hsl(0 0% 60% / 0.15);
-  --radius: 12px;
-}
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
 
 *,
-*:after,
-*:before {
-	box-sizing: border-box;
-}
-[data-explode] .wrapper {	
-	transform-style: preserve-3d;
-}
-body {
-	display: grid;
-	place-items: center;
-	min-height: 100vh;
-  overflow: hidden;
-	font-family:  "Geist Sans", "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
-}
-
-* {
+*::after,
+*::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
 }
 
 body {
-  min-height: 100vh;
   display: grid;
   place-items: center;
-  background-color: var(--body, black);
-  color: hsl(0 0% 90%);
-  font-weight: 60;
+  font-family: "League Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
 }
 
-.wrapper {
-	position: relative;
+ul {
+  list-style: none;
 }
 
-body::before {
-	content: "";
-  background-image: url("https://assets.codepen.io/605876/code-icon-bg.svg");
-  background-position: calc(var(--xp) * calc(var(--movement, 0) * -1px)) calc(var(--yp) * calc(var(--movement, 0) * -1px));
-  position: fixed;
-  inset: 0;
-  filter: grayscale(1);
-  opacity: var(--icon, 0);
+.main {
+  max-width: 75rem;
+  padding: 3em 1.5em;
 }
 
-article {
-  aspect-ratio: 3 / 4;
-  border-radius: calc(var(--radius) * 1px);
-  width: 260px;
+.main__heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  color: #eceff1;
+}
+
+.cards {
   position: relative;
-	grid-template-rows: 1fr auto;
-  box-shadow: 0 1rem 2rem -1rem black;
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
-  backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
 }
-main {
+
+.cards__inner {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 120ch;
-  max-width: calc(100vw - 2rem);
-  position: relative;
+  gap: 2.5em;
 }
 
-[data-explode] main {
-  transform: translate3d(0, 0, 200vmax);
-}
-
-article a {
-  background: hsl(0 0% 0%);
-	display: inline-block;
-	color: white;
-	text-decoration: none;
-	font-weight: 140;
-	text-align: center;
-	padding: 0.75rem 1.5rem;
-	position: relative;
-}
-h2 {
-	font-weight: 100;
-  font-size: 1.5rem;
-  margin: 0;
-}
-.card__content span {
-  font-size: 0.875rem;
-  font-weight: 120;
-  opacity: 0.5;
-}
-.card__content {
-  color: hsl(0 0% 70%);
+.card {
+  --flow-space: 0.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  flex: 1 1 14rem;
+  padding: 1.5em 2em;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: start;
+  gap: 1.25em;
+  color: #eceff1;
+  background-color: #2b2b2b;
+  border: 1px solid #eceff133;
+  border-radius: 15px;
 }
 
-.card__content div {
-  position: relative;
-  display: grid;
-  align-items: center;
-}
-.card__content svg {
-  width: 80px;
-}
-.card__content div svg:not(:nth-of-type(1)) {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  translate: calc(var(--index) * 40%) -50%;
-  scale: calc(1 - (var(--index) * 0.2));
-  z-index: calc(4 - var(--index));
-  opacity: calc(4 / (2 * (var(--index) * 10)));
-}
-.card__content svg:nth-of-type(2) {
-  --index: 1;
-}
-.card__content svg:nth-of-type(3) {
-  --index: 2;
-}
-.card__content svg:nth-of-type(4) {
-  --index: 3;
+.card:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
 }
 
-
-/* Make sure you offset the glow when in 3D mode with the offset provided from JS land */
-[data-explode] [data-glow] {
-  background-image: radial-gradient(
-    var(--spotlight-size) var(--spotlight-size) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--glow-opacity, 0.1)), transparent
-  );
-}
-[data-explode] [data-glow]::before {
-  background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) 1), transparent 100%
-  );
-}
-[data-explode] [data-glow]::after {
-  background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(0 100% 100% / 1), transparent 100%
-  );
+.card:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
 }
 
-[data-explode] .wrapper:not(:first-of-type) {
-  display: none;
+.card:nth-child(3) {
+  --hue: 338.69;
+  --saturation: 100%;
+  --lightness: 48.04%;
 }
 
-[data-explode] .wrapper {
-  transform: rotateX(-24deg) rotateY(-50deg) translate3d(0, 0, -400px);
+.card__bullets {
+  line-height: 1.4;
 }
 
-.dg.ac {
-  transform: translate3d(0, 0, 200vmin);
+.card__bullets li::before {
+  display: inline-block;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  transform: translatey(0.25ch);
+  margin-right: 1ch;
 }
 
-.wrapper {
-	position: relative;
+.card__heading {
+  font-size: 1.05em;
+  font-weight: 600;
 }
 
-.dummy {
-	--border-size: calc(var(--border, 2) * 1px);
-	--spotlight-size: calc(var(--size, 150) * 1px);
-	--hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
-  --glow-opacity: 1;
-	position: absolute;
-	inset: 0;
-	transform-style: preserve-3d;
-	border-radius: calc(var(--radius) * 1px);
+.card__price {
+  font-size: 1.75em;
+  font-weight: 700;
 }
 
-[data-explode] article {
-  backdrop-filter: unset;
-  opacity: 0.35;
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25em);
 }
 
-.dummy__backdrop {
-	border-radius: calc(var(--radius) * 1px);
-	position: absolute;
-	inset: 0;
-	background-image: radial-gradient(
-    var(--spotlight-size) var(--spotlight-size) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--glow-opacity, 0.1)), transparent
-  );
-	background-color: var(--backup-border);
-	transform: translate3d(0, 0, 200px);
+.cta {
+  display: block;
+  align-self: end;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0d0d0d;
+  padding: 0.7em;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.dummy__backdrop::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 200vmax;
-	width: 200vmax;
-	translate: -50% -50%;
-	background-image: radial-gradient(
-    var(--spotlight-size) var(--spotlight-size) at
-    calc(((var(--x, 0) - var(--left, 0)) * 1px) + 100vmax - 130px)
-    calc(((var(--y, 0) - var(--top, 0)) * 1px) + 100vmax - (260px * (3/4))),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--glow-opacity, 0.1)), transparent
-  );
-	z-index: -1;
-	opacity: 0.35;
-}
-.dummy__glow::after,
-.dummy__border::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 200vmax;
-	width: 200vmax;
-	translate: -50% -50%;
-	background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-    calc(((var(--x, 0) - var(--left, 0)) * 1px) + 100vmax - 130px)
-    calc(((var(--y, 0) - var(--top, 0)) * 1px) + 100vmax - (260px * (3/4))),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--glow-opacity, 0.1)), transparent
-  );
-	z-index: -1;
-	opacity: 0.5;
-}
-
-.dummy__border, .dummy__glow {
-	position: absolute;
-	inset: 0;
-	transform: translate3d(0, 0, 400px);
-	border-radius: calc(var(--radius) * 1px);
-}
-
-.dummy__glow::before,
-.dummy__border::before {
-	content: "";
-	position: absolute;
-	background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / 1), transparent 100%
-  );
-  background-color: var(--backup-border);
-  inset: calc(var(--border-size) * -1);
-  border: var(--border-size) solid transparent;
-  border-radius: calc(var(--radius) * 1px);
-  background-attachment: fixed;
-  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  mask:
-    linear-gradient(transparent, transparent),
-    linear-gradient(white, white);
-  mask-clip: padding-box, border-box;
-  mask-composite: intersect;
-}
-
-.dummy__glow {
-	border-radius: calc(var(--radius) * 1px);
-	position: absolute;
-	inset: 0;
-	transform: translate3d(0, 0, 600px);
-}
-.dummy__glow::before {
-	background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-    calc((var(--x, 0) - var(--left, 0)) * 1px)
-    calc((var(--y, 0) - var(--top, 0)) * 1px),
-    hsl(0 100% 100% / 1), transparent 100%
-  );
-}
-.dummy__glow::after {
-	background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-    calc(((var(--x, 0) - var(--left, 0)) * 1px) + 100vmax - 130px)
-    calc(((var(--y, 0) - var(--top, 0)) * 1px) + 100vmax - (260px * (3/4))),
-    hsl(0 100% 100% / 1), transparent
-  );
-}
-.dummy > * {
-	transform-style: preserve-3d;
-}
-.wrapper > span ,
-.dummy span {
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	color: hsl(0 0% 80%);
-	font-weight: 20;
-	left: calc(100% + 4rem);
-	white-space: nowrap;
-	font-size: 1.25rem;
-	transform: rotateY(50deg) rotateX(24deg) translate(-50%, 50%);
-}
-
-.wrapper:not(:nth-of-type(2)) > span::after,
-:is(.dummy__glow, .dummy__border) span::after {
-  content: "(pseudo)";
-  font-size: 0.875rem;
-  position: absolute;
-  left: 100%;
-  bottom: 0%;
-  translate: 0.5rem 0%;
-  opacity: 0.5;
-}
-
-.wrapper > span {
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 250%);
-}
-
-
-[data-spread] .wrapper:first-of-type {
-  opacity: 0.35;
-}
-[data-spread] .wrapper:nth-of-type(2) :is(.card__content, a, [data-glow] > [data-glow]),
-[data-spread] .wrapper:nth-of-type(2) [data-glow]::before,
-[data-spread] .wrapper:nth-of-type(2) [data-glow]::after {
-  opacity: 0;
-}
-[data-spread] .wrapper:nth-of-type(3) :is(.card__content, a, [data-glow] > [data-glow]),
-[data-spread] .wrapper:nth-of-type(3) [data-glow]::after {
-  opacity: 0;
-}
-
-[data-spread] .wrapper:nth-of-type(4) :is(.card__content, a, [data-glow] > [data-glow]),
-[data-spread] .wrapper:nth-of-type(4) [data-glow]::before {
-  opacity: 0;
-}
-[data-spread] .wrapper:nth-of-type(3) article,
-[data-spread] .wrapper:nth-of-type(4) article {
-  background: transparent;
-}
-
-[data-spread] .wrapper:not(:first-of-type) article {
-  --bg-spot-opacity: 0.5;
-  --border-spot-opacity: 1;
-  --border-light-opacity: 1;
-}
-
-[data-spread] main::before {
-  --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
-  --spotlight-size: calc(var(--size) * 1px);
-  --bg-spot-opacity: 0.75;
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(
-    var(--spotlight-size) var(--spotlight-size) at
-    calc(var(--x, 0) * 1px)
-    calc(var(--y, 0) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
-  );
-  z-index: -1;
-  opacity: 0.5;
-  filter: blur(20px);
-}
-
-[data-spread] .wrapper {
-  z-index: 2;
-}
-
-
-/* Glow specific styles */
-[data-glow] {
-  --border-size: calc(var(--border, 2) * 1px);
-  --spotlight-size: calc(var(--size, 150) * 1px);
-  --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
-  background-image: radial-gradient(
-    var(--spotlight-size) var(--spotlight-size) at
-    calc(var(--x, 0) * 1px)
-    calc(var(--y, 0) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
-  );
-  background-color: var(--backdrop, transparent);
-  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
-  background-position: 50% 50%;
-  background-attachment: fixed;
-  border: var(--border-size) solid var(--backup-border);
-  position: relative;
-}
-
-[data-glow]::before,
-[data-glow]::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  inset: calc(var(--border-size) * -1);
-  border: var(--border-size) solid transparent;
-  border-radius: calc(var(--radius) * 1px);
-  background-attachment: fixed;
-  background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  mask:
-    linear-gradient(transparent, transparent),
-    linear-gradient(white, white);
-  mask-clip: padding-box, border-box;
-  mask-composite: intersect;
-}
-
-/* This is the emphasis light */
-[data-glow]::before {
-  background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
-    calc(var(--x, 0) * 1px)
-    calc(var(--y, 0) * 1px),
-    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)), transparent 100%
-  );
-  z-index: 2;
-  filter: brightness(2);
-}
-/* This is the spotlight */
-[data-glow]::after {
-  background-image: radial-gradient(
-    calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
-    calc(var(--x, 0) * 1px)
-    calc(var(--y, 0) * 1px),
-    hsl(0 100% 100% / var(--border-light-opacity, 1)), transparent 100%
-  );
-  z-index: 2;
-}
-
-[data-glow] [data-glow] {
+.overlay {
   position: absolute;
   inset: 0;
-  will-change: filter;
-}
-
-[data-glow] > [data-glow] {
-  border-radius: calc(var(--radius) * 1px);
-  border-width: calc(var(--border-size) * 20);
-  filter: blur(calc(var(--border-size) * 10));
-  background: none;
   pointer-events: none;
+  user-select: none;
+  opacity: var(--opacity, 0);
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
 }
 
-[data-glow] > [data-glow]::before {
-  inset: -10px;
-  border-width: 10px;
+.overlay .card {
+  background-color: hsla(var(--hsl), 0.15);
+  border-color: hsla(var(--hsl), 1);
+  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
 }
 
-[data-glow] [data-glow] {
-  border: none;
+.overlay .cta {
+  display: block;
+  grid-row: -1;
+  width: 100%;
+  background-color: hsl(var(--hsl));
+  box-shadow: 0 0 0 1px hsl(var(--hsl));
 }
 
-[data-glow] :is(a, button) {
-  border-radius: calc(var(--radius) * 1px);
-  border: var(--border-size) solid transparent;
+:not(.overlay) > .card {
+  transition: 400ms background ease;
+  will-change: background;
 }
-[data-glow] :is(a, button) [data-glow] {
-  background: none;
-}
-[data-glow] :is(a, button) [data-glow]::before {
-  inset: calc(var(--border-size) * -1);
-  border-width: calc(var(--border-size) * 1);
+
+:not(.overlay) > .card:hover {
+  --lightness: 95%;
+  background: hsla(var(--hsl), 0.1);
 }
