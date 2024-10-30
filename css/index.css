@@ -865,3 +865,7 @@ SOFTWARE.
     display: none;
   }
 }
+.home-left-links, .home-right-links {
+  max-width: 37.05px;
+  max-height:86.89px;
+}
