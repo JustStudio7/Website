@@ -16,7 +16,7 @@ const applyOverlayMask = (e) => {
 const createOverlayCta = (overlayCard, ctaEl) => {
   const overlayCta = document.createElement("div");
   overlayCta.classList.add("cta");
-  overlayCta.textContent = ctaEl.textContent;
+  //overlayCta.textContent = ctaEl.textContent;
   overlayCta.setAttribute("aria-hidden", true);
   overlayCard.append(overlayCta);
 };
