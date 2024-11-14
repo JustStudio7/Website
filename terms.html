@@ -692,5 +692,15 @@ var something;
 
     activate();
     </script>
+    <script defer>
+        window.onload = function() {
+            if (window.location.href.includes('navbar=false')) {
+                var headerElement = document.querySelector('.header');
+                if (headerElement) {
+                    headerElement.remove();
+                }
+            }
+        };
+    </script>
   </body>
 </html>
