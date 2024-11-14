@@ -225,6 +225,73 @@ SOFTWARE.
     <script type="text/javascript" src="https://juststudio.is-a.dev/js/navbar.js" defer></script>
   </head>
   <body>
+    <style>
+        .warning {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            z-index: 1001;
+            padding: 15px;
+            border-radius: 15px;
+            max-height: 300px;
+            max-width: 600px;
+            transition: 0.5s;
+        }
+        .warning-bg {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            -moz-backdrop-filter: blur(8px);
+            -o-backdrop-filter: blur(8px);
+            z-index: 1000;
+            translate: -50% -50%;
+            transition: 0.5s;
+        }
+        .warning h1 {
+            text-align: center;
+            font-family: "Rubik";
+        }
+        .warning span {
+            font-family: "Rubik";
+        }
+        .warning button {
+            position: fixed;
+            left: 50%;
+            bottom: 0%;
+            font-family: "Rubik";
+            translate: -50% -15px;
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+            background-color: black;
+            border-width: 0px;
+            border-color: black;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .warning button:hover {
+            background-color: white;
+            color: black;
+            border-width: 2px;
+        }
+        .warning span, .warning h1 {
+            pointer-events: none;
+        }
+        .warning span a {
+            text-decoration: underline;
+            cursor: pointer;
+            pointer-events: all;
+        }
+    </style>
     <link href="https://juststudio.is-a.dev/css/themes.css" rel="stylesheet" />
     <div id="loader"></div>
     <div id="loaderbg"></div>
