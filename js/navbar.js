@@ -112,3 +112,24 @@ themeSwitch.addEventListener("dblclick", () => {
   theme = localStorage.getItem('theme');
   theme !== "special" ? switchThemeToSpecial() : null
 });
+
+if (localStorage.getItem("agreed") === null || localStorage.getItem("agreed") === "false") {
+            localStorage.setItem("agreed", "false");
+            document.body.insertAdjacentHTML('beforeend', `
+                <div class="warning-bg"></div>
+                <div class="warning">
+                    <h1>Agreement</h1>
+                    <span>By using our website, you agree to our <a href="#" onclick="window.open(
+                    '/terms?navbar=false',
+                    'Terms and User Agreement',
+                    'height=600,width=500,screenX=50,left=50,screenY=50,top=50,status=yes,menubar=yes,resizeable=no'
+                    ); return false;">terms and user agreement</a>.</span>
+                    <button id="termsagreebtn">I Agree</button>
+                </div>
+            `);
+            document.getElementById("termsagreebtn").addEventListener("click", function() {
+                localStorage.setItem("agreed", "true");
+                document.querySelector(".warning").style.opacity = "0";
+                document.querySelector(".warning-bg").style.opacity = "0";
+            });
+        }
