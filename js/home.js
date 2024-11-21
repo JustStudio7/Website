@@ -11,7 +11,7 @@ function checkFPS() {
       frameCount = 0;
       lastTime = currentTime;
 
-      if (fps < 50) {
+      if (fps < 35) {
           splineViewer.remove();
       }
   }
