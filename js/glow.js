@@ -63,6 +63,7 @@ const updateCardAndOverlaySize = () => {
     card.style.width = `${maxWidth}px`;
     card.style.height = `${maxHeight}px`;
 
+    overlay.children[index].style = `--width: ${width};`;
     overlay.children[index].style.width = `${maxWidth}px`;
     overlay.children[index].style.height = `${maxHeight}px`;
   });
