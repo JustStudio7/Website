@@ -50,10 +50,12 @@ document.body.addEventListener("pointermove", applyOverlayMask);
 const updateCardAndOverlaySize = () => {
   let maxWidth = 0;
   let maxHeight = 0;
-
+  let wdth = 0;
+  
   cards.forEach((card) => {
     const width = card.offsetWidth;
     const height = card.offsetHeight;
+    wdth = width;
 
     maxWidth = Math.max(maxWidth, width);
     maxHeight = Math.max(maxHeight, height);
@@ -63,7 +65,7 @@ const updateCardAndOverlaySize = () => {
     card.style.width = `${maxWidth}px`;
     card.style.height = `${maxHeight}px`;
 
-    overlay.children[index].style = `--width: ${width}px;`;
+    overlay.children[index].style = `--width: ${wdth}px;`;
     overlay.children[index].style.width = `${maxWidth}px`;
     overlay.children[index].style.height = `${maxHeight}px`;
   });
