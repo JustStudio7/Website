@@ -141,6 +141,8 @@ ul {
   );
   transition: 400ms mask ease;
   will-change: mask;
+  height: 100%;
+  width: var(--width);
 }
 
 .overlay .card {
