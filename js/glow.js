@@ -37,6 +37,8 @@ const observer = new ResizeObserver((entries) => {
 const initOverlayCard = (cardEl) => {
   const overlayCard = document.createElement("div");
   overlayCard.classList.add("card");
+  overlayCard.style.width = `${cardEl.offsetWidth}px`;
+  overlayCard.style.height = `${cardEl.offsetHeight}px`;
   createOverlayCta(overlayCard, cardEl.lastElementChild);
   overlay.append(overlayCard);
   observer.observe(cardEl);
@@ -44,3 +46,28 @@ const initOverlayCard = (cardEl) => {
 
 cards.forEach(initOverlayCard);
 document.body.addEventListener("pointermove", applyOverlayMask);
+
+const updateCardAndOverlaySize = () => {
+  let maxWidth = 0;
+  let maxHeight = 0;
+
+  cards.forEach((card) => {
+    const width = card.offsetWidth;
+    const height = card.offsetHeight;
+
+    maxWidth = Math.max(maxWidth, width);
+    maxHeight = Math.max(maxHeight, height);
+  });
+
+  cards.forEach((card, index) => {
+    card.style.width = `${maxWidth}px`;
+    card.style.height = `${maxHeight}px`;
+
+    overlay.children[index].style.width = `${maxWidth}px`;
+    overlay.children[index].style.height = `${maxHeight}px`;
+  });
+
+  requestAnimationFrame(updateCardAndOverlaySize);
+};
+
+updateCardAndOverlaySize();
