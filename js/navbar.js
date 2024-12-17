@@ -61,6 +61,9 @@ headerElement.innerHTML = `
     <a target="_blank" rel="noreferrer noopener" href="https://www.roblox.com/groups/11641563/JustStudio#!/about">
         <img src="https://juststudio.is-a.dev/img/roblox.white.svg">
     </a>
+    <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/#team" style="display:none">
+        <span>team</span>
+    </a>
 </div>
     <div id="theme-switch">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1437f3">
