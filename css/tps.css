@@ -302,3 +302,18 @@ p img {
                 border: 6px solid rgb(140 102 240);
                 transition: 1s;
             }
+
+a {
+  color: white;
+}
+img {
+  width:56px;
+  height:56px;
+  min-width:56px;
+  min-height:56px;
+  max-width:56px;
+  max-height:56px;
+  background-image: url("/img/1714165239.602498-1f96a837-e638-476a-81d3-75b9f25ed066-200h.png");
+  background-size: 50px;
+  background-position: center;
+}
