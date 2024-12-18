@@ -819,6 +819,7 @@ spline-viewer {
 }
 .pop-up-v2[pu-data="loading"] {
   opacity: 0;
+  z-index: 0;
 }
 .pop-up-v2#team {
   max-width: 400px;
