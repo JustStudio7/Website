@@ -289,7 +289,13 @@ SOFTWARE.
                 	elements[i].style.opacity = "1";
             	}
             };
-	    document.getElementById("team").removeAttribute("style");
+	    setTimeout(() => {
+		var iframe = document.getElementById("team");
+	    	iframe.src = iframe.src;
+	    	iframe.onload = function() {
+    			iframe.removeAttribute("style");
+	    	};
+	    }, 1000)
           </script>
 	  <script src="https://juststudio.is-a.dev/js/home.js" defer></script>
         </div>
