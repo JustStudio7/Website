@@ -249,7 +249,7 @@ SOFTWARE.
       	href="./css/menu.css"
       />
       <div class="home-container">
-	<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team" pu-data="loading"></iframe>
+	<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team" pu-data="loading" style="opacity:0;"></iframe>
 	<script>
 		function removeLoadingAttribute() {
     			const iframe = document.getElementById('team');
@@ -260,7 +260,7 @@ SOFTWARE.
         			const loadingElements = iframeDocument.querySelectorAll('[pu-data="loading"]');
 
         			loadingElements.forEach(element => {
-            			element.removeAttribute('pu-data');
+            			iframe.removeAttribute('pu-data');
         			});
     			}
 		}
@@ -268,6 +268,7 @@ SOFTWARE.
 		const iframe = document.getElementById('team');
 
 		iframe.addEventListener('load', function() {
+			iframe.style.opacity = 1;
     			removeLoadingAttribute();
 		});
 	</script>
