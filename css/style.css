@@ -805,14 +805,16 @@ spline-viewer {
   max-height: 455px;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
   animation-name: fadeIn;
-  animation-delay: 0s;
+  animation-delay: 1s;
   animation-duration: 1.5s;
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  opacity: 1;
 }
 .pop-up-v2[v="2.1"] {
   transform: skewX(5deg) rotateX(55deg) rotateZ(55deg) scale(75%);
+  transition: 1.5s;
 }
 .pop-up-v2[v="2.1"]:hover, .pop-up-v2[v="2.1"][pu-data="loading"] {
   transform: skewX(0deg) rotateX(0deg) rotateZ(0deg) scale(100%);
