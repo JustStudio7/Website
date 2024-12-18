@@ -814,10 +814,12 @@ spline-viewer {
 }
 .pop-up-v2[v="2.1"] {
   transform: skewX(5deg) rotateX(55deg) rotateZ(55deg) scale(75%);
+  -webkit-transform: skewX(5deg) rotateX(55deg) rotateZ(55deg) scale(75%);
   transition: 1.5s;
 }
 .pop-up-v2[v="2.1"]:hover, .pop-up-v2[v="2.1"][pu-data="loading"] {
   transform: skewX(0deg) rotateX(0deg) rotateZ(0deg) scale(100%);
+  -webkit-transform: skewX(0deg) rotateX(0deg) rotateZ(0deg) scale(100%);
 }
 .pop-up-v2[pu-data="loading"] {
   opacity: 0;
