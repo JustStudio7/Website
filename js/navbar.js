@@ -83,7 +83,7 @@ headerElement.parentElement.innerHTML += `
     </span>
 `;
 
-if (window.href.location == 'https://juststudio.is-a.dev/' || window.href.location == 'https://juststudio.is-a.dev/#team' || window.href.location == 'https://juststudio.is-a.dev/#') {
+if (window.location.hostname == 'juststudio.is-a.dev' && window.location.pathname == '/') {
     headerElement.parentElement.innerHTML += `<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team"></iframe>`;
 }
 
