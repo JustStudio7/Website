@@ -249,29 +249,6 @@ SOFTWARE.
       	href="./css/menu.css"
       />
       <div class="home-container">
-	<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team" pu-data="loading" style="opacity:0;"></iframe>
-	<script>
-		function removeLoadingAttribute() {
-    			const iframe = document.getElementById('team');
-
-    			if (iframe && iframe.contentDocument) {
-        			const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-        			const loadingElements = iframeDocument.querySelectorAll('[pu-data="loading"]');
-
-        			loadingElements.forEach(element => {
-            			iframe.removeAttribute('pu-data');
-        			});
-    			}
-		}
-
-		const iframe = document.getElementById('team');
-
-		iframe.addEventListener('load', function() {
-			iframe.style.opacity = 1;
-    			removeLoadingAttribute();
-		});
-	</script>
         <div class="home-bg">
           <img
             alt="image"
