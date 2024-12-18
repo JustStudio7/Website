@@ -816,6 +816,8 @@ spline-viewer {
 }
 .pop-up-v2[v="2.1"]:hover, .pop-up-v2[v="2.1"][pu-data="loading"] {
   transform: skewX(0deg) rotateX(0deg) rotateZ(0deg) scale(100%);
+}
+.pop-up-v2[pu-data="loading"] {
   opacity: 0;
 }
 .pop-up-v2#team {
