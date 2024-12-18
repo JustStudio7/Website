@@ -82,11 +82,11 @@ headerElement.parentElement.innerHTML += `
         <br>
     </span>
 `;
-
+/*
 if (window.location.hostname == 'juststudio.is-a.dev' && window.location.pathname == '/') {
     headerElement.parentElement.innerHTML += `<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team"></iframe>`;
 }
-
+*/
 let theme = localStorage.getItem('theme');
 const themeSwitch = document.getElementById('theme-switch');
 
