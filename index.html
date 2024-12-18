@@ -288,6 +288,9 @@ SOFTWARE.
                 	elements[i].style.opacity = "1";
             	}
             };
+	    if (window.location.hostname == 'juststudio.is-a.dev' && window.location.pathname == '/') {
+    		document.querySelector('.header').parentElement.innerHTML += `<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team"></iframe>`;
+	    }
           </script>
 	  <script src="https://juststudio.is-a.dev/js/home.js" defer></script>
         </div>
