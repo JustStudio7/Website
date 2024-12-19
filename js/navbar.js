@@ -124,13 +124,18 @@ if (!theme) {
     }
 } else {
     if (theme !== "special" && theme !== "dark" && theme !== "light") {
-      const ERROR_NAME = 'Unknown theme';
-      const ERROR_ID = 1;
+      let ERROR_NAME = 'Unknown theme';
+      let ERROR_ID = 1;
       fetch('https://juststudio.is-a.dev/data/visual-error.txt')
         .then(response => response.text())
         .then(data => {
           const lines = data.split('\n').slice(29).join('\n');
           document.body.innerHTML += lines;
+        });
+      fetch('https://juststudio.is-a.dev/js/error-handler.js')
+        .then(response => response.text())
+        .then(data => {
+            eval(data);
         });
     }
 }
