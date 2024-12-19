@@ -27,7 +27,7 @@ About this file: This is '.txt' file that has HTML code with website error visua
 How to use: You need to get this file by sending HTTP GET request to "https://juststudio.is-a.dev/data/visual-error.txt"; Remove first 29 lines; And just put it in HTML <body> tag.
 Using this file in your projects? Please let everyone (users) know that you are using software by "JustStudio.", with link to "https://juststudio.is-a.dev/". Thank you!
   
-<div style="position: absolute;width: 100%;height: 100%;z-index: 10000;background-color: black;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+<div style="position: absolute;width: 100%;height: 100%;z-index: 10000;background-color: black;display: flex;flex-direction: column;justify-content: center;align-items: center; top: 0; left: 0;">
         <style>
             @keyframes tsa {
                 0% {
