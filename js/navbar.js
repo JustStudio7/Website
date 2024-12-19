@@ -82,11 +82,6 @@ headerElement.parentElement.innerHTML += `
         <br>
     </span>
 `;
-/*
-if (window.location.hostname == 'juststudio.is-a.dev' && window.location.pathname == '/') {
-    headerElement.parentElement.innerHTML += `<iframe class="pop-up pop-up-v2" id="team" v="2.1" src="https://juststudio.is-a.dev/team"></iframe>`;
-}
-*/
 let theme = localStorage.getItem('theme');
 const themeSwitch = document.getElementById('theme-switch');
 
@@ -120,11 +115,22 @@ themeSwitch.addEventListener("dblclick", () => {
   theme !== "special" ? switchThemeToSpecial() : null
 });
 
-if (theme !== "special" && theme !== "dark" && theme !== "light") {
-  fetch('https://juststudio.is-a.dev/data/visual-error.txt')
-    .then(response => response.text())
-    .then(data => {
-      const lines = data.split('\n').slice(29).join('\n');
-      document.body.innerHTML += lines;
-    });
+if (!theme) {
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (darkThemeMq.matches) {
+        switchThemeToDark();
+    } else {
+        switchThemeToLight();
+    }
+} else {
+    if (theme !== "special" && theme !== "dark" && theme !== "light") {
+      const ERROR_NAME = 'Unknown theme';
+      const ERROR_ID = 1;
+      fetch('https://juststudio.is-a.dev/data/visual-error.txt')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n').slice(29).join('\n');
+          document.body.innerHTML += lines;
+        });
+    }
 }
