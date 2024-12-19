@@ -57,5 +57,4 @@ Using this file in your projects? Please let everyone (users) know that you are 
         </h1>
         <span style="font-size: 1em;font-family: 'Rubik';color: white;text-shadow: 0 0 8px rgba(255,255,255,1);text-align: center;" id="eS1">Something went wrong.</span><br>
         <span style="font-size: 0.75em;font-family: 'Rubik';color: white; opacity: 0.5;text-align: center;" id="eS2">Error: Unknown error.</span>
-        <script src="/js/error-handler.js"></script>
 </div>
