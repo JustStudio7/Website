@@ -31,18 +31,28 @@ if (ERROR_NAME) {
     errorMessageElement.textContent = "Error: Unknown error.";
 }
 
+let err_res = false;
+
 if (ERROR_ID) {
     if (ERROR_ID === 1) {
-        console.warn('abc');
-        setTimeout(() => {
-            const resolvingElement = document.getElementById("eS1");
-            resolvingElement.textContent = "Resolving...";
-            setTimeout(() => {
-                resolvingElement.textContent = "Done!";
-                setTimeout(() => {
-                    window.location.reload();
-                }, 10);
-            }, 2000);
-        }, 2300);
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) {
+            switchThemeToDark();
+        } else {
+            switchThemeToLight();
+        }
+        err_res = true;
     }
+}
+if (err_res) {
+    setTimeout(() => {
+        const resolvingElement = document.getElementById("eS1");
+        resolvingElement.textContent = "Resolving...";
+        setTimeout(() => {
+            resolvingElement.textContent = "Done!";
+            setTimeout(() => {
+                window.location.reload();
+            }, 10);
+        }, 2000);
+    }, 2300);
 }
