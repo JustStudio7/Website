@@ -48,7 +48,7 @@ Using this file in your projects? Please let everyone (users) know that you are 
                 }
             }
         </style>
-        <h1 style="font-size: 3em;font-family: 'Rubik';color: white;text-shadow: 0 0 8px rgba(255,255,255,0.75);" id="eH1">
+        <h1 style="font-size: 3em;font-family: 'Rubik';color: white;text-shadow: 0 0 8px rgba(255,255,255,0.75);display: flex;gap: 0;flex-direction: row;align-content: center;justify-content: center;align-items: center;" id="eH1">
             <letter style="animation: tsa 2s cubic-bezier(0.7, 0.68, 0.18, 1.09) infinite;animation-delay: 0ms;">O</letter>
             <letter style="animation: tsa 2s cubic-bezier(0.7, 0.68, 0.18, 1.09) infinite;animation-delay: 50ms;">o</letter>
             <letter style="animation: tsa 2s cubic-bezier(0.7, 0.68, 0.18, 1.09) infinite;animation-delay: 100ms;">p</letter>
