@@ -25,6 +25,7 @@ SOFTWARE.
 */
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap");
+@import url("https://juststudio.is-a.dev/css/scrollbar.css");
 
 *,
 *::after,
@@ -249,59 +250,6 @@ p img {
     display: none;
   }
 }
-
-/* 
-    scrollbar style by https://www.is-a.dev/ 
-    modified by JustStudio.
-*/
-            ::-webkit-scrollbar {
-                width: 16px;
-            }
-
-            ::-webkit-scrollbar-button {
-                width: 0;
-                height: 0;
-            }
-
-            ::-webkit-scrollbar-track {
-                background: rgba(0,0,0,0);
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid rgb(20 48 196);
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid rgb(71 17 212);
-                transition: 1s;
-            }
-
-            .t-light ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid #1437f3;
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            .t-light ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid #1437f3;
-                transition: 1s;
-            }
-
-            .t-purple ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid rgb(110, 59, 243);
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            .t-purple ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid rgb(140 102 240);
-                transition: 1s;
-            }
 
 a {
   color: white;
