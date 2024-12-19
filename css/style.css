@@ -24,6 +24,8 @@ SOFTWARE.
 
 */
 
+@import url("https://juststudio.is-a.dev/css/scrollbar.css");
+
 :root {
   --dl-size-size-large: 144px;
   --dl-size-size-small: 48px;
@@ -615,58 +617,6 @@ spline-viewer {
   filter: blur(8px) brightness(125%);
   -webkit-filter: blur(8px) brightness(125%);
 }
-/* 
-    scrollbar style by https://www.is-a.dev/ 
-    modified by JustStudio.
-*/
-            ::-webkit-scrollbar {
-                width: 16px;
-            }
-
-            ::-webkit-scrollbar-button {
-                width: 0;
-                height: 0;
-            }
-
-            ::-webkit-scrollbar-track {
-                background: rgba(0,0,0,0);
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid rgb(20 48 196);
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid rgb(71 17 212);
-                transition: 1s;
-            }
-
-            .t-light ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid #1437f3;
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            .t-light ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid #1437f3;
-                transition: 1s;
-            }
-
-            .t-purple ::-webkit-scrollbar-thumb {
-                background: rgb(255 255 255);
-                border: 4px solid rgb(110, 59, 243);
-                border-radius: 10px;
-                transition: 1s;
-            }
-
-            .t-purple ::-webkit-scrollbar-thumb:hover {
-                border: 6px solid rgb(140 102 240);
-                transition: 1s;
-            }
 .pop-up {
   opacity: 0;
   position: fixed;
