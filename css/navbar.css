@@ -55,6 +55,7 @@ SOFTWARE.
 }
 .footer {
   display: block;
+  z-index: 10001;
 }
 .home-footer1 {
   fill: rgba(228, 228, 228, 0.75);
