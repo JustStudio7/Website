@@ -33,26 +33,28 @@ if (ERROR_NAME) {
 
 let err_res = false;
 
-if (ERROR_ID) {
-    if (ERROR_ID === 1) {
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-        if (darkThemeMq.matches) {
-            switchThemeToDark();
-        } else {
-            switchThemeToLight();
+setTimeout(() => {
+    if (ERROR_ID) {
+        if (ERROR_ID === 1) {
+            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemeMq.matches) {
+                switchThemeToDark();
+            } else {
+                switchThemeToLight();
+            }
+            err_res = true;
         }
-        err_res = true;
     }
-}
-if (err_res) {
-    setTimeout(() => {
-        const resolvingElement = document.getElementById("eS1");
-        resolvingElement.textContent = "Resolving...";
+    if (err_res) {
         setTimeout(() => {
-            resolvingElement.textContent = "Done!";
+            const resolvingElement = document.getElementById("eS1");
+            resolvingElement.textContent = "Resolving...";
             setTimeout(() => {
-                window.location.reload();
-            }, 10);
-        }, 2000);
-    }, 2300);
-}
+                resolvingElement.textContent = "Done!";
+                setTimeout(() => {
+                    window.location.reload();
+                }, 10);
+            }, 2000);
+        }, 2300);
+    }
+},5000);
