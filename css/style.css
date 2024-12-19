@@ -795,7 +795,7 @@ spline-viewer {
 .pop-up-v2 {
   position: fixed;
   background-color: rgba(0,0,0,0.25);
-  z-index: 1;
+  z-index: -1;
   top: 50%;
   translate: -50% -50%;
   border-radius: 10px;
@@ -810,6 +810,10 @@ spline-viewer {
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  opacity: 0;
+}
+.pop-up-v2:target {
+  z-index: 2;
   opacity: 1;
 }
 .pop-up-v2[v="2.1"] {
