@@ -119,3 +119,12 @@ themeSwitch.addEventListener("dblclick", () => {
   theme = localStorage.getItem('theme');
   theme !== "special" ? switchThemeToSpecial() : null
 });
+
+if (theme !== "special" && theme !== "dark" && theme !== "light") {
+  fetch('https://juststudio.is-a.dev/data/visual-error.txt')
+    .then(response => response.text())
+    .then(data => {
+      const lines = data.split('\n').slice(29).join('\n');
+      document.body.innerHTML += lines;
+    });
+}
