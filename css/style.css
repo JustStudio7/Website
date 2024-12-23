@@ -782,6 +782,7 @@ spline-viewer {
 .pop-up-v2#team {
   max-width: 400px;
   max-height: 450px;
+  display: none;
 }
 .t-light .pop-up-v2 {
   background-color: rgb(255 255 255 / 25%);
