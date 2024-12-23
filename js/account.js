@@ -33,5 +33,11 @@ window.addEventListener('load', async function () {
   Clerk.mountUserButton(userbuttonDiv);
   if (!Clerk.user) {
     document.getElementById('acc-btn').style.display = 'flex';
+  } else if (window.location.pathname == '/account/') {
+    document.getElementById('accounts').innerHTML = `
+      <div id="user-profile"></div>
+    `
+    const userprofileDiv = document.getElementById('user-profile')
+    Clerk.mountUserProfile(userprofileDiv)
   }
 })
