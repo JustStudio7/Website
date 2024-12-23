@@ -419,3 +419,36 @@ SOFTWARE.
 .t-light #acc-btn {
   fill: #1437f3;
 }
+.no-acc-btn {
+  #theme-switch {
+    margin-right: 0em;
+    right: 15px;
+  }
+  .header {
+    padding-right: 70px;
+  }
+  @media(max-width: 564px) {
+  .h-main {
+    display: flex;
+  }}
+  @media(max-width: 535px) {
+  .h-main {
+    display: none;
+  }}
+  @media(max-width: 599px) {
+  .h-main span {
+    font-size: 20px;
+  }}
+  @media(max-width: 570px) {
+  .h-main span {
+    font-size: 15px;
+  }}
+  @media(max-width: 300px) {
+  #theme-switch {
+    display: flex;
+  }}
+  @media(max-width: 266px) {
+  #theme-switch {
+    display: none;
+  }}
+}
