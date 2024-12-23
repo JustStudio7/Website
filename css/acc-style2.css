@@ -267,7 +267,7 @@ body {
     drop-shadow(0px 1px 0px white) 
     drop-shadow(0px -1px 0px white);
 }
-#user-profile {
+#user-profile, #sign-in {
   position: absolute;
   z-index: 2;
   width: 100%;
