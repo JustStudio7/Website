@@ -32,6 +32,6 @@ window.addEventListener('load', async function () {
   await Clerk.load()
   Clerk.mountUserButton(userbuttonDiv);
   if (!Clerk.user) {
-    document.getElementById('acc-btn').style.display = 'block';
+    document.getElementById('acc-btn').style.display = 'flex';
   }
 })
