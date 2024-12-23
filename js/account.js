@@ -39,5 +39,6 @@ window.addEventListener('load', async function () {
     `
     const userprofileDiv = document.getElementById('user-profile')
     Clerk.mountUserProfile(userprofileDiv)
+    document.body.classList.add('no-acc-btn')
   }
 })
