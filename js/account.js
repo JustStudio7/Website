@@ -33,6 +33,7 @@ window.addEventListener('load', async function () {
   Clerk.mountUserButton(userbuttonDiv);
   if (!Clerk.user) {
     document.getElementById('acc-btn').style.display = 'flex';
+    userbuttonDiv.style.display = 'none';
     if (window.location.pathname == '/account/') {
       document.getElementById('accounts').innerHTML = `
         <div id="sign-in"></div>
