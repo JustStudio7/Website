@@ -294,7 +294,7 @@ SOFTWARE.
     display: none;
   }
 }
-@media(max-width: 350px) {
+@media(max-width: 412px) {
   .h-games {
     display: none;
   }
@@ -334,7 +334,7 @@ SOFTWARE.
   transition: 300ms;
   font-size: 18px
 }
-@media(max-width: 535px) {
+@media(max-width: 564px) {
   .h-main {
     display: none;
   }
@@ -361,7 +361,7 @@ SOFTWARE.
     width: 150px;
   }
 }
-@media(max-width: 570px) {
+@media(max-width: 599px) {
   .h-main span {
     font-size: 15px;
   }
@@ -380,8 +380,8 @@ SOFTWARE.
     width: 120px;
   }
 }
-@media(max-width: 266px) {
-  #theme-switch {
+@media(max-width: 300px) {
+  #theme-switch, #user-button, #acc-btn {
     display: none;
   }
   .header {
