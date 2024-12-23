@@ -87,6 +87,7 @@ headerElement.parentElement.innerHTML += `
 `;
 let theme = localStorage.getItem('theme');
 const themeSwitch = document.getElementById('theme-switch');
+const acc_btn = document.getElementById('acc-btn');
 
 const switchThemeToLight = () => {
   document.body.classList.add('t-light');
@@ -117,6 +118,10 @@ themeSwitch.addEventListener("dblclick", () => {
   theme = localStorage.getItem('theme');
   theme !== "special" ? switchThemeToSpecial() : null
 });
+
+acc_btn.addEventListener("click", () => {
+  window.location.href = "https://juststudio.is-a.dev/account/";
+})
 
 if (!theme) {
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
