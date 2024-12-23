@@ -23,20 +23,14 @@
     </script>
     <div id="accounts"></div>
     <script type="module">
-      import { Clerk } from 'https://clerk.juststudio.is-a.dev/npm/@clerk/clerk-js'
-
-      const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
-
-      const clerk = new Clerk(clerkPubKey)
-      await clerk.load()
-
       document.getElementById('accounts').innerHTML = `
         <div id="user-button"></div>
       `
 
       const userbuttonDiv = document.getElementById('user-button')
 
-      clerk.mountUserButton(userbuttonDiv)
+      await Clerk.load()
+      Clerk.mountUserButton(userbuttonDiv)
     </script>
   </body>
 </html>
