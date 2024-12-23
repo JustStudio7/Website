@@ -31,7 +31,11 @@
         const userbuttonDiv = document.getElementById('user-button')
 
         await Clerk.load()
-        Clerk.mountUserButton(userbuttonDiv)
+        Clerk.mountUserButton(userbuttonDiv);
+
+        if (!Clerk.user) {
+          document.getElementById('acc-btn').style.display = 'block';
+        }
       })
     </script>
   </body>
