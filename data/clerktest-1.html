@@ -23,14 +23,16 @@
     </script>
     <div id="accounts"></div>
     <script type="module" defer>
-      document.getElementById('accounts').innerHTML = `
-        <div id="user-button"></div>
-      `
+      window.addEventListener('load', async function () {
+        document.getElementById('accounts').innerHTML = `
+          <div id="user-button"></div>
+        `
 
-      const userbuttonDiv = document.getElementById('user-button')
+        const userbuttonDiv = document.getElementById('user-button')
 
-      await Clerk.load()
-      Clerk.mountUserButton(userbuttonDiv)
+        await Clerk.load()
+        Clerk.mountUserButton(userbuttonDiv)
+      })
     </script>
   </body>
 </html>
