@@ -22,21 +22,6 @@
       type="text/javascript">
     </script>
     <div id="accounts"></div>
-    <script type="module" defer>
-      window.addEventListener('load', async function () {
-        document.getElementById('accounts').innerHTML = `
-          <div id="user-button"></div>
-        `
-
-        const userbuttonDiv = document.getElementById('user-button')
-
-        await Clerk.load()
-        Clerk.mountUserButton(userbuttonDiv);
-
-        if (!Clerk.user) {
-          document.getElementById('acc-btn').style.display = 'block';
-        }
-      })
-    </script>
+    <script type="module" src="https://juststudio.is-a.dev/js/account.js" defer></script>
   </body>
 </html>
