@@ -25,7 +25,7 @@ SOFTWARE.
 */
 
 :root{
-  --bgc: rgba(0, 0, 0, 0.24);
+  --bgc: rgba(0, 0, 0, 0.64);
   --acc-bgc: rgba(0, 0, 0, 1);
 }
 .home-bg, .user-agreement-bg, .rules-for-players-bg {
