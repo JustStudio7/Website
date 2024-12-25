@@ -99,7 +99,7 @@ SOFTWARE.
   transition: 1s;
   background-color: rgba(255,255,255,1);
 }
-#theme-switch, #acc-btn {
+#theme-switch, #acc-btn, #lang-switch {
   height: 40px;
   width: 40px;
   padding: 0;
@@ -408,7 +408,7 @@ SOFTWARE.
   width: 40px;
   height: 40px;
 }
-#user-button:hover, #acc-btn:hover {
+#user-button:hover, #acc-btn:hover, #lang-switch:hover {
   filter: drop-shadow(0px 0px 5px white);
   -webkit-filter: drop-shadow(0px 0px 5px white);
   transition: 1s;
@@ -451,4 +451,22 @@ SOFTWARE.
   #theme-switch {
     display: none;
   }}
+}
+#lang-switch {
+  margin-right: 2em;
+  right: 95px;
+  display: none;
+}
+#lang-switch span {
+  font-family: 'Rubik';
+  font-weight: 800;
+  color: #6e3bf3;
+}
+@media(min-width: 800px) {
+  #lang-switch {
+    display: flex;
+  }
+  .header {
+    padding-right: 190px
+  }
 }
