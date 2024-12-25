@@ -181,7 +181,6 @@ SOFTWARE.
   margin: auto;
   display: flex;
   position: relative;
-  transform: scale(66%);
   align-self: center;
   align-items: center;
   flex-direction: column;
