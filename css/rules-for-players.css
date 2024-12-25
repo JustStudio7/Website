@@ -891,3 +891,28 @@ SOFTWARE.
     padding: 10px;
   }
 }
+.rules-for-players-info1 * {
+  line-height: 0.8;
+}
+.rules-for-players-info1 span {
+  font-size: 16px;
+  top: -15px;
+  position: relative;
+}
+.rules-for-players-info1 span a span {
+  top: 0px;
+}
+.rules-for-players-info1 h1 {
+  font-size: 24px;
+  margin-top: 15px;
+}
+.rules-for-players-name4 {
+  scale: 150%;
+  translate: 0% 100%;
+}
+@media(max-height: 700px) {
+  .rules-for-players-main {
+    top: 75px;
+    transform: translate(-50%, 0%);
+  }
+}
