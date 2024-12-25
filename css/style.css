@@ -798,3 +798,12 @@ spline-viewer {
 .txt1, .txt2, .user-agreement-main, .rules-for-players-main {
   cursor: default;
 }
+img[src="img/wavebar.svg"] {
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+  transition: 700ms;
+}
+.t-light img[src="img/wavebar.svg"], .t-purple img[src="img/wavebar.svg"] {
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+}
