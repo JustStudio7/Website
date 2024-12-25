@@ -470,3 +470,6 @@ SOFTWARE.
     padding-right: 190px
   }
 }
+.t-light #lang-switch span {
+  color: #1437f3;
+}
