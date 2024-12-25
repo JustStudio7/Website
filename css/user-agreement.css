@@ -140,7 +140,6 @@ SOFTWARE.
   margin: auto;
   display: flex;
   position: relative;
-  transform: scale(66%);
   align-self: center;
   align-items: center;
   flex-direction: column;
@@ -839,4 +838,29 @@ SOFTWARE.
 }
 .stfl {
   text-decoration: underline;
+}
+.user-agreement-info1 * {
+  line-height: 0.8;
+}
+.user-agreement-info1 span {
+  font-size: 16px;
+  top: -15px;
+  position: relative;
+}
+.user-agreement-info1 span a span {
+  top: 0px;
+}
+.user-agreement-info1 h1 {
+  font-size: 24px;
+  margin-top: 15px;
+}
+.user-agreement-name2 {
+  scale: 150%;
+  translate: 0% 100%;
+}
+@media(max-height: 700px) {
+  .user-agreement-main {
+    top: 75px;
+    transform: translate(-50%, 0%);
+  }
 }
