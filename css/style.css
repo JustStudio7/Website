@@ -609,10 +609,14 @@ body {
   background: black;
 }
 spline-viewer {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  filter: blur(12px) brightness(45%);
+  -webkit-filter: blur(12px) brightness(45%);
   z-index: -1;
-  transition: 300ms;
+  transition: 700ms;
+}
+.t-purple spline-viewer {
+  filter: blur(8px) brightness(100%);
+  -webkit-filter: blur(8px) brightness(100%);
 }
 .t-light spline-viewer {
   filter: blur(8px) brightness(125%);
