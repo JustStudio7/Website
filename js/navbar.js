@@ -54,7 +54,7 @@ headerElement.innerHTML = `
     </div>
 </div>
 <div class="h-main">
-    <span class="txt11">JustStudio.</span>
+    <span class="txt1">JustStudio.</span>
     <a href="https://discord.gg/aHXxS6VvcC" target="_blank" rel="noreferrer noopener">
         <img src="https://juststudio.is-a.dev/img/discord.white.svg" alt="Discord Server">
     </a>
@@ -77,13 +77,13 @@ headerElement.innerHTML = `
         </svg>
     </div>
     <div id="lang-switch">
-        <span class="txt12">EN</span>
+        <span class="txt11">EN</span>
     </div>
 `;
 headerElement.parentElement.innerHTML += `
     <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank">
-              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt13">© 2024 JustStudio.</span>
+              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12">© 2024 JustStudio.</span>
         </a>
         <br>
     </span>
