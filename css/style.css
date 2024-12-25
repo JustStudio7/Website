@@ -791,3 +791,6 @@ spline-viewer {
 .t-purple .pop-up-v2 {
   background-color: rgb(164 108 240 / 33%);
 }
+.txt1, .txt2, .user-agreement-main, .rules-for-players-main {
+  cursor: default;
+}
