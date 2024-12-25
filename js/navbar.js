@@ -28,38 +28,38 @@ const headerElement = document.querySelector('.header');
 headerElement.innerHTML = `
 <div class="dropdown h-terms">
     <div class="trigger">
-        <span><em style="display:none;">📜</em>Terms</span>
+        <span class="txt3"><em style="display:none;" class="OUTDATED">📜</em>Terms</span>
         <ul class="buttons">
-            <li><a href="/terms">User Agreement</a></li>
-            <li><a href="/rules">Rules For Players</a></li>
+            <li><a href="/terms" class="txt4">User Agreement</a></li>
+            <li><a href="/rules" class="txt5">Rules For Players</a></li>
         </ul>
     </div>
 </div>
     
     <div class="dropdown h-products">
     <div class="trigger">
-        <span><em style="display:none;">🟣</em>Products</span>
+        <span class="txt6"><em style="display:none;" class="OUTDATED">🟣</em>Products</span>
         <ul class="buttons">
-            <li><a href="/account/">JustStudio.Accounts</a></li>
-            <li><a href="https://api.juststudio.is-a.dev/">API</a></li>
+            <li><a href="/account/" class="txt7">JustStudio.Accounts</a></li>
+            <li><a href="https://api.juststudio.is-a.dev/" class="txt8">API</a></li>
         </ul>
     </div>
 </div><div class="dropdown h-games">
     <div class="trigger">
-        <span><em style="display:none;">🎮</em>Games</span>
+        <span class="txt9"><em style="display:none;" class="OUTDATED">🎮</em>Games</span>
         <ul class="buttons">
-            <li><a style="color:rgba(0,0,0,0.5);">Coming soon...</a></li>
+            <li><a style="color:rgba(0,0,0,0.5);" class="txt10">Coming soon...</a></li>
             
         </ul>
     </div>
 </div>
 <div class="h-main">
-    <span>JustStudio.</span>
+    <span class="txt11">JustStudio.</span>
     <a href="https://discord.gg/aHXxS6VvcC" target="_blank" rel="noreferrer noopener">
-        <img src="https://juststudio.is-a.dev/img/discord.white.svg">
+        <img src="https://juststudio.is-a.dev/img/discord.white.svg" alt="Discord Server">
     </a>
     <a target="_blank" rel="noreferrer noopener" href="https://www.roblox.com/groups/11641563/JustStudio#!/about">
-        <img src="https://juststudio.is-a.dev/img/roblox.white.svg">
+        <img src="https://juststudio.is-a.dev/img/roblox.white.svg" alt="Roblox Community">
     </a>
     <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/#team" style="display:none">
         <span>team</span>
@@ -77,13 +77,13 @@ headerElement.innerHTML = `
         </svg>
     </div>
     <div id="lang-switch">
-        <span>EN</span>
+        <span class="txt12">EN</span>
     </div>
 `;
 headerElement.parentElement.innerHTML += `
     <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank">
-              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);">© 2024 JustStudio.</span>
+              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt13">© 2024 JustStudio.</span>
         </a>
         <br>
     </span>
@@ -149,4 +149,9 @@ if (!theme) {
             eval(data);
         });
     }
+}
+
+const outdatedElements = document.getElementsByClassName("OUTDATED");
+while (outdatedElements.length > 0) {
+    outdatedElements[0].parentNode.removeChild(outdatedElements[0]);
 }
