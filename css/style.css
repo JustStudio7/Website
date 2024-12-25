@@ -25,6 +25,7 @@ SOFTWARE.
 */
 
 @import url("https://juststudio.is-a.dev/css/scrollbar.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
   --dl-size-size-large: 144px;
