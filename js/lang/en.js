@@ -49,7 +49,7 @@ const Translations = {
         "21": "Reason",
         "22": "We can ban you on our games and services and assets if you violate the Rules for Players or the User Agreement. You can also get banned if: you are a friend/ally/partner/etc. of the one who got banned; or if you did an attack/raid on \"JustStudio.\" or were a participant of the attack/raid; or if you are trying to find loopholes in the rules or agreements or terms.",
         "23": "Details",
-        "24": "If you are banned for actions in our game, then you will get temporary ban (depending on actions) in the game or a ban forever on services and assets created by \"JustStudio.\"; Or if you are banned for actions in any of our services/assets but not in our game, then you will get banned forever absolutely on all games/services/assets created by \JustStudio.\"",
+        "24": "If you are banned for actions in our game, then you will get temporary ban (depending on actions) in the game or a ban forever on services and assets created by \"JustStudio.\"; Or if you are banned for actions in any of our services/assets but not in our game, then you will get banned forever absolutely on all games/services/assets created by \"JustStudio.\"",
         "25": "Appeals",
         "26": "If you think that you were banned by mistake, you can appeal on our <a href=\"https://discord.gg/aHXxS6VvcC\" target=\"_blank\"><span style=\"text-decoration: underline;\">Discord server</span></a>.",
         "27": "Information",
