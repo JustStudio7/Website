@@ -141,6 +141,7 @@ SOFTWARE.
   min-width: 0px;
   width: 125px;
   transition: 350ms min-width 700ms;
+  position: relative;
 }
 .dropdown .trigger {
   position: relative;
@@ -166,6 +167,17 @@ SOFTWARE.
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
+}
+.dropdown:before {
+  content: '';
+  background-color: white;
+  position: absolute;
+  height: 72%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border-radius: 15px;
 }
 .dropdown .trigger span em {
   font-style: normal;
@@ -472,4 +484,8 @@ SOFTWARE.
 }
 .t-light #lang-switch span {
   color: #1437f3;
+}
+.t-purple .dropdown:before {
+  background-color: #6e3bf3;
+  height: 76%;
 }
