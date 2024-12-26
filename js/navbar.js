@@ -158,3 +158,140 @@ const outdatedElements = document.getElementsByClassName("OUTDATED");
 while (outdatedElements.length > 0) {
     outdatedElements[0].parentNode.removeChild(outdatedElements[0]);
 }
+
+sessionStorage.setItem('MLSsys', 'false');
+function initializeMultiLanguageSupportSystem() {
+    if (sessionStorage.getItem('MLSsys') === 'false') {
+        "use strict";
+        sessionStorage.setItem('MLSsys', 'true');
+        
+        let lang = globalThis.localStorage.getItem('language');
+        const langSwitch = document.getElementById('lang-switch');
+        let cooldown = false;
+        
+        function fetchTranslations(newLang) {
+            const url = newLang === 'RU' ? 'https://juststudio.is-a.dev/js/lang/ru.js' : 'https://juststudio.is-a.dev/js/lang/en.js';
+            return fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                const cleanedData = data.split('\n').slice(27).join('\n');
+                const jsonString = cleanedData.replace(/\\+/g, '\\').trim();
+                return JSON.parse('{\n'+jsonString);
+            });
+        }
+        
+        function updateLanguage(newLang, doTranaitions) {
+            fetchTranslations(newLang).then(Translations => {
+                const count = Object.keys(Translations["EN"] || Translations["RU"]).length;
+                const elementsToFade = [];
+                
+                for (let i = 1; i <= count; i++) {
+                    const elements = document.getElementsByClassName(`txt${i}`);
+                    for (let element of elements) {
+                        const uniqueID = `txtElementDATA_${i}`;
+                        const originalID = element.id;
+                        const originalOpacity = element.style.opacity || '';
+                        const originalTransition = element.style.transition || '';
+        
+                        sessionStorage.setItem(uniqueID, JSON.stringify({ originalID, originalOpacity, originalTransition }));
+                        element.id = uniqueID;
+                        elementsToFade.push({ element, newLang, i, originalOpacity, originalTransition });
+                    }
+                }
+        
+                fadeOut(elementsToFade, newLang, Translations, doTranaitions);
+            });
+        }
+        
+        function fadeOut(elements, newLang, Translations, doTranaitions) {
+            if (doTranaitions) {
+                let fadeCount = 0;
+                elements.forEach(({ element, newLang, i, originalOpacity, originalTransition }) => {
+                    element.style.transition = '300ms';
+                    if (element.innerHTML !== Translations[newLang][i]) {
+                        element.style.opacity = 0;
+                    }
+            
+                    fadeCount++;
+                    if (fadeCount === elements.length) {
+                        setTimeout(() => {
+                            changeInnerHTML(elements, newLang, Translations);
+                        }, 300+50);
+                    }
+                });
+            } else {
+                changeInnerHTML(elements, newLang, Translations);
+            }
+        }
+        
+        function changeInnerHTML(elements, newLang, Translations) {
+            elements.forEach(({ element, newLang, i }) => {
+                if (newLang === "RU" && !Translations["RU"][i]) {
+                    return;
+                }
+                element.innerHTML = Translations[newLang][i];
+            });
+        
+            fadeIn(elements);
+        }
+        
+        function fadeIn(elements) {
+            elements.forEach(({ element }) => {
+                const data = JSON.parse(sessionStorage.getItem(element.id));
+                element.style.transition = '300ms';
+                setTimeout(() => {
+                    element.style.opacity = data.originalOpacity;
+                    setTimeout(() => {
+                        element.removeAttribute('id');
+                        element.style.transition = data.originalTransition;
+                        sessionStorage.setItem(`txtElementDATA`, element.id);
+                        element.id = data.originalID;
+                        sessionStorage.removeItem(`txtElementDATA_${sessionStorage.getItem(`txtElementDATA`)}`);
+                        sessionStorage.removeItem(`txtElementDATA`);
+                    }, 300);
+                }, 50);
+            });
+        }
+        
+        function initializeLanguage() {
+            if (!lang) {
+                const userLang = navigator.language || navigator.userLanguage;
+                lang = userLang.startsWith('ru') ? 'RU' : 'EN';
+                globalThis.localStorage.setItem('language', lang);
+            } else {
+                if (lang !== 'EN' && lang !== 'RU') {
+                    (function() {
+                      let ERROR_NAME = 'Unknown language';
+                      let ERROR_ID = 2;
+                      fetch('https://juststudio.is-a.dev/data/visual-error.txt')
+                        .then(response => response.text())
+                        .then(data => {
+                          const lines = data.split('\n').slice(29).join('\n');
+                          document.body.innerHTML += lines;
+                        });
+                      fetch('https://juststudio.is-a.dev/js/error-handler.js')
+                        .then(response => response.text())
+                        .then(data => {
+                            eval(data);
+                        });
+                    })();
+                }
+            }
+            updateLanguage(lang, false);
+        }
+        
+        langSwitch.addEventListener('click', () => {
+            if (cooldown) return;
+            cooldown = true;
+            lang = lang === 'EN' ? 'RU' : 'EN';
+            globalThis.localStorage.setItem('language', lang);
+            updateLanguage(lang, true);
+            setTimeout(() => cooldown = false, 1000);
+        });
+        
+        initializeLanguage();
+    } else {
+        console.warn('MultiLanguageSupportSystem has already been initialized!');
+    }
+}
+initializeMultiLanguageSupportSystem();
