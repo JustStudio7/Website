@@ -43,6 +43,9 @@ setTimeout(() => {
                 switchThemeToLight();
             }
             err_res = true;
+        } else if (ERROR_ID === 2) {
+            localStorage.removeItem('language');
+            err_res = true;
         }
     }
     if (err_res) {
