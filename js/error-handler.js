@@ -36,15 +36,22 @@ let err_res = false;
 setTimeout(() => {
     if (ERROR_ID) {
         if (ERROR_ID === 1) {
-            const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-            if (darkThemeMq.matches) {
-                switchThemeToDark();
-            } else {
-                switchThemeToLight();
+            try {
+                const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+                if (darkThemeMq.matches) {
+                    switchThemeToDark();
+                } else {
+                    switchThemeToLight();
+                }
+            } catch {
+                localStorage.removeItem('theme');
             }
             err_res = true;
         } else if (ERROR_ID === 2) {
             localStorage.removeItem('language');
+            err_res = true;
+        } else if (ERROR_ID === 3) {
+            localStorage.removeItem('header');
             err_res = true;
         }
     }
