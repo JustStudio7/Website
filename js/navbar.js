@@ -298,3 +298,43 @@ function initializeMultiLanguageSupportSystem() {
     }
 }
 initializeMultiLanguageSupportSystem();
+
+let headerState = localStorage.getItem('header');
+const headerSwitch = document.getElementById('header-switch');
+
+const switchHeaderStateToAlternative = () => {
+  document.body.classList.add('h-alternative');
+  localStorage.setItem('header', 'alternative');
+}
+
+const switchHeaderStateToDefault = () => {
+  document.body.classList.remove('h-alternative');
+  localStorage.setItem('header', 'default');
+}
+
+if(headerState === "alternative") switchHeaderStateToAlternative()
+
+headerSwitch.addEventListener("click", () => {
+  headerState = localStorage.getItem('header');
+  headerState !== "alternative" ? switchHeaderStateToAlternative() : switchHeaderStateToDefault()
+})
+
+if (!headerState) {
+    switchHeaderStateToDefault()
+} else {
+    if (headerState !== "alternative" && headerState !== "default") {
+      let ERROR_NAME = 'Unknown header state';
+      let ERROR_ID = 3;
+      fetch('https://juststudio.is-a.dev/data/visual-error.txt')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n').slice(29).join('\n');
+          document.body.innerHTML += lines;
+        });
+      fetch('https://juststudio.is-a.dev/js/error-handler.js')
+        .then(response => response.text())
+        .then(data => {
+            eval(data);
+        });
+    }
+}
