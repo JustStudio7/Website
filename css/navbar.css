@@ -43,7 +43,7 @@ SOFTWARE.
   flex-direction: row-reverse;
   -webkit-flex-direction: row-reverse;
   gap: 1em;
-  transition: 300ms;
+  transition: 700ms;
   border-color: #fff;
   border-width: 0px;
 }
@@ -488,4 +488,34 @@ SOFTWARE.
 .t-purple .dropdown:before {
   background-color: #6e3bf3;
   height: 76%;
+}
+.h-alternative .header {
+  border-width: 3px;
+  border-radius: 20px;
+  width: 96%;
+  left: 2%;
+  top: 15px;
+  padding-top: 12px;
+  filter: drop-shadow(0px 0px 16px rgba(0,0,0,0.2));
+  -webkit-filter: drop-shadow(0px 0px 16px rgba(0,0,0,0.2));
+}
+.h-alternative .h-logo {
+  left: 2%;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.h-alternative #user-button {
+  margin-top: 15px;
+  margin-right: 15px;
+  right: 2%;
+}
+.h-alternative #theme-switch, #acc-btn, #lang-switch {
+  top: 12px;
+}
+.h-alternative .header:hover {
+  filter: drop-shadow(0px 0px 16px rgba(255,255,255,0.2));
+  -webkit-filter: drop-shadow(0px 0px 16px rgba(255,255,255,255, 0.2));
+}
+.h-alternative #header-switch img {
+  rotate: 180deg;
 }
