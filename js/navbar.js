@@ -133,11 +133,15 @@ acc_btn.addEventListener("click", () => {
 })
 
 if (!theme) {
-    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-    if (darkThemeMq.matches) {
+    try {
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) {
+            switchThemeToDark();
+        } else {
+            switchThemeToLight();
+        }
+    } catch {
         switchThemeToDark();
-    } else {
-        switchThemeToLight();
     }
 } else {
     if (theme !== "special" && theme !== "dark" && theme !== "light") {
