@@ -46,3 +46,19 @@ function checkFPS() {
 }
 
 requestAnimationFrame(checkFPS);
+
+this.addEventListener("activate", (event) => {
+  const del = ["https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode"];
+
+  event.waitUntil(
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          if (del.includes(key)) {
+            return caches.delete(key);
+          }
+        }),
+      ),
+    ),
+  );
+});
