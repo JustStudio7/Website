@@ -1,4 +1,4 @@
-Under MIT License - <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">© 2024 JustStudio.</a>
+Under the MIT License - <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">© 2024 JustStudio.</a>
 
 -------------
 
@@ -23,7 +23,6 @@ Under MIT License - <a href="https://github.com/JustStudio7/Website/blob/main/LI
 ---------
 
 Icons by <a href="https://icons8.com">Icons8</a>,
-Reaver logo by <a href="https://reaverentertainment.dcms.site/">Reaver.Entertainment</a>,
 Wave image on website background by <a href="https://rpcs3.net/">RPCS3</a>.
 
 
