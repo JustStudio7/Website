@@ -64,6 +64,9 @@ headerElement.innerHTML = `
     <a target="_blank" rel="noreferrer noopener" href="https://github.com/JustStudio7">
         <img src="https://juststudio.is-a.dev/img/github.white.svg" alt="GitHub Profile">
     </a>
+    <a target="_blank" rel="noreferrer noopener" id="header-switch">
+        <img src="https://juststudio.is-a.dev/img/arrow.svg" style="margin-left: 5px; height: 24px; width: 24px;">
+    </a>
     <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/#team" style="display:none">
         <span>team</span>
     </a>
