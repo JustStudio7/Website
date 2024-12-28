@@ -279,3 +279,40 @@ body {
   padding-top: 70px;
   padding-bottom: 20px;
 }
+#sign-in{.cl-cardBox{.cl-footer{:last-child:not([href="https://accounts.juststudio.is-a.dev/sign-up"]) {
+  display: none;
+}}}}
+#user-profile{.cl-cardBox{.cl-navbar{ > :last-child {
+  display: none;
+}}}}
+@media (max-height: 814px) {
+  #user-profile, #sign-in {
+    height: 100%;
+    padding-top: 75px;
+    padding-bottom: 30px;
+  }
+  #user-profile{.cl-cardBox { 
+    height: 100%;
+  }}
+  #sign-in{.cl-cardBox {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    .cl-footer {
+      background: white;
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      border-radius: 15px;
+      :last-child:not([href="https://accounts.juststudio.is-a.dev/sign-up"]) {
+        display: none;
+      }
+      margin: 0; padding: 0;
+    }
+  }}
+}
