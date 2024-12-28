@@ -436,8 +436,12 @@ SOFTWARE.
     margin-right: 0em;
     right: 15px;
   }
+  #lang-switch {
+    margin-right: 1em;
+    right: 55px;
+  }
   .header {
-    padding-right: 70px;
+    padding-right: 130px;
   }
   @media(max-width: 564px) {
   .h-main {
@@ -462,6 +466,10 @@ SOFTWARE.
   @media(max-width: 266px) {
   #theme-switch {
     display: none;
+  }}
+  @media(max-width: 800px) {
+    .header {
+      padding-right: 70px;
   }}
 }
 #lang-switch {
