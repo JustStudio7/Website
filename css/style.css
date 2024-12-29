@@ -953,3 +953,6 @@ img[src="img/wavebar.svg"] {
   filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
   -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
 }
+#content {
+  transition: 700ms;
+}
