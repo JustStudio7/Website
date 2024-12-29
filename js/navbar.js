@@ -440,6 +440,7 @@ window.addEventListener('online', function() {
     r_notific(n_connection, true);
 });
 
+console.clear();
 let initialWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     if (window.innerWidth < initialWidth) {
