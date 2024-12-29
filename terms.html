@@ -529,8 +529,12 @@ SOFTWARE.
         window.onload = function() {
             if (window.location.href.includes('navbar=false')) {
                 var headerElement = document.querySelector('.header');
+		var notificsElementt = document.getElementById('notifications');
                 if (headerElement) {
                     headerElement.remove();
+                }
+		if (notificsElementt) {
+                    notificsElementt.remove();
                 }
             }
         };
