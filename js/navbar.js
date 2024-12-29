@@ -420,6 +420,7 @@ function r_notific(notificElement, blur) {
     }, 701)
 }
 function checkUserAgreement() {
+    terms_accepted = localStorage.getItem('d1');
     if (!terms_accepted) {
         "use strict";
         const n_te_b_id = 'n_ta'
