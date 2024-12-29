@@ -288,6 +288,12 @@ function initializeMultiLanguageSupportSystem() {
         }
         
         langSwitch.addEventListener('click', () => {
+            if (cooldown) {
+                langSwitch.classList.add('s-shake');
+                setTimeout(() => {
+                    langSwitch.classList.remove('s-shake');
+                }, 501);
+            }
             if (cooldown) return;
             cooldown = true;
             lang = lang === 'EN' ? 'RU' : 'EN';
