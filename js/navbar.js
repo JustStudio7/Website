@@ -48,7 +48,7 @@ headerElement.innerHTML = `
     <div class="trigger">
         <span class="txt9"><em style="display:none;" class="OUTDATED">🎮</em>Games</span>
         <ul class="buttons">
-            <li><a style="color:rgba(0,0,0,0.5);" class="txt10">Coming soon...</a></li>
+            <li><a style="color:rgba(0,0,0,0.5);" class="txt10" href="#">Coming soon...</a></li>
             
         </ul>
     </div>
@@ -65,7 +65,7 @@ headerElement.innerHTML = `
         <img src="https://juststudio.is-a.dev/img/github.white.svg" alt="GitHub Profile">
     </a>
     <a target="_blank" rel="noreferrer noopener" id="header-switch">
-        <img src="https://juststudio.is-a.dev/img/arrow.svg" style="margin-left: 5px; height: 24px; width: 24px;">
+        <img src="https://juststudio.is-a.dev/img/arrow.svg" alt="Header Style Switch" style="margin-left: 5px; height: 24px; width: 24px;">
     </a>
     <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/#team" style="display:none">
         <span>team</span>
@@ -466,6 +466,7 @@ window.addEventListener('online', function() {
 setInterval(() => {console.clear()},5000)
 let initialWidth = window.innerWidth;
 window.addEventListener('resize', () => {
+    updateWavebars();
     if (window.innerWidth < initialWidth) {
         const loopCode = () => {
             for (let i = 0; i < 5; i++) {
@@ -495,3 +496,13 @@ window.addEventListener('resize', () => {
         }, 100);
     }
 });
+
+function updateWavebars() {
+    document.querySelectorAll('.wavebar-svg-object').forEach(wavebarObj => {
+        wavebarObj.removeAttribute('width');
+        wavebarObj.removeAttribute('height');
+        wavebarObj.setAttribute('width', wavebarObj.offsetWidth);
+        wavebarObj.setAttribute('height', wavebarObj.offsetHeight);
+    });
+}
+updateWavebars();
