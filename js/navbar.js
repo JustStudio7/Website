@@ -343,6 +343,28 @@ if (!headerState) {
     }
 }
 
+let connectionSVGCached = true
+try {
+    fetch('https://juststudio.is-a.dev/img/connection.svg')
+        .then(response => {
+            if (response.ok && response.headers.get('Content-Type') === 'image/svg+xml') {
+                return response.blob();
+            } else {
+                throw new Error('Not a valid SVG image or response error');
+            }
+        })
+        .then(blob => {
+            caches.open('svg-cache').then(cache => {
+                cache.put(new Request(url), new Response(blob));
+            });
+        })
+        .catch(error => {
+            connectionSVGCached = false;
+        });
+} catch {
+    connectionSVGCached = false;
+}
+
 let terms_accepted = localStorage.getItem('d1');
 function notify(icon, text, buttonText, id, blur, type) {
     "use strict";
@@ -359,9 +381,17 @@ function notify(icon, text, buttonText, id, blur, type) {
         })
     } else {
         if (buttonText) {
-            notificsElement.innerHTML = `<span class="notification"><img href="${icon}"></img>${text}<button id="${id}">${buttonText}</button></span>`;
-        } else {
-            notificsElement.innerHTML = `<span class="notification"><img href="${icon}"></img>${text}</span>`;
+            if (icon) {
+                notificsElement.innerHTML = `<span class="notification"><img href="${icon}"></img>${text}<button id="${id}">${buttonText}</button></span>`;
+            } else {
+                notificsElement.innerHTML = `<span class="notification">${text}<button id="${id}">${buttonText}</button></span>`;
+            }
+        } else { 
+            if (icon) {
+                notificsElement.innerHTML = `<span class="notification"><img href="${icon}"></img>${text}</span>`;
+            } else {
+                notificsElement.innerHTML = `<span class="notification">${text}</span>`;
+            }
         }
     }
     notificElement = notificsElement.querySelector('.notification');
@@ -422,7 +452,11 @@ function checkUserAgreement() {
 }
 checkUserAgreement()
 window.addEventListener('offline', function() {
-    let n_connection = notify('img/connection.svg', 'No Internet connection!', null, null, true);
+    if (connectionSVGCached) {
+        let n_connection = notify('img/connection.svg', 'No Internet connection!', null, null, true);
+    } else {
+        let n_connection = notify(null, 'No Internet connection!', null, null, true);
+    }
 });
 window.addEventListener('online', function() {
     r_notific(n_connection, true);
