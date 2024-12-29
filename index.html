@@ -38,16 +38,29 @@ SOFTWARE.
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script type="application/ld+json">
+	    {
+	      "@context": "https://schema.org",
+	      "@type": "Organization",
+	      "image": "https://juststudio.is-a.dev/img/logo-200h.png",
+	      "url": "https://juststudio.is-a.dev/",
+	      "sameAs": ["https://www.roblox.com/communities/11641563/JustStudio", "https://github.com/JustStudio7"],
+	      "logo": "https://juststudio.is-a.dev/img/logo-200h.png",
+	      "name": "JustStudio.",
+	      "description": "a System Development Studio",
+	      "email": "support@juststudio.is-a.dev"
+	    }
+    </script>
     <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
-    let url = window.location.href;
-    if (url.match("index.html")) {
-        window.location.href = url.replace("index.html", "");
-    } else if (url.match(".html")) {
-        window.location.href = url.replace(".html", "");
-    } else if (url.match(/\.\w+$/)) {
-        window.location.href = "/";
-    }
-  </script>
+	    let url = window.location.href;
+	    if (url.match("index.html")) {
+	        window.location.href = url.replace("index.html", "");
+	    } else if (url.match(".html")) {
+	        window.location.href = url.replace(".html", "");
+	    } else if (url.match(/\.\w+$/)) {
+	        window.location.href = "/";
+	    }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH7JXLSWPX"></script>
     <script>
@@ -181,38 +194,6 @@ SOFTWARE.
       rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
-
-    <script type="text/javascript">
-      const JSLstyles = [
-       'color: white',
-       'background: blue',
-       'font-size: 30px',
-        'border: 1px solid white',
-        'text-shadow: 2px 2px black',
-        'padding: 10px',
-      ].join(';');
-      const WARNstyles = [
-       'color: black',
-       'background: yellow',
-       'font-size: 60px',
-        'border: 1px solid red',
-        'text-shadow: 0px 0px black',
-        'padding: 5px',
-      ].join(';');
-       setTimeout(() => {
-           console.clear();
-
-           console.info("Powered by JustStudio.");
-      console.info("https://juststudio.is-a.dev");
-
-         console.log('%cJustStudio.', JSLstyles);
-          console.log('');
-
-       console.log('%cSTOP!', WARNstyles);
-       console.log('WARNING! We strongly do NOT recommended doing anything in the developer tools menu!');
-       console.log('If someone told you to paste or copy or change something, they are most likely truing to hack you/your account!');
-      }, 7500);
-    </script>
     <script type="text/javascript">
       let title = document.title
       window.addEventListener('blur', () => {
@@ -393,168 +374,13 @@ SOFTWARE.
             <div class="home-hitbox1"></div>
           </div>
         </div>
-        <div class="home-footer OUTDATED">
-          <div class="home-row-1">
-            <a href="/" class="home-navlink">
-              <div class="home-info1">
-                <img alt="image" src="img/logo-200h.png" class="home-logo" />
-                <h1 class="home-text text-shadow">
-                  <span>JustStudio.</span>
-                  <br />
-                </h1>
-              </div>
-            </a>
-            <span class="home-copyright">© JustStudio. 2024</span>
-          </div>
-          <div class="home-row-2">
-            <h1 class="home-heading text-shadow">
-              <span>Terms</span>
-              <br />
-              <br />
-            </h1>
-            <a href="terms" class="home-link-1">
-              <span>User Agreement</span>
-              <br />
-            </a>
-            <a href="rules" class="home-link-2">
-              <span>Rules For Players</span>
-              <br />
-            </a>
-          </div>
-          <div class="home-row-3">
-            <h1 class="home-heading1 text-shadow">
-              <span>Games</span>
-              <br />
-              <br />
-            </h1>
-            <span class="home-link-11">
-              <span>Coming soon.</span>
-              <br class="home-text14" />
-            </span>
-            <span class="home-link-21">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-row-4">
-            <h1 class="home-heading2 text-shadow">
-              <span>Products</span>
-              <br />
-            </h1>
-            <span class="home-link-12">
-              <span>Coming soon.</span>
-              <br class="home-text20" />
-            </span>
-            <span class="home-link-22">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-hitbox2">
-            <img
-              alt="image"
-              src="img/reaver.entertainment-300h.png"
-              class="home-arrow"
-            />
-            <div class="home-hitbox-2"></div>
-          </div>
-        </div>
-        <div class="home-header OUTDATED">
-          <a href="/" class="home-navlink1">
-            <div class="home-row-11">
-              <div class="home-info2">
-                <img
-                  alt="image"
-                  src="img/logo-200h.png"
-                  class="home-logo1"
-                />
-                <h1 class="home-text23 text-shadow">
-                  <span>DevTeam</span>
-                  <br />
-                </h1>
-              </div>
-            </div>
-          </a>
-          <div class="home-row-21">
-            <h1 class="home-heading3 text-shadow">
-              <span>JustDeveloper</span>
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/1296091692/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-13"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <a
-              href="https://justdeveloper.is-a.dev/"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-23"
-            >
-              <span>Website</span>
-              <br />
-            </a>
-          </div>
-          <div class="home-row-31">
-            <h1 class="home-heading4 text-shadow">
-              <span>yruowr</span>
-              <br />
-              <br />
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/1473133132/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-14"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <span class="home-link-24">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-row-41">
-            <h1 class="home-heading5 text-shadow">
-              <span>GarikHappy</span>
-              <br />
-            </h1>
-            <a
-              href="https://www.roblox.com/users/2214857326/profile"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link-15"
-            >
-              <span>Roblox Profile</span>
-              <br />
-            </a>
-            <span class="home-link-25">
-              <span>Coming Soon...</span>
-              <br />
-            </span>
-          </div>
-          <div class="home-hitbox3">
-            <img
-              alt="image"
-              src="img/reaver.entertainment-300h.png"
-              class="home-arrow1"
-            />
-            <div class="home-hitbox-21"></div>
-          </div>
-        </div>
 	<link href="https://juststudio.is-a.dev/css/navbar.css" rel="stylesheet" />
         <a
           href="https://juststudio.is-a.dev/"
           rel="noreferrer noopener"
           class="h-logo-link"
         >
-          <img src="https://juststudio.is-a.dev/img/logo-200h.png" alt="image" class="h-logo" />
+          <img src="https://juststudio.is-a.dev/img/logo-200h.png" alt="Logo" class="h-logo" />
         </a>
 	<div class="header"></div>
       </div>
