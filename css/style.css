@@ -958,3 +958,8 @@ img[src="img/wavebar.svg"] {
 #content {
   transition: 700ms;
 }
+@media(max-width: 424px) {
+  .notification img, .notification svg {
+    display: none;
+  }
+}
