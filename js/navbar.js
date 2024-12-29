@@ -438,3 +438,33 @@ window.addEventListener('offline', function() {
 window.addEventListener('online', function() {
     r_notific(n_connection, true);
 });
+
+let initialWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+    if (window.innerWidth < initialWidth) {
+        const loopCode = () => {
+            for (let i = 0; i < 5; i++) {
+                console.log('%cSTOP!', `font-size:250px; background-color: white; color: red; border: 5px solid red; border-radius: 50px; padding: 5px;`);
+                console.log('%cDo not copy/paste anything here, you could give attackers access to your JustStudio.Account!', `color: red; font-weight: 700; background-color: white; font-size: 20px; border: 5px solid white; border-radius: 50px; padding: 5px;`);
+                console.log('%cIf you do not understand exactly what you are doing, close this window and stay safe.', `color: white; font-weight: 700; background-color: black; font-size: 20px; border: 5px solid black; border-radius: 50px; padding: 5px;`);
+            }
+        };
+
+        const eventHandler = () => {
+            loopCode();
+        };
+
+        window.addEventListener('mousemove', eventHandler);
+        window.addEventListener('keydown', eventHandler);
+        window.addEventListener('focus', eventHandler);
+
+        const checkWidth = setInterval(() => {
+            if (window.innerWidth >= initialWidth) {
+                clearInterval(checkWidth);
+                window.removeEventListener('mousemove', eventHandler);
+                window.removeEventListener('keydown', eventHandler);
+                window.removeEventListener('focus', eventHandler);
+            }
+        }, 100);
+    }
+});
