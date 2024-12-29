@@ -472,6 +472,7 @@ window.addEventListener('resize', () => {
         window.addEventListener('mousemove', eventHandler);
         window.addEventListener('keydown', eventHandler);
         window.addEventListener('focus', eventHandler);
+        window.addEventListener('blur', eventHandler);
 
         const checkWidth = setInterval(() => {
             if (window.innerWidth >= initialWidth) {
@@ -479,6 +480,7 @@ window.addEventListener('resize', () => {
                 window.removeEventListener('mousemove', eventHandler);
                 window.removeEventListener('keydown', eventHandler);
                 window.removeEventListener('focus', eventHandler);
+                window.removeEventListener('blur', eventHandler);
             }
         }, 100);
     }
