@@ -906,7 +906,7 @@ img[src="img/wavebar.svg"] {
   z-index: -2;
   border-radius: 20px;
 }
-.notification:hover, #n-hover {
+.notification:hover, .n-hover {
   filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
   -webkit-filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
   button {
@@ -916,12 +916,12 @@ img[src="img/wavebar.svg"] {
     box-shadow: 0px 0px 5px white;
   }
 }
-.notification:hover:before, #n-hover:before {
+.notification:hover:before, .n-hover:before {
   scale: 1;
   filter: blur(1.5rem);
   transition: 1.5s;
 }
-.notification:hover:after, #n-hover:after {
+.notification:hover:after, .n-hover:after {
   width: 99.7%;
   height: 95%;
   right: 0%;
