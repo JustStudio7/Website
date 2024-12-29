@@ -337,7 +337,11 @@ headerSwitch.addEventListener("click", () => {
 })
 
 if (!headerState) {
-    switchHeaderStateToDefault()
+    if (window.innerWidth > 1000) {
+        switchHeaderStateToAlternative()
+    } else {
+        switchHeaderStateToDefault()
+    }
 } else {
     if (headerState !== "alternative" && headerState !== "default") {
       let ERROR_NAME = 'Unknown header state';
