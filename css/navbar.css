@@ -530,3 +530,6 @@ SOFTWARE.
   }
 }
 @media (max-width: 1000px) { #header-switch { display: none; } }
+#header-switch {
+  cursor: pointer;
+}
