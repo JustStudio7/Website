@@ -344,12 +344,12 @@ if (!headerState) {
 }
 
 let terms_accepted = localStorage.getItem('d1');
-function notify(icon, text, buttonText, id, type) {
+function notify(icon, text, buttonText, id, blur, type) {
     "use strict";
     let notificsElement = globalThis.document.getElementById('notifications');
     let notificElement;
     if (!notificsElement) {
-        globalThis.document.body.appendChild(globalThis.document.createElement('div')).id = 'notifications';
+        globalThis.document.body.insertBefore(globalThis.document.createElement('div'), globalThis.document.getElementById('content')).id = 'notifications';
         notificsElement = globalThis.document.getElementById('notifications');
     }
     if (type && type == 'terms') {
@@ -371,21 +371,55 @@ function notify(icon, text, buttonText, id, type) {
             notificElement.classList.remove('n-hover');
         }, 1500);
     }, 1000)
+    if (blur) {
+        const elementsToBlur = ['content', 'accounts', ':r3:', 'clerk-components'];
+        elementsToBlur.forEach(id => {
+            const element = globalThis.document.getElementById(id);
+            if (element) {
+                element.style.filter = 'blur(8px)';
+                element.style['-webkit-filter'] = 'blur(8px)';
+                element.style['pointer-events'] = 'none';
+            }
+        });
+        globalThis.document.getElementById('content').style.scale = '110%';
+    }
     return notificElement;
 }
-function r_notific(notificElement) {
+function r_notific(notificElement, blur) {
+    if (blur) {
+        const elementsToBlur = ['content', 'accounts', ':r3:', 'clerk-components'];
+        elementsToBlur.forEach(id => {
+            const element = globalThis.document.getElementById(id);
+            if (element) {
+                element.style.filter = '';
+                element.style['-webkit-filter'] = '';
+                element.style['pointer-events'] = '';
+            }
+        });
+        globalThis.document.getElementById('content').style.scale = '';
+    }
     notificElement.style.opacity = '0';
     notificElement.style.translate = '-50% 30%';
     setTimeout(() => {
-        notificElement.parentNode.removeChild(notificElement);
+        try {
+            notificElement.parentNode.removeChild(notificElement);
+        } catch {
+            notificElement.remove();
+        }
     }, 701)
 }
 if (!terms_accepted) {
     "use strict";
     const n_te_b_id = 'n_ta'
-    let n_te = globalThis.notify(null,null,null,n_te_b_id,'terms');
+    let n_te = globalThis.notify(null,null,null,n_te_b_id,false,'terms');
     globalThis.document.getElementById(n_te_b_id).addEventListener("click", () => {
-        globalThis.r_notific(n_te);
+        globalThis.r_notific(n_te,false);
         globalThis.localStorage.setItem('d1', 'y');
     });
 }
+window.addEventListener('offline', function() {
+    let n_connection = notify('img/connection.svg', 'No Internet connection!', null, null, true);
+});
+window.addEventListener('online', function() {
+    r_notific(n_connection, true);
+});
