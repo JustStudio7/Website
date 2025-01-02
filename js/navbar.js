@@ -2,7 +2,7 @@
 
 MIT License
 
-Copyright (c) 2024 JustStudio. <https://juststudio.is-a.dev/>
+Copyright (c) 2024-2025 JustStudio. <https://juststudio.is-a.dev/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -86,10 +86,11 @@ headerElement.innerHTML = `
         <span class="txt11">EN</span>
     </div>
 `;
+const currentYear = new Date().getFullYear();
 headerElement.parentElement.innerHTML += `
     <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank">
-              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12">© 2024 JustStudio.</span>
+              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12">© 2024-${currentYear} JustStudio.</span>
         </a>
         <br>
     </span>
