@@ -240,7 +240,11 @@ function initializeMultiLanguageSupportSystem() {
                 }
                 element.innerHTML = Translations[newLang][i];
             });
-            document.getElementById('copyrightfootertext').innerHTML = document.getElementById('copyrightfootertext').innerHTML.replace(/2024/g, `2024-${currentYear}`);
+            try {
+                document.getElementById('copyrightfootertext').innerHTML = document.getElementById('copyrightfootertext').innerHTML.replace(/2024/g, `2024-${currentYear}`);
+            } catch {
+                document.getElementById('txtElementDATA_12').innerHTML = document.getElementById('txtElementDATA_12').innerHTML.replace(/2024/g, `2024-${currentYear}`);
+            }
             fadeIn(elements);
         }
         
