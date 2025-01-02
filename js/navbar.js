@@ -240,7 +240,7 @@ function initializeMultiLanguageSupportSystem() {
                 }
                 element.innerHTML = Translations[newLang][i];
                 if (element.id.includes('copyrightfootertext'))  {
-                    element.innerHTML = element.innerHTML.replace('2024', `2024-${currentYear}`);
+                    element.innerHTML = element.innerHTML.replace(/2024/g, `2024-${currentYear}`);
                 }
             });
         
