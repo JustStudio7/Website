@@ -90,7 +90,7 @@ const currentYear = new Date().getFullYear();
 headerElement.parentElement.innerHTML += `
     <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank">
-              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12">© 2024-${currentYear} JustStudio.</span>
+              <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">© 2024-${currentYear} JustStudio.</span>
         </a>
         <br>
     </span>
@@ -176,6 +176,7 @@ function initializeMultiLanguageSupportSystem() {
         let lang = globalThis.localStorage.getItem('language');
         const langSwitch = document.getElementById('lang-switch');
         let cooldown = false;
+        const currentYear = new Date().getFullYear();
         
         function fetchTranslations(newLang) {
             const url = newLang === 'RU' ? 'https://juststudio.is-a.dev/js/lang/ru.js' : 'https://juststudio.is-a.dev/js/lang/en.js';
@@ -238,6 +239,9 @@ function initializeMultiLanguageSupportSystem() {
                     return;
                 }
                 element.innerHTML = Translations[newLang][i];
+                if (element.id.includes('copyrightfootertext'))  {
+                    element.innerHTML = element.innerHTML.replace('2024', `2024-${currentYear}`);
+                }
             });
         
             fadeIn(elements);
