@@ -239,11 +239,8 @@ function initializeMultiLanguageSupportSystem() {
                     return;
                 }
                 element.innerHTML = Translations[newLang][i];
-                if (element.id.includes('copyrightfootertext'))  {
-                    element.innerHTML = element.innerHTML.replace(/2024/g, `2024-${currentYear}`);
-                }
             });
-        
+            document.getElementById('copyrightfootertext').innerHTML = document.getElementById('copyrightfootertext').innerHTML.replace(/2024/g, `2024-${currentYear}`);
             fadeIn(elements);
         }
         
