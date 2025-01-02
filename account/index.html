@@ -60,9 +60,10 @@ SOFTWARE.
 			]
 		}
 	</script>
-	  <script>
+	  <script defer>
+		  await Clerk.load();
 		  function openThirdPartyPage() {
-		    const thirdPartyWindow = window.open("https://j.is-a.dev/", "_blank");
+		    const thirdPartyWindow = window.open("https://j.is-a.dev/", "_self");
 		    thirdPartyWindow.Clerk = Clerk;
 		    window.close();
 		  }
