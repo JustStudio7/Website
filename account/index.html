@@ -60,18 +60,6 @@ SOFTWARE.
 			]
 		}
 	</script>
-	  <script>
-		  window.addEventListener('load', async function () {
-		  await Clerk.load();
-		  function openThirdPartyPage() {
-		    const thirdPartyWindow = window.open("https://j.is-a.dev/", "_self");
-		    thirdPartyWindow.Clerk = Clerk;
-		    window.close();
-		  }
-		  if (window.location.href.includes('r=cs')) {
-			  openThirdPartyPage();
-		  }})
-	  </script>
 	  <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
     let url = window.location.href;
     if (url.match("index.html")) {
