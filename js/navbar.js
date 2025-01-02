@@ -30,8 +30,8 @@ headerElement.innerHTML = `
     <div class="trigger">
         <span class="txt3"><em style="display:none;" class="OUTDATED">📜</em>Terms</span>
         <ul class="buttons">
-            <li><a href="/terms" class="txt4">User Agreement</a></li>
-            <li><a href="/rules" class="txt5">Rules For Players</a></li>
+            <li><a href="https://juststudio.is-a.dev/terms" class="txt4">User Agreement</a></li>
+            <li><a href="https://juststudio.is-a.dev/rules" class="txt5">Rules For Players</a></li>
         </ul>
     </div>
 </div>
@@ -40,7 +40,7 @@ headerElement.innerHTML = `
     <div class="trigger">
         <span class="txt6"><em style="display:none;" class="OUTDATED">🟣</em>Products</span>
         <ul class="buttons">
-            <li><a href="/account/" class="txt7">JustStudio.Accounts</a></li>
+            <li><a href="https://juststudio.is-a.dev/account/" class="txt7">JustStudio.Accounts</a></li>
             <li><a href="https://api.juststudio.is-a.dev/" class="txt8">API</a></li>
         </ul>
     </div>
