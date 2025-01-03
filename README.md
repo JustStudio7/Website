@@ -1,4 +1,4 @@
-Under the MIT License - <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">© 2024 JustStudio.</a>
+Under the MIT License - <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE">© 2024-2025 JustStudio.</a>
 
 -------------
 
