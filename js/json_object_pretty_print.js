@@ -38,7 +38,7 @@ Object.prototype.prettyPrint = function(){
                .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
                .replace(/</g, '&lt;').replace(/>/g, '&gt;')
                .replace(jsonLine, replacer);
-}
+};
 
 function rnd() {
     return Math.floor(Math.random() * 500) + 1;
@@ -51,9 +51,9 @@ const DATA_2 = DATA_1[0]+DATA_1[1]/*+DATA_1[2]*/+DATA_1[3]+DATA_1[4]+DATA_1[5]+D
 var rc = {"Total":DATA_2,".thisRun":{"Code":{"200":DATA_2-DATA_1[8],"301":DATA_1[5]+DATA_1[6],"400":0,"403":6,"404":DATA_1[8],"405":0,"410":0,"429":0,"500":0,"501":0,"503":0}},"Endpoints":{"index":{"(index)":DATA_1[0],".thisRun":{"/v1/":DATA_1[1]}},"/v1/status":DATA_1[3],"/system/networkInterfaces":1,"/system/consoleSize":2,"/system/uid":3,"/v1/reqCount":DATA_1[4],"/docs":DATA_1[5],"/index.html":DATA_1[6],"/v1/account/welcomeText":DATA_1[7]}};
 var s = {"code":200};
 
-const reqCount = document.getElementById('reqCount')
+const reqCount = document.getElementById('reqCount');
 reqCount.innerHTML = rc.prettyPrint();
-const status = document.getElementById('status')
+const status = document.getElementById('status');
 status.innerHTML = s.prettyPrint();
 
 function update() {

@@ -199,13 +199,13 @@ SOFTWARE.
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
     <script type="text/javascript">
-      let title = document.title
+      let title = document.title;
       window.addEventListener('blur', () => {
-          document.title = "JustStudio."
-      })
+          document.title = "JustStudio.";
+      });
       window.addEventListener('focus', () => {
-          document.title = title
-      })
+          document.title = title;
+      });
     </script>
     <script type="text/javascript" src="https://juststudio.is-a.dev/js/navbar.js" defer></script>
   </head>
@@ -275,7 +275,7 @@ SOFTWARE.
                   logoElement.remove();
                 }
               }
-            }, 200)
+            }, 200);
 	    window.onload = function() {
             	var elements = document.getElementsByClassName("splvwer");
             	for (var i = 0; i < elements.length; i++) {
@@ -288,7 +288,7 @@ SOFTWARE.
 	    	iframe.onload = function() {
     			iframe.removeAttribute("style");
 	    	};
-	    }, 1000)
+	    }, 1000);
           </script>
 	  <script src="https://juststudio.is-a.dev/js/home.js" defer></script>
         </div>
@@ -416,8 +416,8 @@ SOFTWARE.
         document.getElementById("loaderbg").style.display = "none";
         document.getElementById("loader").style["z-index"] = -5;
         document.getElementById("loaderbg").style["z-index"] = -5;
-        document.getElementById("loader").remove()
-        document.getElementById("loaderbg").remove()
+        document.getElementById("loader").remove();
+        document.getElementById("loaderbg").remove();
       };
 
       activate();

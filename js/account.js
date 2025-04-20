@@ -27,9 +27,9 @@ SOFTWARE.
 window.addEventListener('load', async function () {
   document.getElementById('accounts').innerHTML = `
     <div id="user-button"></div>
-  `
-  const userbuttonDiv = document.getElementById('user-button')
-  await Clerk.load()
+  `;
+  const userbuttonDiv = document.getElementById('user-button');
+  await Clerk.load();
   Clerk.mountUserButton(userbuttonDiv);
   if (!Clerk.user) {
     document.getElementById('acc-btn').style.display = 'flex';
@@ -37,16 +37,16 @@ window.addEventListener('load', async function () {
     if (window.location.pathname == '/account/') {
       document.getElementById('accounts').innerHTML = `
         <div id="sign-in"></div>
-      `
-      const signInDiv = document.getElementById('sign-in')
-      Clerk.mountSignIn(signInDiv)
+      `;
+      const signInDiv = document.getElementById('sign-in');
+      Clerk.mountSignIn(signInDiv);
     }
   } else if (window.location.pathname == '/account/') {
     document.getElementById('accounts').innerHTML = `
       <div id="user-profile"></div>
-    `
-    const userprofileDiv = document.getElementById('user-profile')
-    Clerk.mountUserProfile(userprofileDiv)
-    document.body.classList.add('no-acc-btn')
+    `;
+    const userprofileDiv = document.getElementById('user-profile');
+    Clerk.mountUserProfile(userprofileDiv);
+    document.body.classList.add('no-acc-btn');
   }
 })

@@ -96,7 +96,7 @@ const copyrightText = `
         </a>
         <br>
     </span>
-`
+`;
 if (headerElement) {
     headerElement.parentElement.innerHTML += copyrightText;
 } else {
@@ -124,16 +124,16 @@ const switchThemeToSpecial = () => {
   localStorage.setItem('theme', 'special');
 }
 
-if(theme === "light") switchThemeToLight()
-if(theme === "special") switchThemeToSpecial()
+if(theme === "light") switchThemeToLight();
+if(theme === "special") switchThemeToSpecial();
 
 themeSwitch.addEventListener("click", () => {
   theme = localStorage.getItem('theme');
-  theme !== "light" ? switchThemeToLight() : switchThemeToDark()
+  theme !== "light" ? switchThemeToLight() : switchThemeToDark();
 })
 themeSwitch.addEventListener("dblclick", () => { 
   theme = localStorage.getItem('theme');
-  theme !== "special" ? switchThemeToSpecial() : null
+  theme !== "special" ? switchThemeToSpecial() : null;
 });
 
 acc_btn.addEventListener("click", () => {
@@ -251,7 +251,7 @@ function initializeMultiLanguageSupportSystem() {
                 document.getElementById('copyrightfootertext').innerHTML = document.getElementById('copyrightfootertext').innerHTML.replace(/2024/g, `2024-${currentYear}`);
             } catch {
                 document.getElementById('txtElementDATA_12').innerHTML = document.getElementById('txtElementDATA_12').innerHTML.replace(/2024/g, `2024-${currentYear}`);
-            }
+            };
             fadeIn(elements);
         }
         
@@ -342,18 +342,18 @@ const switchHeaderStateToDefault = () => {
   localStorage.setItem('header', 'default');
 }
 
-if(headerState === "alternative") switchHeaderStateToAlternative()
+if(headerState === "alternative") switchHeaderStateToAlternative();
 
 headerSwitch.addEventListener("click", () => {
   headerState = localStorage.getItem('header');
-  headerState !== "alternative" ? switchHeaderStateToAlternative() : switchHeaderStateToDefault()
+  headerState !== "alternative" ? switchHeaderStateToAlternative() : switchHeaderStateToDefault();
 })
 
 if (!headerState) {
     if (window.innerWidth > 1000) {
-        switchHeaderStateToAlternative()
+        switchHeaderStateToAlternative();
     } else {
-        switchHeaderStateToDefault()
+        switchHeaderStateToDefault();
     }
 } else {
     if (headerState !== "alternative" && headerState !== "default") {
@@ -467,7 +467,7 @@ function checkUserAgreement() {
         });
     }
 }
-checkUserAgreement()
+checkUserAgreement();
 let n_connection;
 window.addEventListener('offline', function() {
     n_connection = notify(null, 'No Internet connection!', null, null, true, 'wifi');
@@ -476,7 +476,7 @@ window.addEventListener('online', function() {
     r_notific(n_connection, true);
 });
 
-setInterval(() => {console.clear()},5000)
+setInterval(() => {console.clear()},5000);
 let initialWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     updateWavebars();
