@@ -110,19 +110,19 @@ const switchThemeToLight = () => {
   document.body.classList.add('t-light');
   document.body.classList.remove('t-purple');
   localStorage.setItem('theme', 'light');
-}
+};
 
 const switchThemeToDark = () => {
   document.body.classList.remove('t-light');
   document.body.classList.remove('t-purple');
   localStorage.setItem('theme', 'dark');
-}
+};
 
 const switchThemeToSpecial = () => {
   document.body.classList.remove('t-light');
   document.body.classList.add('t-purple');
   localStorage.setItem('theme', 'special');
-}
+};
 
 if(theme === "light") switchThemeToLight();
 if(theme === "special") switchThemeToSpecial();
