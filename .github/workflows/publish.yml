@@ -23,9 +23,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Compress with _just
-        uses: JustDeveloper1/_just@v0.0.27-pre3
+        uses: JustDeveloper1/_just@v0.0.27-pre4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: account
 
   deploy:
     environment:
