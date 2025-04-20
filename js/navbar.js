@@ -130,7 +130,7 @@ if(theme === "special") switchThemeToSpecial();
 themeSwitch.addEventListener("click", () => {
   theme = localStorage.getItem('theme');
   theme !== "light" ? switchThemeToLight() : switchThemeToDark();
-})
+});
 themeSwitch.addEventListener("dblclick", () => { 
   theme = localStorage.getItem('theme');
   theme !== "special" ? switchThemeToSpecial() : null;
@@ -138,7 +138,7 @@ themeSwitch.addEventListener("dblclick", () => {
 
 acc_btn.addEventListener("click", () => {
   window.location.href = "https://juststudio.is-a.dev/account/";
-})
+});
 
 if (!theme) {
     try {
@@ -167,12 +167,12 @@ if (!theme) {
             eval(data);
         });
     }
-}
+};
 
 const outdatedElements = document.getElementsByClassName("OUTDATED");
 while (outdatedElements.length > 0) {
     outdatedElements[0].parentNode.removeChild(outdatedElements[0]);
-}
+};
 
 sessionStorage.setItem('MLSsys', 'false');
 function initializeMultiLanguageSupportSystem() {
@@ -226,7 +226,7 @@ function initializeMultiLanguageSupportSystem() {
                     element.style.transition = '300ms';
                     if (element.innerHTML !== Translations[newLang][i]) {
                         element.style.opacity = 0;
-                    }
+                    };
             
                     fadeCount++;
                     if (fadeCount === elements.length) {
@@ -298,7 +298,7 @@ function initializeMultiLanguageSupportSystem() {
                 }
             }
             updateLanguage(lang, false);
-        }
+        };
         
         langSwitch.addEventListener('click', () => {
             if (cooldown) {
@@ -306,7 +306,7 @@ function initializeMultiLanguageSupportSystem() {
                 setTimeout(() => {
                     langSwitch.classList.remove('s-shake');
                 }, 501);
-            }
+            };
             if (cooldown) return;
             cooldown = true;
             lang = lang === 'EN' ? 'RU' : 'EN';
@@ -326,7 +326,7 @@ function initializeMultiLanguageSupportSystem() {
     } else {
         console.warn('MultiLanguageSupportSystem has already been initialized!');
     }
-}
+};
 initializeMultiLanguageSupportSystem();
 
 let headerState = localStorage.getItem('header');
@@ -335,19 +335,19 @@ const headerSwitch = document.getElementById('header-switch');
 const switchHeaderStateToAlternative = () => {
   document.body.classList.add('h-alternative');
   localStorage.setItem('header', 'alternative');
-}
+};
 
 const switchHeaderStateToDefault = () => {
   document.body.classList.remove('h-alternative');
   localStorage.setItem('header', 'default');
-}
+};
 
 if(headerState === "alternative") switchHeaderStateToAlternative();
 
 headerSwitch.addEventListener("click", () => {
   headerState = localStorage.getItem('header');
   headerState !== "alternative" ? switchHeaderStateToAlternative() : switchHeaderStateToDefault();
-})
+});
 
 if (!headerState) {
     if (window.innerWidth > 1000) {
@@ -371,7 +371,7 @@ if (!headerState) {
             eval(data);
         });
     }
-}
+};
 
 let terms_accepted = localStorage.getItem('d1');
 function notify(icon, text, buttonText, id, blur, type) {
@@ -430,7 +430,7 @@ function notify(icon, text, buttonText, id, blur, type) {
         globalThis.document.getElementById('content').style.scale = '110%';
     }
     return notificElement;
-}
+};
 function r_notific(notificElement, blur) {
     if (blur) {
         const elementsToBlur = ['content', 'accounts', ':r3:', 'clerk-components'];
@@ -454,7 +454,7 @@ function r_notific(notificElement, blur) {
         }
         checkUserAgreement()
     }, 701)
-}
+};
 function checkUserAgreement() {
     terms_accepted = localStorage.getItem('d1');
     if (!terms_accepted) {
@@ -466,7 +466,7 @@ function checkUserAgreement() {
             globalThis.localStorage.setItem('d1', 'y');
         });
     }
-}
+};
 checkUserAgreement();
 let n_connection;
 window.addEventListener('offline', function() {
