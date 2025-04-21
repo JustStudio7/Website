@@ -418,7 +418,7 @@ function notify(icon, text, buttonText, id, blur, type) {
         setTimeout(() => {
             notificElement.classList.remove('n-hover');
         }, 1500);
-    }, 1000)
+    }, 1000);
     if (blur) {
         const elementsToBlur = ['content', 'accounts', ':r3:', 'clerk-components'];
         elementsToBlur.forEach(id => {
