@@ -24,6 +24,7 @@ SOFTWARE.
 
 */
 
+const slashslash = atob('Ly8=');
 const spl_v = document.querySelector('spline-viewer');
 let lastTime = performance.now();
 let frameCount = 0;
@@ -48,7 +49,7 @@ function checkFPS() {
 requestAnimationFrame(checkFPS);
 
 this.addEventListener("activate", (event) => {
-  const del = ["https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode"];
+  const del = [`https:${slashslash}prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode`];
 
   event.waitUntil(
     caches.keys().then((keyList) =>

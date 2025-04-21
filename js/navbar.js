@@ -388,7 +388,7 @@ function notify(icon, text, buttonText, id, blur, type) {
         notificsElement.innerHTML = `<span class="notification" id="txt45"><svg xmlns="${svgxmlns}" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1437f3"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm0-240q-33 0-56.5-23.5T400-440v-320q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760v320q0 33-23.5 56.5T480-360Z"></path></svg>By using this website, you agree to the <a href="#" id="n_tl"> User Agreement</a>.<button id="${id}">I agree</button></span>`;
         document.getElementById('n_tl').addEventListener("click", () => {
             const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('terms?navbar=false', 'User Agreement', `toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${left},top=${top},width=${width},height=${height}`);return false;
-        })
+        });
         if (globalThis.localStorage.getItem('language') !== 'EN') {
             globalThis.localStorage.setItem('language-upd', '_');
         }
