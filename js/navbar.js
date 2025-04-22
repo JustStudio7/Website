@@ -191,7 +191,7 @@ function initializeMultiLanguageSupportSystem() {
                 .then(response => response.text())
                 .then(data => {
                 const cleanedData = data.slice(30);
-                const jsonString = cleanedData.replace(/\\+/g, '\\').trim();
+                const jsonString = cleanedData.replace(/\\+/g, '\\').trim().slice(0,-1).trim();
                 return JSON.parse(jsonString);
             });
         }
