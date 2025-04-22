@@ -30,7 +30,7 @@ if (headerElement) {
     headerElement.innerHTML = `
     <div class="dropdown h-terms">
         <div class="trigger">
-            <span class="txt3"><em style="display:none;" class="OUTDATED">📜</em>Terms</span>
+            <span class="txt3">Terms</span>
             <ul class="buttons">
                 <li><a href="https:${slashslash}juststudio.is-a.dev/terms" class="txt4">User Agreement</a></li>
                 <li><a href="https:${slashslash}juststudio.is-a.dev/rules" class="txt5">Rules For Players</a></li>
@@ -40,15 +40,14 @@ if (headerElement) {
         
         <div class="dropdown h-products">
         <div class="trigger">
-            <span class="txt6"><em style="display:none;" class="OUTDATED">🟣</em>Products</span>
+            <span class="txt6">Products</span>
             <ul class="buttons">
-                <li><a href="https:${slashslash}juststudio.is-a.dev/account/" class="txt7">JustStudio.Accounts</a></li>
-                <li><a href="https:${slashslash}api.juststudio.is-a.dev/" class="txt8">API</a></li>
+                <li><a href="https:${slashslash}encoder.js.is-a.dev/" class="txt7">Encoder.js</a></li>
             </ul>
         </div>
     </div><div class="dropdown h-games">
         <div class="trigger">
-            <span class="txt9"><em style="display:none;" class="OUTDATED">🎮</em>Games</span>
+            <span class="txt9">Games</span>
             <ul class="buttons">
                 <li><a style="color:rgba(0,0,0,0.5);" class="txt10" href="#">Coming soon...</a></li>
                 
@@ -191,9 +190,9 @@ function initializeMultiLanguageSupportSystem() {
             return fetch(url)
                 .then(response => response.text())
                 .then(data => {
-                const cleanedData = data.split('\n').slice(27).join('\n');
+                const cleanedData = data.slice(30);
                 const jsonString = cleanedData.replace(/\\+/g, '\\').trim();
-                return JSON.parse('{\n'+jsonString);
+                return JSON.parse(jsonString);
             });
         }
         

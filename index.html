@@ -282,13 +282,13 @@ SOFTWARE.
                 	elements[i].style.opacity = "1";
             	}
             };
-	    setTimeout(() => {
+            setTimeout(() => {try{
 		var iframe = document.getElementById("team");
 	    	iframe.src = iframe.src;
 	    	iframe.onload = function() {
     			iframe.removeAttribute("style");
 	    	};
-	    }, 1000);
+	    }catch(e){}}, 1000);
           </script>
 	  <script src="https://juststudio.is-a.dev/js/home.js" defer></script>
         </div>
@@ -304,77 +304,6 @@ SOFTWARE.
               <div class="home-hitbox6"></div>
             </div>
             <h1 class="home-desc text-shadow txt2">a System Development Studio</h1>
-          </div>
-          <div class="home-left-links OUTDATED">
-	    <a
-	      href="https://github.com/JustStudio7/Website/blob/main/LICENSE"
-	      target="_blank"
-              rel="noreferrer noopener"
-              class="home-link"
-            >
-            	<img
-              	alt="Copyright"
-              	src="img/copyright.svg"
-              	loading="eager"
-              	class="home-licence"
-            	/>
-	    </a>
-            <a
-              href="https://github.com/JustStudio7/Website"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link"
-            >
-              <img
-                alt="This website is open-source"
-                src="img/opensource.svg"
-                loading="eager"
-                class="home-code"
-              />
-            </a>
-            <div class="home-hitbox"></div>
-          </div>
-          <div class="home-right-links OUTDATED">
-            <a
-              href="https://www.roblox.com/groups/11641563/JustStudio#!/about"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link1"
-            >
-              <img
-                alt="Roblox Community"
-                src="img/roblox.svg"
-                loading="eager"
-                class="home-roblox"
-              />
-            </a>
-            <a
-              href="https://github.com/JustStudio7"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link2"
-            >
-              <img
-                alt="Github Profile"
-                src="img/github.svg"
-                loading="eager"
-                class="home-github"
-              />
-            </a>
-            <a
-              href="https://discord.gg/aHXxS6VvcC"
-              target="_blank"
-              rel="noreferrer noopener"
-              class="home-link3"
-            >
-              <img
-                alt="Discord Server"
-                src="img/discord.svg"
-                loading="eager"
-                class="home-discord"
-              />
-            </a>
-            <div class="home-hitbox1"></div>
           </div>
         </div>
 	<link href="https://juststudio.is-a.dev/css/navbar.css" rel="stylesheet" />
@@ -394,7 +323,6 @@ SOFTWARE.
       document.oncontextmenu = noselect;
       function noselect() {return false;}
     </script>
-    <script src="/js/menu.js"></script>
     <script>
       var something;
 	    
