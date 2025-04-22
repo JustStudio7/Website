@@ -461,7 +461,7 @@ function checkUserAgreement() {
     terms_accepted = localStorage.getItem('d1');
     if (!terms_accepted) {
         "use strict";
-        const n_te_b_id = 'n_ta'
+        const n_te_b_id = 'n_ta';
         let n_te = globalThis.notify(null,null,null,n_te_b_id,false,'terms');
         globalThis.document.getElementById(n_te_b_id).addEventListener("click", () => {
             globalThis.r_notific(n_te,false);
