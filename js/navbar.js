@@ -41,7 +41,7 @@ if (headerElement) {
         <div class="trigger">
             <span class="txt6">Products</span>
             <ul class="buttons">
-                <li><a href="https://encoder.js.is-a.dev/" class="txt7">Encoder.js</a></li>
+                <li><a href="https://encoder.js.is-a.dev/">Encoder.js</a></li>
             </ul>
         </div>
     </div><div class="dropdown h-games">
