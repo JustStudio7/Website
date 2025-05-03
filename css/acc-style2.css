@@ -24,6 +24,7 @@ SOFTWARE.
 
 */
 
+@import url("https://juststudio.is-a.dev/css/notifications.css");
 body {
   overflow: hidden;
 }
@@ -316,5 +317,3 @@ body {
     }
   }}
 }
-
-@import url("https://juststudio.is-a.dev/css/notifications.css");
