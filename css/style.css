@@ -28,13 +28,9 @@ SOFTWARE.
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-  --dl-size-size-large: 144px;
   --dl-size-size-small: 48px;
-  --dl-size-size-medium: 96px;
-  --dl-size-size-xlarge: 192px;
   --dl-size-size-xsmall: 16px;
   --dl-space-space-unit: 16px;
-  --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
   --dl-color-theme-accent1: #C5B6E0;
   --dl-color-theme-accent2: #8F84D2;
@@ -42,13 +38,8 @@ SOFTWARE.
   --dl-color-theme-primary1: #23297F;
   --dl-color-theme-primary2: #585AB3;
   --dl-space-space-halfunit: 8px;
-  --dl-space-space-sixunits: 96px;
   --dl-space-space-twounits: 32px;
-  --dl-radius-radius-radius2: 2px;
-  --dl-radius-radius-radius4: 4px;
-  --dl-radius-radius-radius8: 8px;
   --dl-space-space-fiveunits: 80px;
-  --dl-space-space-fourunits: 64px;
   --dl-color-theme-secondary1: #FFFFFF;
   --dl-color-theme-secondary2: #FBF1EB;
   --dl-space-space-threeunits: 48px;
@@ -59,12 +50,6 @@ SOFTWARE.
   --dl-radius-radius-inputradius: 24px;
   --dl-radius-radius-buttonradius: 24px;
   --dl-space-space-oneandhalfunits: 24px;
-  --dl-color-juststudio.styles-blue: #1437f3ff;
-  --dl-color-juststudio.styles-dark: #000040ff;
-  --dl-color-juststudio.styles-black: #000000ff;
-  --dl-color-juststudio.styles-light: #e3eeffff;
-  --dl-color-juststudio.styles-white: #ffffffff;
-  --dl-color-juststudio.styles-purple: #6e3bf3ff;
 }
 .button {
   color: var(--dl-color-theme-neutral-dark);

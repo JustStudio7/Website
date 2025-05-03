@@ -25,13 +25,9 @@ SOFTWARE.
 */
 
 :root {
-  --dl-size-size-large: 144px;
   --dl-size-size-small: 48px;
-  --dl-size-size-medium: 96px;
-  --dl-size-size-xlarge: 192px;
   --dl-size-size-xsmall: 16px;
   --dl-space-space-unit: 16px;
-  --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
   --dl-color-theme-accent1: #FFFFFF;
   --dl-color-theme-accent2: #F5D1B0;
@@ -39,13 +35,8 @@ SOFTWARE.
   --dl-color-theme-primary1: #BF4408;
   --dl-color-theme-primary2: #E65103;
   --dl-space-space-halfunit: 8px;
-  --dl-space-space-sixunits: 96px;
   --dl-space-space-twounits: 32px;
-  --dl-radius-radius-radius2: 2px;
-  --dl-radius-radius-radius4: 4px;
-  --dl-radius-radius-radius8: 8px;
   --dl-space-space-fiveunits: 80px;
-  --dl-space-space-fourunits: 64px;
   --dl-color-theme-secondary1: #FFFFFF;
   --dl-color-theme-secondary2: #FBF1EB;
   --dl-space-space-threeunits: 48px;
