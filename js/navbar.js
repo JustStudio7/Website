@@ -55,13 +55,13 @@ if (headerElement) {
     </div>
     <div class="h-main">
         <span class="txt1">JustStudio.</span>
-        <a href="https://discord.gg/aHXxS6VvcC" target="_blank" rel="noreferrer noopener">
+        <a href="https://juststudio.is-a.dev/r/discord" target="_blank" rel="noreferrer noopener">
             <img src="https://juststudio.is-a.dev/img/discord.white.svg" alt="Discord Server">
         </a>
-        <a target="_blank" rel="noreferrer noopener" href="https://www.roblox.com/groups/11641563/JustStudio#!/about">
+        <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/r/roblox">
             <img src="https://juststudio.is-a.dev/img/roblox.white.svg" alt="Roblox Community">
         </a>
-        <a target="_blank" rel="noreferrer noopener" href="https://github.com/JustStudio7">
+        <a target="_blank" rel="noreferrer noopener" href="https://juststudio.is-a.dev/r/github">
             <img src="https://juststudio.is-a.dev/img/github.white.svg" alt="GitHub Profile">
         </a>
         <a target="_blank" rel="noreferrer noopener" id="header-switch">
