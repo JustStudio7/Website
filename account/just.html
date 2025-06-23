@@ -411,24 +411,26 @@ SOFTWARE.
             }
         }
     </style>
-    <script async defer>
-        await Clerk.load();
-        if (!Clerk || !Clerk.user || !Clerk.user.id) {
-            window.location.href = 'https://juststudio.is-a.dev/account/';
-        };
-        const uid = Clerk.user.id || undefined;
-        const key = Clerk.user.primaryEmailAddressId || undefined;
-        function auth(str) {
-            return str.split('').map(char => {
-                if (char === char.toUpperCase()) {
-                return char.toLowerCase();
-                } else {
-                return char.toUpperCase();
-                }
-            }).join('');
-        };
-        document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''));
-        document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''));
+    <script>
+        window.addEventListener('load', async function () {
+            await Clerk.load();
+            if (!Clerk || !Clerk.user || !Clerk.user.id) {
+                window.location.href = 'https://juststudio.is-a.dev/account/';
+            };
+            const uid = Clerk.user.id || undefined;
+            const key = Clerk.user.primaryEmailAddressId || undefined;
+            function auth(str) {
+                return str.split('').map(char => {
+                    if (char === char.toUpperCase()) {
+                    return char.toLowerCase();
+                    } else {
+                    return char.toUpperCase();
+                    }
+                }).join('');
+            };
+            document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''));
+            document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''));
+        });
     </script>
   </body>
 </html>
