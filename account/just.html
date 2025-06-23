@@ -288,6 +288,7 @@ SOFTWARE.
     <div id="accounts"></div>
     <script type="module" src="https://juststudio.is-a.dev/js/account.js" defer></script>
     <div id="content">
+        <div class="accdata"><span><strong>ID</strong>: <code id="uid"></code></span><span><strong>Key</strong>: <code id="key"></code><br><small>This is a sensitive key. Do not share it with anyone.<br><small>By changing primary email address, this key will be updated.</small></small></span></div>
         <span class="home-footer">
           <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE"><span style="opacity: 0.5; text-decoration: underline;">© JustStudio. 2024</span></a>
           <br />
@@ -334,6 +335,99 @@ SOFTWARE.
     	};
 
     	activate();
+    </script>
+    <style>
+        #content {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #121212;
+        }
+        .accdata {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #ffffff0a;
+            border-color: #ffffff0a;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 15px;
+            padding: 20px 100px;
+            padding-bottom: 35px;
+            pointer-events: none;
+            min-width: 339px;
+        }
+        .accdata span {
+            color: #fff;
+        }
+        .accdata code {
+            background-color: #12121299;
+            border-radius: 20px;
+            padding: 0px 5px;
+            pointer-events: all;
+            cursor: pointer;
+        }
+        .accdata small {
+            position: fixed;
+            translate: -50% -2px;
+            color: #ffa000;
+            opacity: 0.7;
+            transition: 300ms opacity 500ms;
+            text-shadow: 0px 0px 0px;
+            pointer-events: all;
+            cursor:default;
+            white-space: nowrap;
+        }
+        .accdata small:hover {
+            opacity: 1;
+            animation-name: wrning;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes wrning {
+            from {
+                text-shadow: 0px 0px 0px;
+            }
+            50% {
+                text-shadow: 0px 0px 10px;
+            }
+            to {
+                text-shadow: 0px 0px 0px;
+            }
+        }
+        @-webkit-keyframes wrning {
+            from {
+                text-shadow: 0px 0px 0px;
+            }
+            75% {
+                text-shadow: 0px 0px 10px;
+            }
+            to {
+                text-shadow: 0px 0px 0px;
+            }
+        }
+    </style>
+    <script defer>
+        if (!Clerk.user || !Clerk.user.id) {
+            window.location.href = 'https://juststudio.is-a.dev/account/';
+        };
+        const uid = Clerk.user.id || undefined;
+        const key = Clerk.user.primaryEmailAddressId || undefined;
+        function auth(str) {
+            return str.split('').map(char => {
+                if (char === char.toUpperCase()) {
+                return char.toLowerCase();
+                } else {
+                return char.toUpperCase();
+                }
+            }).join('');
+        }
+        document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''))
+        document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''))
     </script>
   </body>
 </html>
