@@ -288,7 +288,10 @@ SOFTWARE.
     <div id="accounts"></div>
     <script type="module" src="https://juststudio.is-a.dev/js/account.js" defer></script>
     <div id="content">
-        <div class="accdata"><span><strong>ID</strong>: <code id="uid" title="Copy to clipboard"></code></span><span><strong>Key</strong>: <code id="key" title="Copy to clipboard"></code><br><small>This is a sensitive key. Do not share it with anyone.<br><small>By changing primary email address, this key will be updated.</small></small></span></div>
+        <div class="accdata">
+            <span><strong>User ID</strong>: <code id="uid" title="Copy to clipboard"></code><span id="uidc">Copied!</span></span>
+            <span><strong>Key</strong>: <code id="key" title="Copy to clipboard"></code><br><small>This is a sensitive key. Do not share it with anyone.<br><small>By changing primary email address, this key will be updated.</small></small><span id="keyc">Copied!</span></span>
+        </div>
         <span class="home-footer">
           <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE"><span style="opacity: 0.5; text-decoration: underline;">© JustStudio. 2024</span></a>
           <br />
@@ -388,6 +391,11 @@ SOFTWARE.
             animation-duration: 2s;
             animation-iteration-count: infinite;
         }
+        .accdata span span {
+            position: fixed;
+            transition: 300ms;
+            opacity: 0;
+        }
         @keyframes wrning {
             from {
                 text-shadow: 0px 0px 0px;
@@ -430,15 +438,29 @@ SOFTWARE.
             };
             const uide = document.getElementById('uid');
             const keye = document.getElementById('key');
+            const uidc = document.getElementById('uidc');
+            const keyc = document.getElementById('keyc');
             const uid = auth(cuid.replace('user_','').split('').reverse().join(''));
             const key = auth(ckey.replace('idn_', '').split('').reverse().join(''));
             uide.innerHTML = uid;
             keye.innerHTML = key;
             uide.addEventListener("click", async () => {
                 await navigator.clipboard.writeText(uid);
+                uidc.style.transition = '0ms';
+                uidc.style.opacity = '1';
+                setTimeout(() => {
+                    uidc.style.transition = '300ms';
+                    uidc.style.opacity = null;
+                }, 500);
             });
             keye.addEventListener("click", async () => {
                 await navigator.clipboard.writeText(key);
+                keyc.style.transition = '0ms';
+                keyc.style.opacity = '1';
+                setTimeout(() => {
+                    keyc.style.transition = '300ms';
+                    keyc.style.opacity = null;
+                }, 500);
             });
         });
     </script>
