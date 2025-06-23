@@ -1,0 +1,337 @@
+<!-- 
+
+MIT License
+
+Copyright (c) 2024-2025 JustStudio. <https://juststudio.is-a.dev/>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+\-->
+
+
+<!-- JustStudio. /-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JustStudio.Accounts</title>
+    <meta property="og:description" content="JustStudio. - a System Development Studio." />
+    <meta
+      name="description"
+      content="JustStudio. - a System Development Studio."
+    />
+    <meta name="title" content="JustStudio.Accounts">
+    <meta name="keywords" content="JustStudio,Account,Accounts">   
+    <meta property="og:title" content="JustStudio.Accounts" />
+	  <script type='application/ld+json'>
+		{
+			"@context": "http://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{
+				"@type": "ListItem",
+				"position": "1",
+				"name": "JustStudio.",
+				"item": "https://juststudio.is-a.dev/"
+			},
+				{
+				"@type": "ListItem",
+				"position": "2",
+				"name": "Accounts",
+				"item": "https://juststudio.is-a.dev/account/"
+			}
+			]
+		}
+	</script>
+	  <script> // Debug url script by JustStudio. \\ https://juststudio.is-a.dev
+    let url = window.location.href;
+    if (url.match("index.html")) {
+        window.location.href = url.replace("index.html", "");
+    } else if (url.match(".html")) {
+        window.location.href = url.replace(".html", "");
+    } else if (url.match(/\.\w+$/)) {
+        window.location.href = "/";
+    }
+  </script>
+	  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH7JXLSWPX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-PH7JXLSWPX');
+    </script>
+    <!-- End Google tag -->
+    <script src="https://analytics.juststudio.is-a.dev/"></script>
+    <meta
+      property="og:image"
+      content="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9819bb2f-010c-481e-936e-0ff85d44f8ab/ce7a1bbd-65e8-43c4-a8b3-8f0776d2b099?org_if_sml=1&amp;force_format=original"
+    />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://juststudio.is-a.dev/account/" />
+    <meta property="og:title" content="JustStudio.Accounts" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://juststudio.is-a.dev/account/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://juststudio.is-a.dev/account/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://juststudio.is-a.dev/account/favicon-16x16.png">
+    <link rel="manifest" href="https://juststudio.is-a.dev/account/site.webmanifest">
+    <meta property="vk:image" content="http://juststudio.is-a.dev/logo-200h-b.png" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://juststudio.is-a.dev/img/1714165239.602498-1f96a837-e638-476a-81d3-75b9f25ed066.png"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+	  <style>
+    #loader {
+      		position: absolute;
+      		left: 50%;
+      		top: 50%;
+      		z-index: 1000001;
+      		width: 60px;
+      		height: 60px;
+      		margin: -35px 0 0 -35px;
+      		border: 5px solid rgba(0,0,0,0);
+      		border-radius: 50%;
+      		border-top: 5px solid white;
+      		-webkit-animation: spin 1.5s linear infinite;
+      		animation: spin 1s linear infinite;
+	    	transition-duration: 0.5s;
+    	}
+    	#loaderbg {
+    		position: absolute;
+    		background-color: #1437f3;
+        	width: 100%;
+        	height: 100%;
+	    	z-index: 1000000;
+	    	transition-duration: 0.5s;
+    	}
+
+    	@-webkit-keyframes spin {
+      		0% { -webkit-transform: rotate(0deg); }
+      		100% { -webkit-transform: rotate(360deg); }
+    	}
+
+    	@keyframes spin {
+      		0% { transform: rotate(0deg); }
+      		100% { transform: rotate(360deg); }
+    	}
+
+
+    	@-webkit-keyframes animatebottom {
+      		from { bottom:-100px; opacity:0 } 
+      		to { bottom:0px; opacity:1 }
+    	}
+
+    	@keyframes animatebottom { 
+      		from{ bottom:-100px; opacity:0 } 
+      		to{ bottom:0; opacity:1 }
+    	}
+
+    	#content {
+      		display: none;
+      		text-align: center;
+    	}
+	    .t-purple #loaderbg {
+		    background-color: #7d53ea;
+	    }
+	    .t-light #loaderbg {
+		    background-color: #576fef;
+	    }
+</style>
+    <script type="text/javascript">
+      const JSLstyles = [
+       'color: white',
+       'background: blue',
+       'font-size: 30px',
+        'border: 1px solid white',
+        'text-shadow: 2px 2px black',
+        'padding: 10px',
+      ].join(';');
+      const WARNstyles = [
+       'color: black',
+       'background: yellow',
+       'font-size: 60px',
+        'border: 1px solid red',
+        'text-shadow: 0px 0px black',
+        'padding: 5px',
+      ].join(';');
+       setTimeout(() => {
+           console.clear();
+
+           console.info("Powered by JustStudio.");
+      console.info("https://juststudio.is-a.dev/");
+
+         console.log('%cJustStudio.', JSLstyles);
+          console.log('');
+
+       console.log('%cSTOP!', WARNstyles);
+       console.log('WARNING! We strongly do NOT recommended doing anything in the developer tools menu!');
+       console.log('If someone told you to paste or copy or change something, they are most likely truing to hack you/your account!');
+      }, 7500);
+    </script>
+    <script type="text/javascript">
+      let title = document.title;
+      window.addEventListener('blur', () => {
+          document.title = "JustStudio.";
+      });
+      window.addEventListener('focus', () => {
+          document.title = title;
+      });
+    </script>
+    <script type="text/javascript" src="https://juststudio.is-a.dev/js/navbar.js" defer></script>
+  </head>
+  <body>
+    <link href="https://juststudio.is-a.dev/css/themes.css" rel="stylesheet" />
+    <div id="loader"></div>
+    <div id="loaderbg"></div>
+    <noscript>
+	    <span style="
+		    position: absolute; 
+		    top: 50%; 
+		    left: 50%; 
+		    transform: 
+			    translate(-50%, -50%) 
+			    scale(111%) 
+			    rotateZ(2deg); 
+		    color: #FFFFFF; 
+		    z-index: 1000001; 
+		    padding: 2px; 
+		    background-color: rgba(0,0,0,0.33); 
+		    border-radius: 5px; 
+		    border-style: solid; 
+		    border-width: 2px; 
+		    border-color: #FFFFFF; 
+		    backdrop-filter: blur(4px); 
+		    box-shadow: 2px 2px 5px 0px #FFFFFF;
+		    ">
+		    You need to enable JavaScript in your browser settings to access this website.
+	    </span>
+    </noscript>
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_live_Y2xlcmsuanVzdHN0dWRpby5pcy1hLmRldiQ"
+      src="https://clerk.juststudio.is-a.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+      type="text/javascript">
+    </script>
+    <div id="content">
+        <span class="home-footer">
+          <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE"><span style="opacity: 0.5; text-decoration: underline;">© JustStudio. 2024</span></a>
+          <br />
+        </span>
+        <link href="https://juststudio.is-a.dev/css/navbar.css" rel="stylesheet" />
+            <a
+            href="https://juststudio.is-a.dev/"
+            rel="noreferrer noopener"
+            class="h-logo-link"
+            >
+            <img src="https://juststudio.is-a.dev/img/logo-200h.png" alt="image" class="h-logo" />
+            </a>
+        <div class="header"></div>
+    </div>
+    <script type="text/javascript">
+      document.ondragstart = noselect;
+      document.onselectstart = noselect;
+      document.oncontextmenu = noselect;
+      function noselect() {return false;}
+    </script>
+    <script>
+	var something;
+	    
+      	function activate() {
+      		something = setTimeout(showPage, 2500);
+    	};
+
+    	function showPage() {
+      		document.getElementById("content").style.display = "block";
+      		document.getElementById("loader").style.opacity = 0;
+	    	otherthng = setTimeout(showPage02, 500);
+    	};
+    	function showPage02() {
+      		document.getElementById("loaderbg").style.opacity = 0;
+	    	otherthng = setTimeout(activatePage, 500);
+    	};
+    	function activatePage() {
+      		document.getElementById("loader").style.display = "none";
+      		document.getElementById("loaderbg").style.display = "none";
+      		document.getElementById("loader").style["z-index"] = -5;
+      		document.getElementById("loaderbg").style["z-index"] = -5;
+      		document.getElementById("loader").remove();
+      		document.getElementById("loaderbg").remove();
+    	};
+
+    	activate();
+    </script>
+  </body>
+</html>
