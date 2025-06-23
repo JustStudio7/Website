@@ -288,7 +288,7 @@ SOFTWARE.
     <div id="accounts"></div>
     <script type="module" src="https://juststudio.is-a.dev/js/account.js" defer></script>
     <div id="content">
-        <div class="accdata"><span><strong>ID</strong>: <code id="uid"></code></span><span><strong>Key</strong>: <code id="key"></code><br><small>This is a sensitive key. Do not share it with anyone.<br><small>By changing primary email address, this key will be updated.</small></small></span></div>
+        <div class="accdata"><span><strong>ID</strong>: <code id="uid" title="Copy to clipboard"></code></span><span><strong>Key</strong>: <code id="key" title="Copy to clipboard"></code><br><small>This is a sensitive key. Do not share it with anyone.<br><small>By changing primary email address, this key will be updated.</small></small></span></div>
         <span class="home-footer">
           <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE"><span style="opacity: 0.5; text-decoration: underline;">© JustStudio. 2024</span></a>
           <br />
@@ -411,14 +411,14 @@ SOFTWARE.
             }
         }
     </style>
-    <script>
+    <script type="module" defer>
         window.addEventListener('load', async function () {
             await Clerk.load();
             if (!Clerk || !Clerk.user || !Clerk.user.id) {
                 window.location.href = 'https://juststudio.is-a.dev/account/';
             };
-            const uid = Clerk.user.id || undefined;
-            const key = Clerk.user.primaryEmailAddressId || undefined;
+            const cuid = Clerk.user.id || undefined;
+            const ckey = Clerk.user.primaryEmailAddressId || undefined;
             function auth(str) {
                 return str.split('').map(char => {
                     if (char === char.toUpperCase()) {
@@ -428,8 +428,18 @@ SOFTWARE.
                     }
                 }).join('');
             };
-            document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''));
-            document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''));
+            const uide = document.getElementById('uid');
+            const keye = document.getElementById('key');
+            const uid = auth(cuid.replace('user_','').split('').reverse().join(''));
+            const key = auth(ckey.replace('idn_', '').split('').reverse().join(''));
+            uide.innerHTML = uid;
+            keye.innerHTML = key;
+            uide.addEventListener("click", async () => {
+                await navigator.clipboard.writeText(uid);
+            });
+            keye.addEventListener("click", async () => {
+                await navigator.clipboard.writeText(key);
+            });
         });
     </script>
   </body>
