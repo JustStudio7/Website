@@ -425,9 +425,9 @@ SOFTWARE.
                 return char.toUpperCase();
                 }
             }).join('');
-        }
-        document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''))
-        document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''))
+        };
+        document.getElementById('uid').innerHTML = auth(uid.replace('user_','').split('').reverse().join(''));
+        document.getElementById('key').innerHTML = auth(key.replace('idn_', '').split('').reverse().join(''));
     </script>
   </body>
 </html>
