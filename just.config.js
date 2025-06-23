@@ -25,5 +25,5 @@ SOFTWARE.
 */
 
 module.exports = {
-    type: "compressor"
+    type: "compress"
 }
