@@ -411,8 +411,9 @@ SOFTWARE.
             }
         }
     </style>
-    <script defer>
-        if (!Clerk.user || !Clerk.user.id) {
+    <script async defer>
+        await Clerk.load();
+        if (!Clerk || !Clerk.user || !Clerk.user.id) {
             window.location.href = 'https://juststudio.is-a.dev/account/';
         };
         const uid = Clerk.user.id || undefined;
