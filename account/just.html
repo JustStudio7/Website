@@ -503,8 +503,8 @@ SOFTWARE.
             const keye = document.getElementById('key');
             const uidc = document.getElementById('uidc');
             const keyc = document.getElementById('keyc');
-            const uid = convertBase(encode(auth(cuid.replace('user_','')),window.location.href),10,64);
-            const key = convertBase(encode(auth(ckey.replace('idn_', '')),window.location.href),10,64);
+            const uid = convertBase(encode(auth(cuid.replace('user_','')),'a'),10,64);
+            const key = convertBase(encode(auth(ckey.replace('idn_', '')),'a'),10,64);
             uide.innerHTML = uid;
             keye.innerHTML = key;
             uide.addEventListener("click", async () => {
