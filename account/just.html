@@ -434,7 +434,7 @@ SOFTWARE.
                     z.push(zi % base);
                     carry = Math.floor(zi / base);
                     i++;
-                }
+                };
                 return z;
             };
             const multiplyByNumber = (num, x, base) => {
@@ -448,7 +448,7 @@ SOFTWARE.
                     num = num >> 1;
                     if (num === 0) break;
                     power = add(power, power, base);
-                }
+                };
 
                 return result;
             };
@@ -456,10 +456,10 @@ SOFTWARE.
                 const digits = str.split('');
                 let arr = [];
                 for (let i = digits.length - 1; i >= 0; i--) {
-                    const n = DIGITS.indexOf(digits[i])
+                    const n = DIGITS.indexOf(digits[i]);
                     if (n == -1) return null;
                     arr.push(n);
-                }
+                };
                 return arr;
             };
             const digits = parseToDigitsArray(str, fromBase);
