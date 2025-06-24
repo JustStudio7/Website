@@ -476,7 +476,6 @@ SOFTWARE.
             return out;
         }
         const encode = (str, key) => {
-            str = str.split('').reverse().join('');
             let encoded = '';
             for (let i = 0; i < str.length; i++) {
                 const encodedCharCode = str.charCodeAt(i) ^ key.charCodeAt(i % key.length);
@@ -504,8 +503,8 @@ SOFTWARE.
             const keye = document.getElementById('key');
             const uidc = document.getElementById('uidc');
             const keyc = document.getElementById('keyc');
-            const uid = convertBase(encode(auth(cuid.replace('user_','').split('').reverse().join('')),window.location.href),10,64);
-            const key = convertBase(encode(auth(ckey.replace('idn_', '').split('').reverse().join('')),window.location.href),10,64);
+            const uid = convertBase(encode(auth(cuid.replace('user_','')),window.location.href),10,64);
+            const key = convertBase(encode(auth(ckey.replace('idn_', '')),window.location.href),10,64);
             uide.innerHTML = uid;
             keye.innerHTML = key;
             uide.addEventListener("click", async () => {
