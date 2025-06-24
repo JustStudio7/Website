@@ -476,7 +476,7 @@ SOFTWARE.
             return out;
         }
         const encode = (str, key) => {
-            str = reverseString(str);
+            str = str.split('').reverse().join('');
             let encoded = '';
             for (let i = 0; i < str.length; i++) {
                 const encodedCharCode = str.charCodeAt(i) ^ key.charCodeAt(i % key.length);
