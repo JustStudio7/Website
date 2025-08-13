@@ -21,7 +21,7 @@
 
 "use strict"
 Object.prototype.prettyPrint = function(){
-    var jsonLine = /^( *)("[\w.()/]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg; // JustDeveloper - added that key names can have "()", "/", and ".", how it works: i am added "w.()/", this: "w.()" means that key names can have "()" and ".", and that: "w.()/" = can have "()" and "." and "/"
+    var jsonLine = /^( *)("[\w.()/]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg; // JustDeveloper - key names can also have "()", "/", and "."
     var replacer = function(match, pIndent, pKey, pVal, pEnd) {
         var key = '<span class="json-key" style="color: #5fb4ff">',
             val = '<span class="json-value" style="color: #5fff61">',
