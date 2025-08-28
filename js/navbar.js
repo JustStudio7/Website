@@ -91,7 +91,7 @@ const currentYear = new Date().getFullYear();
 const copyrightText = `
     <span class="home-footer1 footer">
         <a href="https://github.com/JustStudio7/Website/blob/main/LICENSE" target="_blank">
-            <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">© 2024-${currentYear} JustStudio.</span>
+            <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">Copyright &copy; 2024-${currentYear} &#171;JustStudio.&#187;</span>
         </a>
         <br>
     </span>
