@@ -43,6 +43,9 @@ if (headerElement) {
             <ul class="buttons">
                 <li><a href="https://encoder.js.is-a.dev/">Encoder.js</a></li>
             </ul>
+            <ul class="buttons">
+                <li><a href="https://just.is-a.dev/">Just an Ultimate Site Tool</a></li>
+            </ul>
         </div>
     </div><div class="dropdown h-games">
         <div class="trigger">
