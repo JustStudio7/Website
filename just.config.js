@@ -27,7 +27,7 @@ SOFTWARE.
 module.exports = {
     type: "compress",
     install: {
-        sass: true
+        dart_sass: true
     },
     compile: {
         scss: true
