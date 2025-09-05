@@ -26,5 +26,8 @@ SOFTWARE.
 
 module.exports = {
     type: "compress",
-    sass: true
+    sass: true,
+    parser: {
+        css: 'SCSS'
+    }
 }
