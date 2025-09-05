@@ -25,5 +25,6 @@ SOFTWARE.
 */
 
 module.exports = {
-    type: "compress"
+    type: "compress",
+    sass: true
 }
