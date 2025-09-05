@@ -29,7 +29,7 @@ module.exports = {
     install: {
         sass: true
     },
-    parser: {
-        css: 'SCSS'
+    compile: {
+        scss: true
     }
 }
