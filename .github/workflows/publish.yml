@@ -23,7 +23,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Compress with _just
-        uses: js-just/_just@main
+        uses: js-just/latest@main
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
