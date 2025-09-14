@@ -25,7 +25,7 @@ SOFTWARE.
 */
 
 export default = {
-    type: "compress",
+    mode: "compressor",
     install: {
         dart_sass: true
     },
