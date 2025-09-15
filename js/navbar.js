@@ -189,7 +189,7 @@ function initializeMultiLanguageSupportSystem() {
             return fetch(url)
                 .then(response => response.text())
                 .then(data => {
-                const cleanedData = data.slice(22);
+                const cleanedData = data.slice(21);
                 const jsonString = cleanedData.replace(/\\+/g, '\\').trim();
                 return JSON.parse(jsonString);
             });
