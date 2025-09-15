@@ -42,17 +42,14 @@ if (headerElement) {
             <span class="txt6">Products</span>
             <ul class="buttons">
                 <li><a href="https://encoder.js.is-a.dev/">Encoder.js</a></li>
-            </ul>
-            <ul class="buttons">
-                <li><a href="https://just.is-a.dev/">Just an Ultimate Site Tool</a></li>
+                <li><a href="https://just.js.org/">Just an Ultimate Site Tool</a></li>
             </ul>
         </div>
     </div><div class="dropdown h-games">
         <div class="trigger">
             <span class="txt9">Games</span>
             <ul class="buttons">
-                <li><a style="color:rgba(0,0,0,0.5);" class="txt10" href="#">Coming soon...</a></li>
-                
+                <li><a href="https://www.roblox.com/games/9201462652/Find-the-cats-Morphs" target="_blank">Find The Cats</a></li>
             </ul>
         </div>
     </div>
