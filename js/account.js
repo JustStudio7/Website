@@ -24,6 +24,35 @@ SOFTWARE.
 
 */
 
+function OAuth() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectUrl = urlParams.get('redirect_url');
+  const errorid = 'accounts_oauth_error_accept';
+  function onerror(msg) {
+    const notification = notify(null, 'Error: ' + msg, 'OK', errorid);
+    notification.querySelector('#'+errorid).onclick = () => r_notific(notification);
+  }
+  if (redirectUrl) {
+    try {
+      const decodedUrl = decodeURIComponent(redirectUrl);
+      const urlObj = new URL(decodedUrl);
+      const allowedDomains = [
+        'accounts.juststudio.is-a.dev'
+      ];
+      if (allowedDomains.some(domain => 
+        urlObj.hostname === domain || 
+        urlObj.hostname.endsWith('.' + domain)
+      )) {
+        window.location.href = decodedUrl;
+      } else {
+        onerror('Attempt to redirect to non-whitelisted domain.');
+      }
+    } catch (_) {
+      onerror('Redirect URL is invalid or malformed.')
+    }
+  }
+}
+
 window.addEventListener('load', async function () {
   document.getElementById('accounts').innerHTML = `
     <div id="user-button"></div>
@@ -48,5 +77,6 @@ window.addEventListener('load', async function () {
     const userprofileDiv = document.getElementById('user-profile');
     Clerk.mountUserProfile(userprofileDiv);
     document.body.classList.add('no-acc-btn');
+    OAuth();
   }
-})
+});
