@@ -127,6 +127,7 @@ function App() {
           src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js" 
           defer 
         />
+        {/* @ts-ignore */}
         <spline-viewer 
           url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" 
           className="splvwer"
