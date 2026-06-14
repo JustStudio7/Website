@@ -1,0 +1,11 @@
+.logoEnhanced {
+    border-radius: 17%;
+    max-width: 735px;
+    max-height: 735px;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+.logo3D {
+    filter: blur(1px) drop-shadow(0px 0px 2px #6e3bf3);
+    -webkit-filter: blur(1px) drop-shadow(0px 0px 2px #6e3bf3);
+}

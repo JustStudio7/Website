@@ -1,0 +1,28 @@
+html {
+  color: var(--light);
+  font-family: "Rubik", monospace;
+}
+
+body {
+  margin: 0px;
+}
+
+:root {
+  --purple: #6e3bf3;
+  --blue: #1437f3;
+  --light: #fff;
+  --dark: #080A45;
+  --light-purple: #C5B6E0;
+  --soft-purple: #8F84D2;
+  --dark-purple: #2f1671;
+  
+  --rmo: "Rubik Mono One", "Rubik", monospace;
+  --lz: "Lexend Zetta", sans-serif;
+  --scp: "Source Code Pro", monospace;
+
+  --mask: radial-gradient(circle, black 50%, transparent 80%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+}

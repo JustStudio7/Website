@@ -1,0 +1,110 @@
+.loadscreen .logoEnhanced {
+  width: 400px;
+  height: 400px;
+}
+.loadscreen {
+  background-color: var(--dark-purple);
+  transition: 300ms;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: calc(9999 * 9999);
+}
+.loadtitle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@keyframes loaddot {
+  from {
+    opacity: 1;
+  } to {
+    opacity: 0;
+  }
+}
+#d1, #d2, #d3 {
+  animation: loaddot 1s ease-in-out infinite;
+}
+#d1 {
+  animation-delay: 100ms;
+}
+#d2 {
+  animation-delay: 300ms;
+}
+#d3 {
+  animation-delay: 500ms;
+}
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  background: #6E3BF3;
+  background: -webkit-linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
+  background: linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6E3BF3", endColorstr="#1437F3", GradientType=1);
+  overflow: hidden;
+}
+@property --translateX {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0vw;
+}
+.particle {
+  position: absolute;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  animation: floatRight linear infinite;
+  translate: var(--translateX) 0%;
+}
+@keyframes floatRight {
+  0% { transform: translateX(var(--translateX)) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { transform: translateX(calc(100vw - var(--translateX))) rotate(720deg); opacity: 0; }
+  51% { transform: translateX(calc(-10vw - var(--translateX))) rotate(0deg); opacity: 0; }
+  60% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(var(--translateX)) rotate(720deg); opacity: 0; }
+}
+.particles {
+  opacity: 0.1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
+  pointer-events: none;
+  filter: drop-shadow(0px 0px 20px #ffffff88);
+  -webkit-filter: drop-shadow(0px 0px 20px #ffffff88);
+}
+
+.hero {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100vw;
+  max-width: calc(1768px / 1.5);
+  mix-blend-mode: screen;
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
+  min-width: 450px;
+}
+.splvwer {
+  opacity: 0;
+  transition: 700ms;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
