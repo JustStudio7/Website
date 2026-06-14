@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import logo from './assets/logo.png'
+import { useState, useEffect } from 'react'
 import wide from './assets/wide.png'
 import './App.css'
-import {Logo, LoadingLogo} from './logo'
-import {Shader, Dither, Plasma, Aurora, ImageTexture, Neon, LensFlare, ReflectivePlane, Glow, GridDistortion, ChannelBlur} from 'shaders/react'
+import { LoadingLogo } from './logo'
+import { Shader, Dither, Plasma, Aurora, ImageTexture, Neon, LensFlare, ReflectivePlane, Glow, GridDistortion, ChannelBlur } from 'shaders/react'
 
 declare global {
   interface Window {
     JUSTC_ATTEMPTS?: number;
+    JUSTC?: any;
   }
 }
 
 function init(callback: ()=>void) {
-  window['JUSTC'].initialize().then(callback).catch((e)=>{
+  window['JUSTC'].initialize().then(callback).catch((e: any) => {
     console.error(e);
     init(callback);
   });
 }
+
 function load(callback: (obj : any)=>void, link = '/data.justc') {
   if (!window.JUSTC_ATTEMPTS) {
     window.JUSTC_ATTEMPTS = 0;
@@ -42,7 +43,7 @@ function load(callback: (obj : any)=>void, link = '/data.justc') {
         }
       }, 1000);
     });
-  }).catch((e)=>{
+  }).catch((e: any)=>{
     console.error(e);
     load(callback, link);
   }));
@@ -57,15 +58,23 @@ function particles(div: HTMLElement) {
   }
   return div;
 }
+
 function Grid() {
   return (
     <GridDistortion intensity={3.5/2} decay={10} radius={1.7} gridSize={128} opacity={.9} />
   )
 }
+
 function Blur() {
   return (
     <ChannelBlur redIntensity={5} greenIntensity={0} blueIntensity={36} blendMode='color' />
   )
+}
+
+interface LoadedObject {
+  title: string[];
+  langs: string[];
+  [key: string]: any;
 }
 
 function App() {
@@ -75,7 +84,7 @@ function App() {
 
   const currentYear = new Date().getFullYear();
 
-  setTimeout(()=>{
+  useEffect(() => {
     const id = setInterval(()=>{
       if (loaded) {
         clearInterval(id);
@@ -87,13 +96,13 @@ function App() {
         particleDiv.id = 'p';
         particleDiv.className = 'particles';
         main?.insertBefore(particles(particleDiv), main.firstChild);
-        load((obj)=>{
+        load((obj: LoadedObject)=>{
           document.title = obj.title[0] || document.title;
           window.addEventListener('blur', () => {document.title = obj.title[1] || document.title});
           window.addEventListener('focus', () => {document.title = obj.title[0] || document.title});
-          const langs = {};
+          const langs: { [key: string]: any } = {};
           for (const link of obj.langs) {
-            load((lang)=>{
+            load((lang: any)=>{
               langs[lang._name] = lang;
               if (obj.langs.indexOf(link) == obj.langs.length - 1) {
                 setLoaded(true);
@@ -108,40 +117,51 @@ function App() {
         clearInterval(id);
       }
     }, 1000);
-  }, 100);
+  }, [loaded])
 
   return (
     <>
       <div id='main'>
-        	<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js" defer></script>
-          <spline-viewer url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" class="splvwer"></spline-viewer>
-          <script type="text/javascript" defer dangerouslySetInnerHTML={{__html:`
-                    setInterval(() => {
-                      const splineViewer = document.querySelector('spline-viewer');
-                      if (splineViewer) {
-                        const shadowRoot = splineViewer.shadowRoot;
-                        const logoElement = shadowRoot.querySelector('#logo');
+        <script 
+          type="module" 
+          src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js" 
+          defer 
+        />
+        <spline-viewer 
+          url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" 
+          className="splvwer"
+        />
+        <script 
+          type="text/javascript" 
+          dangerouslySetInnerHTML={{__html:`
+            setInterval(() => {
+              const splineViewer = document.querySelector('spline-viewer');
+              if (splineViewer) {
+                const shadowRoot = splineViewer.shadowRoot;
+                const logoElement = shadowRoot.querySelector('#logo');
 
-                        if (logoElement) {
-                          logoElement.remove();
-                        }
-                      }
-                    }, 200);
-              window.onload = function() {
-                      var elements = document.getElementsByClassName("splvwer");
-                      for (var i = 0; i < elements.length; i++) {
-                          elements[i].style.opacity = "1";
-                      }
-                    };
-                    setTimeout(() => {try{
-            var iframe = document.getElementById("team");
+                if (logoElement) {
+                  logoElement.remove();
+                }
+              }
+            }, 200);
+            window.onload = function() {
+              var elements = document.getElementsByClassName("splvwer");
+              for (var i = 0; i < elements.length; i++) {
+                elements[i].style.opacity = "1";
+              }
+            };
+            setTimeout(() => {
+              try {
+                var iframe = document.getElementById("team");
                 iframe.src = iframe.src;
                 iframe.onload = function() {
                   iframe.removeAttribute("style");
                 };
-              }catch(e){}}, 1000);
-            `}}>
-          </script>
+              } catch(e) {}
+            }, 1000);
+          `}}
+        />
         <Shader className='hero'>
           <Neon 
             shape={JSON.stringify({type: "roundedRectSDF", width: .09, height: .09, rounding: .04})} center={{x: .3, y: .5}}
