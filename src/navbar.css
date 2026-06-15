@@ -12,14 +12,6 @@ nav {
   border: 2px solid white;
   transition: 300ms;
 }
-html:not([disableGlass]) nav {
-  backdrop-filter: url(#glass) blur(8px);
-  -webkit-backdrop-filter: url(#glass) blur(8px);
-}
-html[disableGlass] nav {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
 nav, nav .right, nav .left, nav .navleft, nav .navleft div, nav .navright {
   display: flex;
   flex-direction: row;

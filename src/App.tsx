@@ -161,7 +161,6 @@ function App() {
                       behavior: 'smooth'
                     });
                   });
-                  if (!isCapableDesktopDevice()) document.documentElement.setAttribute('disableGlass', 'true');
                 },350);
               };
             }, link);

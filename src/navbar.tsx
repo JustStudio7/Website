@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import './navbar.css'
 import logo from './assets/logo.mini.png'
+import isCapableDesktopDevice from './checkDevice'
 
 declare global {
   interface Window {
@@ -42,7 +43,9 @@ function Navbar() {
 
     return (
         <header>
-            <nav id="hdr">
+            <nav id="hdr" style={
+                isCapableDesktopDevice() ? {backdropFilter: 'url(#glass) blur(8px)', WebkitBackdropFilter: 'url(#glass) blur(8px)'} : {}
+            }>
                 <div className='left'>
                     <img src={logo} />
                     <div className='navleft'>
