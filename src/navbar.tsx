@@ -44,7 +44,8 @@ function Navbar() {
     return (
         <header>
             <nav id="hdr" style={
-                isCapableDesktopDevice() ? {backdropFilter: 'url(#glass) blur(8px)', WebkitBackdropFilter: 'url(#glass) blur(8px)'} : {}
+                isCapableDesktopDevice() ? {backdropFilter: 'url(#glass) blur(8px)', WebkitBackdropFilter: 'url(#glass) blur(8px)'} : 
+                {backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)'}
             }>
                 <div className='left'>
                     <img src={logo} />
