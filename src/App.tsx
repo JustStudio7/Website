@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 import wide from './assets/wide.png'
 import './App.css'
-import { LoadingLogo } from './logo'
+import { Logo, LoadingLogo } from './logo'
 import { Shader, Dither, Plasma, Aurora, ImageTexture, Neon, LensFlare, ReflectivePlane, Glow, GridDistortion, ChannelBlur } from 'shaders/react'
+import Navbar from './navbar'
+import isCapableDesktopDevice from './checkDevice'
 
 declare global {
   interface Window {
     JUSTC_ATTEMPTS?: number;
     JUSTC?: any;
+    LANGUAGE: string;
   }
 }
 
@@ -71,9 +74,43 @@ function Blur() {
   )
 }
 
+interface langObject {
+  text: string[];
+  lists: {
+    name: string;
+    link: string;
+  }[][];
+  [key: string]: any;
+}
+function updContent(langObj : langObject) {
+  setTimeout(()=>{
+    for (let i = 0; i < langObj.text.length; i++) {
+      document.getElementById('t' + (i + 1))!.innerText = langObj.text[i];
+    }
+  }, 0);
+  setTimeout(()=>{
+    for (let i = 0; i < langObj.lists.length; i++) {
+      let html = '';
+      for (const item of langObj.lists[i]) {
+        html += `<li><a href="${item.link}" target="_blank">${item.name}</a></li>`;
+      }
+      document.getElementById('l' + (i + 1))!.innerHTML = html;
+    }
+  }, 0);
+}
+
 interface LoadedObject {
   title: string[];
   langs: string[];
+  icons: string;
+  links: {
+    [key: string]: {
+      id: number;
+      href: string;
+      target: string;
+      [key: string]: any;
+    }
+  }
   [key: string]: any;
 }
 
@@ -85,6 +122,7 @@ function App() {
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
+    window.LANGUAGE = localStorage.getItem('language') || 'EN';
     const id = setInterval(()=>{
       if (loaded) {
         clearInterval(id);
@@ -107,7 +145,23 @@ function App() {
               if (obj.langs.indexOf(link) == obj.langs.length - 1) {
                 setLoaded(true);
                 setTimeout(()=>{
+                  updContent(langs[window.LANGUAGE]);
                   document.getElementById('l')?.remove();
+                  for (const value of Object.values(obj.links)) {
+                    setTimeout(()=>{
+                      const link = document.getElementById('a'+value.id)! as HTMLAnchorElement;
+                      link.href = value.href;
+                      link.target = value.target;
+                    },300);
+                  }
+                  document.getElementById('s')!.addEventListener('click', ()=>{
+                    document.getElementById('main')!.scrollTo({
+                      top: window.innerHeight - (64 + 16 + 16),
+                      left: 0,
+                      behavior: 'smooth'
+                    });
+                  });
+                  if (!isCapableDesktopDevice()) document.documentElement.setAttribute('disableGlass', 'true');
                 },350);
               };
             }, link);
@@ -122,75 +176,59 @@ function App() {
   return (
     <>
       <div id='main'>
-        <script 
-          type="module" 
-          src="https://unpkg.com/@splinetool/viewer@1.9.35/build/spline-viewer.js" 
-          defer 
-        />
-        {/* @ts-ignore */}
-        <spline-viewer 
-          url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" 
-          className="splvwer"
-        />
-        <script 
-          type="text/javascript" 
-          dangerouslySetInnerHTML={{__html:`
-            setInterval(() => {
-              const splineViewer = document.querySelector('spline-viewer');
-              if (splineViewer) {
-                const shadowRoot = splineViewer.shadowRoot;
-                const logoElement = shadowRoot.querySelector('#logo');
-
-                if (logoElement) {
-                  logoElement.remove();
-                }
-              }
-            }, 200);
-            window.onload = function() {
-              var elements = document.getElementsByClassName("splvwer");
-              for (var i = 0; i < elements.length; i++) {
-                elements[i].style.opacity = "1";
-              }
-            };
-            setTimeout(() => {
-              try {
-                var iframe = document.getElementById("team");
-                iframe.src = iframe.src;
-                iframe.onload = function() {
-                  iframe.removeAttribute("style");
-                };
-              } catch(e) {}
-            }, 1000);
-          `}}
-        />
-        <Shader className='hero'>
-          <Neon 
-            shape={JSON.stringify({type: "roundedRectSDF", width: .09, height: .09, rounding: .04})} center={{x: .3, y: .5}}
-            tubeThickness={0} color='#fff' glowColor='#fff' secondaryColor='#6e3bf3' secondaryBlend={0}
-          />
-          <ImageTexture url={wide} objectFit='contain' transform={{scale: .5}} />
-          <Grid />
-          <Blur />
-          <ReflectivePlane height={.605} distance={.22} falloff={1.78} blur={.7} blurDistance={.01} opacity={.32}/>
-          <Glow intensity={.05} />
-          <Grid />
-        </Shader>
-        <Shader className='hero'>
-          <LensFlare
-            lightPosition={{x: .689, y: .46}} starburstIntensity={0.26} starburstPoints={4} streakIntensity={0} glareIntensity={.39}
-            glareSize={.32} intensity={.69} edgeFade={.21} ghostIntensity={0} haloIntensity={0} blendMode='screen' opacity={.18}
-          />
-          <Glow intensity={2} />
-          <GridDistortion intensity={3.5} decay={10} radius={1.7} gridSize={128}/>
-          <Blur />
-        </Shader>
+        {
+          isCapableDesktopDevice() ?
+          <>
+            {/* @ts-ignore */}
+            <spline-viewer 
+              url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" 
+              className="splvwer"
+            />
+            <Shader className='hero'>
+              <Neon 
+                shape={JSON.stringify({type: "roundedRectSDF", width: .09, height: .09, rounding: .04})} center={{x: .3, y: .5}}
+                tubeThickness={0} color='#fff' glowColor='#fff' secondaryColor='#6e3bf3' secondaryBlend={0}
+              />
+              <ImageTexture url={wide} objectFit='contain' transform={{scale: .5}} />
+              <Grid />
+              <Blur />
+              <ReflectivePlane height={.605} distance={.22} falloff={1.78} blur={.7} blurDistance={.01} opacity={.32}/>
+              <Glow intensity={.05} />
+              <Grid />
+            </Shader>
+            <Shader className='hero'>
+              <LensFlare
+                lightPosition={{x: .689, y: .46}} starburstIntensity={0.26} starburstPoints={4} streakIntensity={0} glareIntensity={.39}
+                glareSize={.32} intensity={.69} edgeFade={.21} ghostIntensity={0} haloIntensity={0} blendMode='screen' opacity={.18}
+              />
+              <Glow intensity={2} />
+              <GridDistortion intensity={3.5} decay={10} radius={1.7} gridSize={128}/>
+              <Blur />
+            </Shader>
+          </>
+          : <img src={wide} className='hero' alt='JustStudio.' />
+        }
+        <Navbar />
+        <div className='allowScroll' />
+        <button id="s" style={{display:'none'}}><svg><use href="/img/icons.svg#icon-arrow" /></svg></button>
+        <article style={{display:'none'}}>
+          <h1 id='t4'>Games.</h1>
+          <p>lorem ipsum dolor sit amet</p>
+          <h1 id='t4'>Products.</h1>
+          <p>lorem ipsum dolor sit amet</p>
+          <h1 id='t4'>Team.</h1>
+          <p>lorem ipsum dolor sit amet</p>
+          <footer>
+            <Logo />
+          </footer>
+        </article>
       </div>
       <div className="loadscreen" id='l' style={{opacity: loaded ? 0 : 1}}>
-        <Shader style={{width: '100%', height: '100%', position: 'fixed', filter:loadshader, WebkitFilter:loadshader}}>
+        {isCapableDesktopDevice() ? <Shader style={{width: '100%', height: '100%', position: 'fixed', filter:loadshader, WebkitFilter:loadshader}}>
           <Plasma colorA='#6e3bf3' colorB='#2f1671' density={.8} warp={1} />
           <Aurora colorA='#6e3bf3' colorB='#2f1671' colorC='#1437f3' transform={{rotation: 180}} opacity={.5} />
           <Dither colorMode='source' threshold={1} />
-        </Shader>
+        </Shader> : null}
         <div className="loadtitle">
           <LoadingLogo />
           <h1>JustStudio.</h1>

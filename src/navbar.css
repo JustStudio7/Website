@@ -1,0 +1,229 @@
+header {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  left: 0px;
+  z-index: 5;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  border: 2px solid white;
+  transition: 300ms;
+}
+html:not([disableGlass]) nav {
+  backdrop-filter: url(#glass) blur(8px);
+  -webkit-backdrop-filter: url(#glass) blur(8px);
+}
+html[disableGlass] nav {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+nav, nav .right, nav .left, nav .navleft, nav .navleft div, nav .navright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav.default {
+  border-right: 0px solid transparent;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+}
+nav.alternative {
+  border-radius: 24px;
+  width: calc(100% - 4px - 16px);
+  translate: 8px 8px;
+}
+
+nav img {
+  width: 48px;
+  height: 48px;
+  user-select: none;
+  pointer-events: none;
+  background-color: var(--light);
+  border-radius: 12px;
+  outline: 2px solid white;
+}
+nav .left *:not(div):not(svg):not(svg *):not(a):not(button) {
+  translate: 8px 8px;
+}
+nav .left div:not(.navleft div) {
+  translate: 16px 0px;
+}
+nav h2 {
+  font-weight: 400;
+}
+nav .navleft {
+  flex-direction: column;
+}
+nav svg, nav .navleft button {
+  width: 20px;
+  height: 20px;
+}
+nav .navleft div {
+  translate: 7px -4px;
+}
+nav .navleft button {
+  background: transparent;
+  border: 0px solid transparent;
+  cursor: pointer;
+  padding: 0px;
+  position: fixed;
+  right: 0px;
+  transition: 300ms;
+}
+nav .navleft button use {
+  scale: 1.5;
+  translate: -25% -25%;
+}
+nav.alternative .navleft button {
+  transform: rotate(180deg);
+}
+
+nav .navright {
+  gap: 8px;
+}
+
+.dropdown {
+  max-width: 220px;
+  min-width: 0px;
+  width: 125px;
+  transition: 350ms min-width 700ms;
+  position: relative;
+}
+.dropdown .trigger {
+  position: relative;
+  box-shadow: 0px 8px 16px rgba(0, 0, 255, 0.15);
+  border-radius: 24px;
+  height: 100%;
+}
+.dropdown .trigger span {
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-size: 16px;
+  position: relative;
+  background: #ffffff;
+  color: #6e3bf3;
+  display: block;
+  min-width: 0px;
+  height: 46px;
+  padding: 0 18px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: 350ms border-radius 700ms, 700ms color 700ms, 300ms background-color 300ms, 350ms min-width 700ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dropdown:before {
+  content: '';
+  background-color: white;
+  position: absolute;
+  height: 72%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  border-radius: 16px;
+  transition: 300ms;
+}
+.dropdown .trigger ul.buttons {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 0 0 22px 22px;
+  font-size: 14px;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  -webkit-transform: scaleY(0);
+  -webkit-transform-origin: top;
+  transition: 350ms transform 350ms, 350ms -webkit-transform 350ms;
+  max-width: 220px;
+}
+.dropdown .trigger ul.buttons a {
+  opacity: 0;
+  transition: 350ms opacity 0ms;
+}
+.dropdown .trigger ul.buttons li {
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 40px;
+  padding: 0 20px;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 0px solid #6e3bf3;
+  transition: 200ms border-left 0ms;
+}
+.dropdown .trigger ul.buttons li:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #eee, #fcfcfc);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dropdown .trigger ul.buttons li:last-of-type {
+  border-radius: 0 0 24px 24px;
+}
+.dropdown .trigger ul.buttons li a {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dropdown .trigger ul.buttons li:hover {
+  border-left: 5px solid #6e3bf3;
+}
+.dropdown .trigger ul.buttons li:last-of-type:hover {
+  border-left: 5px solid #1437f3;
+}
+.t-purple .dropdown .trigger ul.buttons li:last-of-type:hover {
+  border-left: 5px solid #6e3bf3;
+}
+.dropdown:hover {
+  min-width: 220px;
+  transition: 350ms min-width 0ms;
+}
+.dropdown .trigger:hover span {
+  border-radius: 24px 24px 0 0;
+  transition: 125ms border-radius 125ms, 700ms color 700ms, 350ms min-width 0ms;
+  color: #1437f3;
+}
+.dropdown .trigger:hover ul.buttons {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transition: 350ms transform 350ms, 350ms -webkit-transform 350ms;
+}
+.dropdown .trigger:hover ul.buttons a {
+  opacity: 1;
+  transition: 1s opacity 500ms;
+}
+
+.navright {
+  translate: -8px 8px;
+}
+.dropdown:has(.trigger:hover)::before {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+nav *{
+  user-select: none;
+}

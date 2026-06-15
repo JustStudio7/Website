@@ -2,9 +2,10 @@ name = "JustStudio.",
 desc = "a System Develompent Studio",
 index = "https://juststudio.is-a.dev/",
 
-function mkLink(link : string, target : string = "_self") {
+function mkLink(id : number, link : string, target : string = "_self") {
     return {
-        "link": link,
+        "id": id,
+        "href": link,
         "target": target
     }.
 }
@@ -15,11 +16,11 @@ content = {
     "desc" = desc
 },
 links = {
-    "index" = mkLink(index),
-    discord = mkLink(index.."r/discord", "_blank"),
-    roblox = mkLink(index.."r/roblox", "_blank"),
-    github = mkLink(index.."r/github", "_blank"),
-    license = mkLink("https://github.com/JustStudio7/Website/blob/main/LICENSE", "_blank")
+    "index" = mkLink(0, index),
+    discord = mkLink(1, index.."r/discord", "_blank"),
+    roblox = mkLink(3, index.."r/roblox", "_blank"),
+    github = mkLink(2,index.."r/github", "_blank"),
+    license = mkLink(4, "https://github.com/JustStudio7/Website/blob/main/LICENSE", "_blank")
 },
 
 langs = [

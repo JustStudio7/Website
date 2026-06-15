@@ -26,3 +26,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0px;
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(255 255 255);
+	border: 2px solid var(--blue);
+	border-radius: 10px;
+	transition: 1s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--blue);
+	border: 2px solid rgb(255 255 255);
+	transition: 1s;
+}

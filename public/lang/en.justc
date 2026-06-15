@@ -1,14 +1,18 @@
-_name = "en",
+_name = "EN",
 
-navbar = {
-    games: "Games",
-    products: "Products",
-    terms: "Terms"
-},
-games = [
-    {name: "Find The Cats", link: "https://www.roblox.com/games/9201462652/Find-the-cats-Morphs"}
+text = [
+    "Games", "Products", "Terms"
 ],
-products = [
-    {name: "Just an Ultimate Site Tool", link: "https://just.js.org"},
-    {name: "JUSTC", link: "https://just.js.org/justc/"},
+lists = [
+    [ -- games
+        {name: "Find The Cats", link: "https://www.roblox.com/games/9201462652/Find-the-cats-Morphs"},
+    ],
+    [ -- products
+        {name: "Just an Ultimate Site Tool", link: "https://just.js.org"},
+        {name: "JUSTC", link: "https://just.js.org/justc/"},
+    ],
+    [ -- terms
+        {name: "User Agreement", link: "/terms"},
+        {name: "Rules for Players", link: "/rules"},
+    ],
 ].

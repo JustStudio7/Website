@@ -1,6 +1,9 @@
 import og from './assets/og.png'
 import { Shader, ImageTexture, RoundedRect, Neon, Glass, ThinFilm, Glow, LensFlare, Form3D, AngularBlur } from 'shaders/react'
 import './logo.css'
+import { useState, useEffect } from 'react';
+import logo from './assets/logo.png';
+import isCapableDesktopDevice from './checkDevice.js'
 
 function _logo(cube: boolean) {
   const rootTransform = {scale: 2.61};
@@ -56,10 +59,30 @@ function _logo(cube: boolean) {
 }
 
 function Logo() {
-  return _logo(false)
+  const [enable3D, set3D] = useState(false);
+
+  useEffect(()=>{
+    set3D(isCapableDesktopDevice());
+  }, []);
+
+  return (
+    <>
+      {enable3D ? _logo(false) : <img src={logo} />}
+    </>
+  )
 }
 function LoadingLogo() {
-  return _logo(true)
+  const [enable3D, set3D] = useState(false);
+
+  useEffect(()=>{
+    set3D(isCapableDesktopDevice());
+  }, []);
+
+  return (
+    <>
+      {enable3D ? _logo(true) : <img src={logo} style={{width: 200, height: 200, marginBottom: '40px', position: 'relative', left: '50%', translate: '-50% 0%'}} />}
+    </>
+  )
 }
 
 export {Logo, LoadingLogo}
