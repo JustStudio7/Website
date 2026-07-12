@@ -106,15 +106,6 @@
 img.hero {
   scale: 0.525;
 }
-.splvwer {
-  opacity: 0;
-  transition: 700ms;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  mix-blend-mode: lighten;
-}
 
 .sprite {
   display: none;
@@ -125,6 +116,8 @@ article {
   z-index: 2;
   position: absolute;
   padding-top: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 article h1 {
   width: 100vw;
@@ -153,8 +146,126 @@ article h1 {
   width: 80px;
   cursor: pointer;
   z-index: 4;
+  transition: 300ms;
 }
 #s svg {
   width: 100%;
   height: 100%;
+}
+
+.form {
+  position: relative;
+  left: 50vw;
+  translate: -50% 0%;
+}
+
+@property --start {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@property --end {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+.anim {
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: plus-lighter;
+  position: absolute;
+}
+.anim:not(.done) {
+  -webkit-mask-image: linear-gradient(118deg, 
+    transparent calc(var(--start) - 10%), 
+    #fff calc(var(--start) + 10%), 
+    #fff calc(var(--end) - 10%), 
+    transparent calc(var(--end) + 10%)
+  );
+  mask-image: linear-gradient(118deg, 
+    transparent calc(var(--start) - 10%), 
+    #fff calc(var(--start) + 10%), 
+    #fff calc(var(--end) - 10%), 
+    transparent calc(var(--end) + 10%)
+  );
+  opacity: 0.67;
+  animation: revealLoop 5s cubic-bezier(0.02, 0.56, 0.96, 0.38) infinite;
+  animation-iteration-count: 3;
+}
+.anim.done {
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 45%, transparent 55%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, #000 45%, transparent 55%, transparent 100%);
+  -webkit-mask-size: 200% 100%;
+  mask-size: 200% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  animation: revealRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.67s;
+  animation-iteration-count: 1;
+}
+
+@keyframes revealRight {
+  0% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  100% {
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+  }
+}
+
+@keyframes revealLoop {
+  0%, 10% {
+    --start: 0%;
+    --end: 0%;
+  }
+  40%, 60% {
+    --start: 0%;
+    --end: 100%;
+    opacity: 0.67;
+  }
+  90%, 100% {
+    --start: 100%;
+    --end: 100%;
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0px 0px 2px #ffffff77);
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  position: relative;
+  left: 50%;
+  translate: -50% 0%;
+  margin-bottom: 64px;
+  gap: 32px;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  justify-content: center;
+}
+
+article h1::after {
+  content: '.';
+  position: absolute;
+  opacity: 0.1;
+}
+article h1 {
+  margin-block: 16px;
+}
+
+article div:hover h1::after {
+  animation: dot 1s ease-in-out infinite;
+}
+@keyframes dot {
+  10% {
+    opacity: 1;
+  }
+  from, to {
+    opacity: 0.1;
+  }
 }

@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-function Navbar() {
+function Navbar({display} : {[key: string]: any}) {
     useEffect(()=>{
         window['NAVBAR_STATE'] = 'default';
         window['NAVBAR_COOLDOWN'] = 0;
@@ -42,7 +42,9 @@ function Navbar() {
     }, []);
 
     return (
-        <header>
+        <header style={{
+            opacity: display ? 1 : 0
+        }}>
             <nav id="hdr" style={
                 isCapableDesktopDevice() ? {backdropFilter: 'url(#glass) blur(8px)', WebkitBackdropFilter: 'url(#glass) blur(8px)'} : 
                 {backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)'}

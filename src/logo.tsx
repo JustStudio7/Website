@@ -75,7 +75,7 @@ function LoadingLogo() {
   const [enable3D, set3D] = useState(false);
 
   useEffect(()=>{
-    set3D(isCapableDesktopDevice());
+    set3D(isCapableDesktopDevice() && String(localStorage.getItem("render")) == "true");
   }, []);
 
   return (

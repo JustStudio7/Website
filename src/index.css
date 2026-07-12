@@ -21,6 +21,9 @@ body {
   --scp: "Source Code Pro", monospace;
 
   --mask: radial-gradient(circle, black 50%, transparent 80%);
+
+  --card-w: calc(248px * 1.67);
+  --card-h: calc(168px * 1.67);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,4 +54,8 @@ h1, h2, h3, h4, h5, h6 {
 	background: var(--blue);
 	border: 2px solid rgb(255 255 255);
 	transition: 1s;
+}
+
+* {
+  color: var(--light);
 }

@@ -1,10 +1,22 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import wide from './assets/wide.png'
 import './App.css'
-import { Logo, LoadingLogo } from './logo'
+import { LoadingLogo } from './logo'
 import { Shader, Dither, Plasma, Aurora, ImageTexture, Neon, LensFlare, ReflectivePlane, Glow, GridDistortion, ChannelBlur } from 'shaders/react'
 import Navbar from './navbar'
 import isCapableDesktopDevice from './checkDevice'
+import Card from './card'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import devapp from './assets/devapp.png'
+import modapp from './assets/modapp.png'
+
+import ftcm from './assets/ftcm.png'
+import _just from './assets/_just.png'
+import justc from './assets/justc.png'
+import reaver from './assets/reaver.png'
+import kappy from './assets/kappy.webp'
+import pixset from './assets/pixset.png'
 
 declare global {
   interface Window {
@@ -116,10 +128,91 @@ interface LoadedObject {
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [loaded2, setLoaded2] = useState(false);
   const loadshader = 'brightness(.5)';
   const copyfilter = 'blur(20px)';
 
   const currentYear = new Date().getFullYear();
+
+  function Loader() {
+    return (
+      <div className="loadscreen" id='l' style={{opacity: loaded ? 0 : 0.999}}>
+        {isCapableDesktopDevice() && String(localStorage.getItem("render")) == "true" ? <Shader style={{width: '100%', height: '100%', position: 'fixed', filter:loadshader, WebkitFilter:loadshader}}>
+          <Plasma colorA='#6e3bf3' colorB='#2f1671' density={.8} warp={1} />
+          <Aurora colorA='#6e3bf3' colorB='#2f1671' colorC='#1437f3' transform={{rotation: 180}} opacity={.5} />
+          <Dither colorMode='source' threshold={1} />
+        </Shader> : null}
+        <div className="loadtitle">
+          <LoadingLogo />
+          <h1>JustStudio.</h1>
+          <span style={{color: 'var(--light-purple)'}}><strong>a System Development Studio</strong></span>
+          <h2 style={{
+            marginTop: '4vh', color: 'var(--light-purple)', fontFamily: 'var(--scp)', position: 'fixed', width: '100%', top: '100%'
+          }}>Loading<span id='d1'>.</span><span id='d2'>.</span><span id='d3'>.</span></h2>
+        </div>
+        <span style={{
+          position: 'fixed', bottom: '0px', width: '100%', textAlign: 'center', color: 'var(--soft-purple)', backdropFilter:copyfilter, WebkitBackdropFilter:copyfilter,
+          paddingBlock: '8px'
+        }}>&copy; 2020-{currentYear} JustStudio.</span>
+      </div>
+    )
+  }
+
+  function Hero({path = '/', display} : {[key: string]: any}) {
+    return (
+      <>
+        {
+          isCapableDesktopDevice() && String(localStorage.getItem("render")) == "true" && path == '/' ?
+          <>
+            <Shader className='hero'>
+              <Neon 
+                shape={JSON.stringify({type: "roundedRectSDF", width: .09, height: .09, rounding: .04})} center={{x: .3, y: .5}}
+                tubeThickness={0} color='#fff' glowColor='#fff' secondaryColor='#6e3bf3' secondaryBlend={0}
+              />
+              <ImageTexture url={wide} objectFit='contain' transform={{scale: .5}} />
+              <Grid />
+              <Blur />
+              <ReflectivePlane height={.605} distance={.22} falloff={1.78} blur={.7} blurDistance={.01} opacity={.32}/>
+              <Glow intensity={.05} />
+              <Grid />
+            </Shader>
+            <Shader className='hero'>
+              <LensFlare
+                lightPosition={{x: .689, y: .46}} starburstIntensity={0.26} starburstPoints={4} streakIntensity={0} glareIntensity={.39}
+                glareSize={.32} intensity={.69} edgeFade={.21} ghostIntensity={0} haloIntensity={0} blendMode='screen' opacity={.18}
+              />
+              <Glow intensity={2} />
+              <GridDistortion intensity={3.5} decay={10} radius={1.7} gridSize={128}/>
+              <Blur />
+            </Shader>
+          </>
+          : <div className={'anim' + (display ? ' done' : '')}>
+            <img src={
+              path == '/form/dev' ? devapp :
+              path == '/form/mod' ? modapp :
+              wide
+            } className='hero' alt='JustStudio.' style={{
+              mixBlendMode: 'overlay', filter: 'blur(32px)', opacity: .2, position: 'absolute'
+            }} />
+            <img src={
+              path == '/form/dev' ? devapp :
+              path == '/form/mod' ? modapp :
+              wide
+            } className='hero' alt='JustStudio.' style={{
+              mixBlendMode: 'overlay', filter: 'blur(8px)', opacity: .3, position: 'absolute'
+            }} />
+            <img src={
+              path == '/form/dev' ? devapp :
+              path == '/form/mod' ? modapp :
+              wide
+            } className='hero' alt='JustStudio.' />
+          </div>
+        }
+        <div className='allowScroll' style={{display: display ? '' : 'none'}} />
+        <button id="s" style={{opacity: display ? 1 : 0}}><svg><use href="/img/icons.svg#icon-arrow" /></svg></button>
+      </>
+    )
+  }
 
   useEffect(() => {
     window.LANGUAGE = localStorage.getItem('language') || 'EN';
@@ -128,6 +221,16 @@ function App() {
         clearInterval(id);
         return;
       }
+      setTimeout(()=>{
+        setLoaded2(true);
+        document.getElementById('s')!.addEventListener('click', ()=>{
+          document.getElementById('main')!.scrollTo({
+            top: window.innerHeight - (64 + 16 + 16),
+            left: 0,
+            behavior: 'smooth'
+          });
+        });
+      }, 12000);
       if (window['JUSTC']) {
         const main = document.getElementById('main');
         const particleDiv = document.getElementById('p') ?? document.createElement('div');
@@ -154,13 +257,6 @@ function App() {
                       link.target = value.target;
                     },300);
                   }
-                  document.getElementById('s')!.addEventListener('click', ()=>{
-                    document.getElementById('main')!.scrollTo({
-                      top: window.innerHeight - (64 + 16 + 16),
-                      left: 0,
-                      behavior: 'smooth'
-                    });
-                  });
                 },350);
               };
             }, link);
@@ -173,75 +269,103 @@ function App() {
   }, [loaded])
 
   return (
-    <>
-      <div id='main'>
-        {
-          isCapableDesktopDevice() ?
-          <>
-            {/* @ts-ignore */}
-            <spline-viewer 
-              url="https://prod.spline.design/QAxOFQH4A5XJ8G5X/scene.splinecode" 
-              className="splvwer"
-            />
-            <Shader className='hero'>
-              <Neon 
-                shape={JSON.stringify({type: "roundedRectSDF", width: .09, height: .09, rounding: .04})} center={{x: .3, y: .5}}
-                tubeThickness={0} color='#fff' glowColor='#fff' secondaryColor='#6e3bf3' secondaryBlend={0}
-              />
-              <ImageTexture url={wide} objectFit='contain' transform={{scale: .5}} />
-              <Grid />
-              <Blur />
-              <ReflectivePlane height={.605} distance={.22} falloff={1.78} blur={.7} blurDistance={.01} opacity={.32}/>
-              <Glow intensity={.05} />
-              <Grid />
-            </Shader>
-            <Shader className='hero'>
-              <LensFlare
-                lightPosition={{x: .689, y: .46}} starburstIntensity={0.26} starburstPoints={4} streakIntensity={0} glareIntensity={.39}
-                glareSize={.32} intensity={.69} edgeFade={.21} ghostIntensity={0} haloIntensity={0} blendMode='screen' opacity={.18}
-              />
-              <Glow intensity={2} />
-              <GridDistortion intensity={3.5} decay={10} radius={1.7} gridSize={128}/>
-              <Blur />
-            </Shader>
-          </>
-          : <img src={wide} className='hero' alt='JustStudio.' />
-        }
-        <Navbar />
-        <div className='allowScroll' />
-        <button id="s" style={{display:'none'}}><svg><use href="/img/icons.svg#icon-arrow" /></svg></button>
-        <article style={{display:'none'}}>
-          <h1 id='t4'>Games.</h1>
-          <p>lorem ipsum dolor sit amet</p>
-          <h1 id='t4'>Products.</h1>
-          <p>lorem ipsum dolor sit amet</p>
-          <h1 id='t4'>Team.</h1>
-          <p>lorem ipsum dolor sit amet</p>
-          <footer>
-            <Logo />
-          </footer>
-        </article>
-      </div>
-      <div className="loadscreen" id='l' style={{opacity: loaded ? 0 : 1}}>
-        {isCapableDesktopDevice() ? <Shader style={{width: '100%', height: '100%', position: 'fixed', filter:loadshader, WebkitFilter:loadshader}}>
-          <Plasma colorA='#6e3bf3' colorB='#2f1671' density={.8} warp={1} />
-          <Aurora colorA='#6e3bf3' colorB='#2f1671' colorC='#1437f3' transform={{rotation: 180}} opacity={.5} />
-          <Dither colorMode='source' threshold={1} />
-        </Shader> : null}
-        <div className="loadtitle">
-          <LoadingLogo />
-          <h1>JustStudio.</h1>
-          <span style={{color: 'var(--light-purple)'}}><strong>a System Development Studio</strong></span>
-          <h2 style={{
-            marginTop: '4vh', color: 'var(--light-purple)', fontFamily: 'var(--scp)', position: 'fixed', width: '100%', top: '100%'
-          }}>Loading<span id='d1'>.</span><span id='d2'>.</span><span id='d3'>.</span></h2>
+    <BrowserRouter>
+      <Suspense fallback={<Loader />}>
+        <div id='main'>
+          <Routes>
+            <Route path='/' element={<>
+              <Hero display={loaded2} />
+            </>} />
+            <Route path='/form/mod' element={<>
+              <Hero path='/form/mod' display={loaded2} />
+            </>} />
+            <Route path='/form/dev' element={<>
+              <Hero path='/form/dev' display={loaded2} />
+            </>} />
+          </Routes>
+          <Navbar display={loaded2} />
+          <article style={{display: loaded2 ? '' : 'none'}}>
+            <Routes>
+              <Route path='/' element={
+                <>
+                  <div>
+                    <h1 id='t4'>Games</h1>
+                    <div className='cards'>
+                      <Card 
+                        title="Find the Cats"
+                        content="Cats are on the loose! They've run off to cities, forests, and everywhere in between. Explore colorful worlds, keep your eyes peeled, and track down every last fluffy troublemaker. Can you find them all?"
+                        href="https://www.roblox.com/games/9201462652/Find-the-cats-Morphs"
+                        bgsrc={ftcm}
+                        color="#d35303"
+                        color2="#b34400"
+                        className="ftcm"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h1 id='t5'>Products</h1>
+                    <div className='cards'>
+                      <Card 
+                        title="The JUSTC Programming Language"
+                        content=""
+                        href="https://just.js.org/justc/"
+                        bgsrc={justc}
+                        color="rgb(40, 34, 129)"
+                        color2="#4c309c"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h1 id='t6'>Partners</h1>
+                    {/* @ts-ignore */}
+                    <div className='cards noblur' style={{'--card-w': 'calc(168px * 1.67)'}}>
+                      <Card 
+                        title="KAPPY SQUAD"
+                        content=""
+                        href="https://kappy.is-a.dev/"
+                        bgsrc={kappy}
+                        color="#ee491f"
+                        color2="#e34526"
+                        className="kappy"
+                      />
+                      <Card 
+                        title="Reaver.Entertainment"
+                        content=""
+                        href="https://reaver.is-a.dev/"
+                        bgsrc={reaver}
+                        color="#1b1b1b"
+                        color2="#111111"
+                      />
+                      <Card 
+                        title="Pixset Studio"
+                        content=""
+                        href="https://www.roblox.com/communities/16590279/Pixset-Studio#!/about"
+                        bgsrc={pixset}
+                        color="#1b1b1b"
+                        color2="#111111"
+                        className="pixset"
+                      />
+                    </div>
+                  </div>
+                </>
+              } />
+              <Route path='/form/mod' element={
+                <>
+                  {/* @ts-ignore */}
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScz43qixR4e107lrCcmC8ICt--eu0JY6ELVRV8QKGnJf9wnKw/viewform?embedded=true" width={window.innerWidth} height={window.innerHeight} frameborder="0" marginheight="0" marginwidth="0" className="form">Loading…</iframe>
+                </>
+              } />
+              <Route path='/form/dev' element={
+                <>
+                  {/* @ts-ignore */}
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAaZ-cQWimlbtGWTMKeL4cZc66zfBQu1yJDObiA_uWLsShsQ/viewform?embedded=true" width={window.innerWidth} height={window.innerHeight} frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+                </>
+              } />
+            </Routes>
+          </article>
         </div>
-        <span style={{
-          position: 'fixed', bottom: '0px', width: '100%', textAlign: 'center', color: 'var(--soft-purple)', backdropFilter:copyfilter, WebkitBackdropFilter:copyfilter,
-          paddingBlock: '8px'
-        }}>&copy; 2024-{currentYear} JustStudio.</span>
-      </div>
-    </>
+      </Suspense>
+    </BrowserRouter>
   )
 }
 

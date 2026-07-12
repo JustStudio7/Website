@@ -1,0 +1,120 @@
+.card div {
+    height: var(--card-h);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.card div::before { /* background */
+    content: '';
+    display: block;
+    position: absolute;
+    width: var(--card-w);
+    height: var(--card-h);
+    background-color: var(--dark);
+    z-index: -1;
+    background-image: var(--bgsrc);
+    background-size: var(--card-w) var(--card-h);
+    scale: 1.2;
+    text-align: right;
+    align-content: end;
+}
+.cards:not(.noblur) .card div::before {
+    rotate: 2deg;
+    filter: blur(8px) brightness(0.67);
+}
+.card div::after {
+    content: var(--desc);
+    display: block;
+    padding-inline: 16px;
+    filter: none !important;
+    transition: 300ms;
+    text-wrap-style: balance;
+    position: absolute;
+    bottom: 16px;
+    font-weight: 600;
+}
+
+.card {
+    display: block;
+    width: var(--card-w);
+    filter: saturate(0);
+}
+
+.card, .card div, .card div::before {
+    border-radius: 16px;
+}
+.card:not(:hover) {
+    overflow: hidden;
+}
+
+.card h3 {
+    padding: 16px;
+    text-align: center;
+    scale: 1.1;
+    filter: none !important;
+}
+.card:hover h3 {
+    mix-blend-mode: exclusion;
+}
+.card h3:last-of-type {
+    mix-blend-mode: overlay !important;
+    position: absolute;
+    width: calc(100% - calc(16px * 2));
+    top: 0px;
+    opacity: 0.5;
+}
+
+.card:hover {
+    filter: saturate(1);
+}
+.card:hover div::before, .card:hover div::after, .card:hover h3 {
+    scale: 1;
+    filter: blur(0px) brightness(1);
+    rotate: 0deg;
+    animation: rotateLoop 9s ease-in-out infinite;
+    transition: scale 100ms, filter 1030ms;
+}
+
+.card, .card div::before {
+    transition: 300ms;
+}
+
+@keyframes rotateLoop {
+    0%, 100% {
+        transform: rotateX(20deg) rotateY(20deg);
+        filter: drop-shadow(-6px 4px 0px var(--cardcol));
+    }
+    10% {
+        transform: rotateX(20deg) rotateY(-20deg);
+        filter: drop-shadow(6px 8px 0px var(--cardcol2));
+    }
+    50% {
+        transform: rotateX(-20deg) rotateY(-20deg);
+        filter: drop-shadow(-6px 8px 0px var(--cardcol));
+    }
+    70% {
+        transform: rotateX(-20deg) rotateY(20deg);
+        filter: drop-shadow(6px 8px 0px var(--cardcol2));
+    }
+}
+
+.card, .card h3, .card p {
+    text-decoration: none !important;
+}
+
+.kappy div::before {
+    background-size: 110%;
+    background-position: 20% 20%;
+}
+.pixset div::before {
+    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+.ftcm:hover div::after {
+    opacity: 0;
+    filter: blur(1px) !important;
+    transition: opacity 100ms;
+}
