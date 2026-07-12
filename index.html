@@ -47,6 +47,18 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="og:image" content="https://img.juststudio.is-a.dev/banner.png">
     <meta name="theme-color" content="#6e3bf3">
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&') 
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
   </head>
   <body>
     <div id="root"></div>

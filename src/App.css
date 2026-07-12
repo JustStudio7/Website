@@ -45,12 +45,14 @@
   height: 100vh;
   position: absolute;
   z-index: 1;
+  overflow-x: hidden;
+}
+#main, footer {
   background: #6E3BF3;
   background: -webkit-linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
   background: -moz-linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
   background: linear-gradient(90deg, rgba(110, 59, 243, 1) 0%, rgba(20, 55, 243, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6E3BF3", endColorstr="#1437F3", GradientType=1);
-  overflow-x: hidden;
 }
 @property --translateX {
   syntax: "<length>";
@@ -115,9 +117,11 @@ article {
   margin-top: 100vh;
   z-index: 2;
   position: absolute;
-  padding-top: 16px;
+  padding-top: 32px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to top, black 95%, transparent);
+  mask-image: linear-gradient(to top, black 95%, transparent);
 }
 article h1 {
   width: 100vw;
@@ -146,11 +150,19 @@ article h1 {
   width: 80px;
   cursor: pointer;
   z-index: 4;
-  transition: 300ms;
 }
 #s svg {
   width: 100%;
   height: 100%;
+  animation: swing 1.67s ease-in-out infinite;
+}
+@keyframes swing {
+  from, to {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 0% 5%;
+  }
 }
 
 .form {
@@ -249,7 +261,7 @@ article h1 {
   justify-content: center;
 }
 
-article h1::after {
+article h1::after, footer h3:not(.name)::after {
   content: '.';
   position: absolute;
   opacity: 0.1;
@@ -258,7 +270,7 @@ article h1 {
   margin-block: 16px;
 }
 
-article div:hover h1::after {
+article div:hover h1::after, footer h3:not(.name)::after {
   animation: dot 1s ease-in-out infinite;
 }
 @keyframes dot {
@@ -268,4 +280,27 @@ article div:hover h1::after {
   from, to {
     opacity: 0.1;
   }
+}
+
+.loadicon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  translate: -50% 0%;
+  bottom: 8px;
+  scale: 0.5;
+  animation: spin 600ms linear infinite;
+}
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+#s, .loadicon {
+  transition: 300ms;
 }

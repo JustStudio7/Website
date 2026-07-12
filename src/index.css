@@ -24,6 +24,8 @@ body {
 
   --card-w: calc(248px * 1.67);
   --card-h: calc(168px * 1.67);
+
+  --footer: calc(180px + 32px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,4 +60,17 @@ h1, h2, h3, h4, h5, h6 {
 
 * {
   color: var(--light);
+}
+
+.nomarker li {
+  translate: -16px 0px;
+}
+.nomarker li::marker {
+  color: transparent;
+}
+
+@media screen and (max-width: 594px) {
+  .mw594 {
+    display: none;
+  }
 }
