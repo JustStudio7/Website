@@ -6,7 +6,7 @@
   background-color: var(--dark-purple);
   transition: 300ms;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   z-index: calc(9999 * 9999);
 }
@@ -42,7 +42,7 @@
 
 #main {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: 1;
   overflow-x: hidden;
@@ -82,7 +82,7 @@
   opacity: 0.1;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   mask-image: var(--mask);
   -webkit-mask-image: var(--mask);
@@ -133,7 +133,7 @@ article h1 {
 .allowScroll {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0px;
   left: 0px;
   z-index: 3;
@@ -144,7 +144,7 @@ article h1 {
   border: 0px solid transparent;
   position: absolute;
   left: 50%;
-  top: 100vh;
+  top: 100%;
   translate: -50% calc(-100% - 8px);
   height: 80px;
   width: 80px;
@@ -183,7 +183,7 @@ article h1 {
 }
 .anim {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   mix-blend-mode: plus-lighter;
   position: absolute;
 }

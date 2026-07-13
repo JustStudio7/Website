@@ -18,7 +18,7 @@ function _logo(cube: boolean) {
 
   return (
     <>
-      <Shader className={className} colorSpace="srgb" disableTelemetry={true}>
+      <Shader className={className} colorSpace="srgb" disableTelemetry={true} style={{backgroundImage: `url(${logo})`, backgroundSize: 'cover'}} >
         <RoundedRect 
           id="root" width={.35} height={.35} rounding={.15} softness={.002} transform={rootTransform} visible={false}
         />
