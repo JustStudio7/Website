@@ -12,7 +12,7 @@ function Footer() {
 
     return (
         <footer>
-            <div style={{width: '180px', height: '180px', marginLeft: '16px', left: '16px', position: 'absolute', display: 'block', zIndex: 2}}>
+            <div style={{width: '180px', height: '180px', marginLeft: '16px', left: '16px', position: 'absolute', display: 'block', zIndex: 2, borderRadius: '32px', outline: '1px solid #ffffff50'}}>
                 <Logo />
             </div>
             <div style={{translate: 'calc(180px + 48px) 16px', zIndex: 2, minWidth: '240px'}}>
