@@ -63,3 +63,19 @@ footer h3::after {
     display: block;
     margin-top: 8px;
 }
+
+@media screen and (max-width: 1295px) {
+    #fvs1, #fs1 {
+        display: none;
+    }
+}
+@media screen and (max-width: 1035px) {
+    #fvs2, #fs2 {
+        display: none;
+    }
+}
+@media screen and (max-width: 735px) {
+    #fvs3, #fs3 {
+        display: none;
+    }
+}

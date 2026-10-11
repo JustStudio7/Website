@@ -272,12 +272,15 @@ function App() {
         clearInterval(id);
       }
     }, 1000);
+    document.getElementById('s')!.onclick = () => {
+      document.getElementById('main')!.scroll(0, window.innerHeight - 35);
+    }
   }, [loaded])
 
   return (
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
-        <div id='main'>
+        <div id='main' style={{scrollBehavior: "smooth"}}>
           <Routes>
             <Route path='/' element={<>
               <Hero display={loaded2} />
